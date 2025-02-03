@@ -1,0 +1,24 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/notification/event/v1/common/recipients.schema.json",
+    "title": "Notification Recipient",
+    "description": "The recipients that need to receive a copy of the notification.",
+    "type": "array",
+    "minItems": 1,
+    "items": {
+        "anyOf": [
+            {
+                "$ref": "./recipientByTfsId.schema.json"
+            },
+            {
+                "$ref": "./recipientByOrganisationUserRole.schema.json"
+            },
+            {
+                "$ref": "./recipientByPersonId.schema.json"
+            },
+            {
+                "$ref": "./recipientByOrganisationGroupId.schema.json"
+            }
+        ]
+    }
+}

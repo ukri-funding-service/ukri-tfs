@@ -1,0 +1,51 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/inv/event/v1/reviewerInviteDecline.schema.json",
+    "title": "Reviewer Invite Decline Object",
+    "description": "An event emitted when an invite has been declined",
+    "type": "object",
+    "properties": {
+        "resourceId": {
+            "description": "The resource ID",
+            "type": "number"
+        },
+        "contactId": {
+            "description": "The invite contact Id",
+            "type": "number"
+        },
+        "inviteId": {
+            "description": "The invite ID",
+            "type": "number"
+        },
+        "inviteStatus": {
+            "description": "The current invite status",
+            "type": "string"
+        },
+        "inviteTimestamp": {
+            "description": "The invite timestamp",
+            "type": "string"
+        },
+        "inviteCode": {
+            "description": "The invite code",
+            "type": "string"
+        },
+        "inviteDeclineReason": {
+            "description": "The invite decline reason",
+            "type": "string"
+        },
+        "personId": {
+            "description": "The invite person Id",
+            "type": "number"
+        },
+        "resource_type": {
+            "description": "The resource type",
+            "type": "string",
+            "enum": ["application"]
+        },
+        "resource_id": {
+            "description": "The resource id",
+            "type": "string"
+        }
+    },
+    "required": ["resourceId", "contactId", "inviteId", "inviteStatus", "inviteCode", "inviteDeclineReason", "personId"]
+}

@@ -1,0 +1,195 @@
+$colour: ufs-colour('ukri-blue');
+$hover-colour: #b938bc;
+$alt-colour: #cb3564;
+
+.dropdown__title {
+    background-color: transparent;
+    border: none;
+    font-family: inherit;
+}
+
+// nav {
+.nav-bar__wrapper {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.nav-bar {
+    float: right;
+    margin-left: 2px;
+    background-color: $colour;
+    display: grid;
+
+    &__list {
+        // > ul {
+        grid-auto-flow: column;
+
+        > li {
+            // margin: 0 0.5rem;
+
+            a,
+            .dropdown__title {
+                text-decoration: none;
+                text-align: center;
+                display: inline-block;
+                color: govuk-colour('white');
+                @include govuk-font($size: 16);
+
+                &:focus {
+                    outline: none;
+                }
+            }
+
+            > a,
+            .dropdown__title {
+                padding: 11px 12px 8px;
+
+                &:hover,
+                &:focus {
+                    background-color: $alt-colour;
+                }
+            }
+
+            .dropdown__title {
+                padding-right: 28px;
+
+                &:after {
+                    display: block;
+                    position: absolute;
+                    right: 10px;
+                    top: 16px;
+                    font-size: 8px;
+                    content: '\25BC';
+                    color: govuk-colour('white');
+                }
+            }
+        }
+    }
+    // ul {
+    .dropdown__menu {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: grid;
+
+        li {
+            padding: 0;
+        }
+    }
+}
+
+.top__link {
+    margin-bottom: 15px;
+}
+
+@media only screen and (min-width: 769px) {
+    .sticky-nav.sticky-nav--fixed {
+        position: -webkit-sticky;
+        position: -moz-sticky;
+        position: -ms-sticky;
+        position: -o-sticky;
+        position: sticky;
+        padding: 0;
+        top: 60px;
+        max-height: 80vh;
+        bottom: auto;
+        overflow-y: auto;
+    }
+    .nav__link--print {
+        position: -webkit-sticky;
+        position: -moz-sticky;
+        position: -ms-sticky;
+        position: -o-sticky;
+        position: sticky;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        top: auto;
+        bottom: 0;
+        background-color: govuk-colour('white');
+    }
+    .govuk-heading--fixed {
+        position: -webkit-sticky;
+        position: -moz-sticky;
+        position: -ms-sticky;
+        position: -o-sticky;
+        position: sticky;
+        padding-bottom: 5px;
+        // margin-bottom: 5px;
+        top: 0;
+        bottom: auto;
+        background-color: govuk-colour('white');
+    }
+}
+
+.dropdown {
+    position: relative;
+
+    .dropdown__title {
+        display: inline-flex;
+        align-items: flex-start;
+    }
+
+    .dropdown__menu {
+        position: absolute;
+        min-width: 20ch;
+        top: 100%;
+        visibility: hidden;
+        padding: 0;
+
+        a {
+            color: govuk-colour('white');
+            background-color: $colour;
+            display: block;
+            padding: 0.75em;
+            opacity: 0;
+            text-align: left;
+            border-top: 1px solid govuk-colour('white');
+
+            &:hover {
+                background-color: $alt-colour;
+            }
+
+            &:focus {
+                outline: none;
+                background-color: $alt-colour;
+            }
+        }
+    }
+
+    &:hover,
+    &:focus-within {
+        .dropdown__title {
+            // leave
+        }
+
+        .dropdown__menu {
+            opacity: 1;
+            visibility: visible;
+
+            a {
+                opacity: 1;
+            }
+        }
+
+        &:after {
+            opacity: 1;
+        }
+    }
+
+    &__link--active {
+        font-weight: bold !important;
+        box-shadow: inset 0 0 0 4px $alt-colour;
+    }
+}
+
+@include touch {
+    .nav-wrapper {
+        // mobile only
+    }
+}
+
+@include mobile {
+    .nav-wrapper {
+        display: none;
+    }
+}

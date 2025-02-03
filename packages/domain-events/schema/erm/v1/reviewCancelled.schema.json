@@ -1,0 +1,26 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/erm/event/v1/reviewCancelled.schema.json",
+    "title": "Cancelled Review",
+    "description": "An object describing a review which has been cancelled",
+    "type": "object",
+    "properties": {
+        "applicationId": {
+            "description": "The application ID",
+            "type": "number"
+        },
+        "reviewId": {
+            "description": "The review ID",
+            "type": "number"
+        },
+        "reviewStatus": {
+            "description": "The review status",
+            "type": "string"
+        },
+        "timestamp": {
+            "description": "The review submission timestamp",
+            "type": "string"
+        }
+    },
+    "required": ["applicationId", "reviewId", "reviewStatus"]
+}

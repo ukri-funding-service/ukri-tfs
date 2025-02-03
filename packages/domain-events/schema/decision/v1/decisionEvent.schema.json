@@ -1,0 +1,8 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/decision/event/v1/decisionEvent.schema.json",
+    "title": "Decision Event",
+    "description": "An Event emitted by the Decision Api service",
+    "type": "object",
+    "oneOf": [{ "$ref": "decisionConfirmedEvent.schema.json" }]
+}

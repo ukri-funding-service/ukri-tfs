@@ -1,0 +1,7 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/award/event/properties/gfsFundingType.schema.json",
+    "title": "GFS Funding Type",
+    "description": "The GFS funding type for the award",
+    "type": "string"
+}

@@ -1,0 +1,48 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/om/event/v1/opportunity.schema.json",
+    "title": "Opportunity",
+    "description": "An Opportunity",
+    "type": "object",
+    "properties": {
+        "opportunity_id": {
+            "description": "The Opportunity Id",
+            "type": "number"
+        },
+        "opportunity_name": {
+            "description": "The Opportunity name",
+            "type": "string"
+        },
+        "funders": {
+            "description": "List of funders",
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "created_at": {
+            "description": "The Date the Opportunity was created",
+            "type": "string",
+            "format": "date-time"
+        },
+        "created_by": {
+            "description": "The identifier of the User who created the Opportunity",
+            "type": "string"
+        },
+        "application_workflows": {
+            "type": "array",
+            "description": "Unordered list of the Opportunity's application workflows",
+            "items": {
+                "$ref": "applicationWorkflow.schema.json"
+            }
+        },
+        "expert_review_workflows": {
+            "type": "array",
+            "description": "Unordered list of the Opportunity's expert review workflows",
+            "items": {
+                "$ref": "expertReviewWorkflow.schema.json"
+            }
+        }
+    },
+    "required": ["opportunity_id", "opportunity_name"]
+}

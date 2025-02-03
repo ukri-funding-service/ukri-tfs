@@ -1,0 +1,279 @@
+$alt-colour: #cb3564;
+
+.new-header {
+    position: relative;
+    z-index: 100;
+
+    &__top {
+        min-height: 95px;
+        position: relative;
+    }
+
+    &__brand {
+        display: block;
+        float: left;
+        width: 208px;
+        height: 71px;
+        padding: 10px 0 0 0;
+        margin-bottom: 10px;
+    }
+
+    &__bar {
+        height: 39px;
+        background-position: 40% 0;
+        background-size: 540px;
+        background-repeat: no-repeat;
+
+        @include touch {
+            background-position: 200px 0;
+        }
+
+        @include mobile {
+            background-position: 200px 0;
+        }
+
+        .column {
+            position: relative;
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+    }
+
+    &__service {
+        display: block;
+        position: absolute;
+        left: 10px;
+        top: 0;
+        width: 220px;
+        font-size: 24px;
+        padding-top: 1px;
+    }
+
+    &--external {
+        .new-header__bar {
+            background-color: #622378;
+            background-image: url('/images/ufs/external_graphic.svg');
+        }
+
+        .new-header__service {
+            color: ufs-colour('lime');
+        }
+    }
+
+    &--admin {
+        .new-header__bar {
+            background-color: ufs-colour('sand');
+            background-image: url('/images/ufs/admin_graphic.svg');
+        }
+
+        .new-header__service {
+            color: ufs-colour('ukri-blue');
+        }
+    }
+
+    &__nav {
+        // <nav>
+        height: 40px;
+        float: left;
+        margin-left: 80px;
+        margin-top: 22px;
+
+        &--touch-hide {
+            @at-root {
+                .js-enabled #{&} {
+                    @include mobile {
+                        display: none !important;
+                    }
+                }
+            }
+        }
+
+        @include mobile {
+            display: block;
+            float: none;
+            clear: both;
+            width: 100%;
+            height: auto;
+            margin: 0;
+            margin-top: 15px;
+        }
+    }
+
+    &__nav-list {
+        // <ul>
+        height: 40px;
+        float: right;
+        text-align: left;
+
+        @include mobile {
+            width: 100%;
+            height: auto;
+            float: none;
+            clear: both;
+            margin-bottom: 20px;
+        }
+    }
+
+    &__nav-item {
+        // <li>
+        display: inline-block;
+        margin-right: 4px;
+
+        @include mobile {
+            display: block;
+            width: 100%;
+        }
+
+        &--user {
+            display: none;
+
+            @include mobile {
+                display: block;
+            }
+        }
+    }
+
+    &__nav-link {
+        // <a>
+        display: inline-block;
+        padding: 0 4px;
+        color: ufs-colour('ukri-blue');
+        text-decoration: none;
+        @include govuk-font($size: 19, $weight: bold);
+
+        @include mobile {
+            border: none;
+            display: block;
+
+            background-color: ufs-colour('ukri-blue');
+            color: govuk-colour('white');
+            padding: 10px 10px;
+            margin-bottom: 1px;
+            text-align: right;
+            font-weight: normal;
+
+            &:hover {
+                background-color: govuk-colour('light-grey');
+                color: govuk-colour('black');
+            }
+
+            &:focus {
+                background-color: govuk-colour('yellow');
+                color: govuk-colour('black');
+            }
+        }
+
+        &--active {
+            font-weight: bold;
+        }
+    }
+
+    &__nav-link-not {
+        display: block;
+        width: 100%;
+        padding: 24px 10px 10px;
+        margin-bottom: 1px;
+        text-align: right;
+        @include govuk-font($size: 19, $weight: bold);
+    }
+
+    &__nav-text {
+        display: inline-block;
+        padding: 4px 0;
+        font-size: 19px;
+        color: govuk-colour('black');
+
+        @include mobile {
+            padding: 6px 0;
+        }
+    }
+
+    &--external {
+        .new-header__nav-link {
+            &:hover {
+                color: #622378;
+            }
+        }
+
+        @include mobile {
+            .new-header__nav-link--active {
+                box-shadow: inset 0 0 0 4px $alt-colour;
+            }
+        }
+
+        @include mobile {
+            .new-header__nav-link {
+                &:hover {
+                    color: govuk-colour('white');
+                    background-color: $alt-colour;
+                }
+            }
+        }
+
+        @include desktop {
+            .new-header__nav-link--active {
+                color: #622378;
+                border: 2px solid #622378;
+            }
+        }
+    }
+
+    &--admin {
+        @include mobile {
+            .new-header__nav-link--active {
+                box-shadow: inset 0 0 0 4px $alt-colour;
+            }
+        }
+
+        @include desktop {
+            .new-header__nav-link--active {
+                color: ufs-colour('sand');
+                border: 2px solid ufs-colour('sand');
+            }
+        }
+    }
+}
+
+.mobile-menu {
+    display: none;
+}
+
+.js-enabled {
+    .mobile-menu {
+        display: none;
+
+        @include mobile {
+            position: absolute;
+            right: 10px;
+            top: 28px;
+            display: block;
+            font-size: 19px;
+            background-color: govuk-colour('white');
+            border: 0;
+            width: 80px;
+            height: 41px;
+            padding: 0;
+            cursor: pointer;
+            color: govuk-colour('black');
+        }
+
+        span {
+            font-size: 12px;
+        }
+
+        &:focus,
+        &:hover {
+            border: 2px solid govuk-colour('yellow');
+            outline: none;
+        }
+    }
+}
+
+.user-header {
+    right: 10px;
+
+    @include mobile {
+        right: 0;
+        display: none;
+    }
+}

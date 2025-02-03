@@ -1,0 +1,27 @@
+{
+    "definitions": {},
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/notification/event/v1/award/sendFesIssuedNotificationEventBody.schema.json",
+    "title": "Send final expenditure statement issued notification event payload data",
+    "description": "Data about the final expenditure statement outcome.",
+    "type": "object",
+    "required": ["recipients", "award", "fesUrl", "templateId"],
+    "properties": {
+        "recipients": {
+            "$ref": "../common/recipients.schema.json"
+        },
+        "award": {
+            "$ref": "./shared/award.schema.json"
+        },
+        "deadlineDays": {
+            "type": "integer"
+        },
+        "fesUrl": {
+            "$ref": "./shared/fesUrl.schema.json"
+        },
+        "templateId": {
+            "type": "string",
+            "enum": ["fesIssued"]
+        }
+    }
+}

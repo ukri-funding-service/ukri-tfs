@@ -1,0 +1,31 @@
+{
+    "definitions": {},
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/notification/event/v1/application/sendApplicationAccessNotificationEventBody.schema.json",
+    "title": "Send Application Access Notification event payload data",
+    "description": "Data about the application access granted",
+    "type": "object",
+    "required": ["application", "recipients", "leadApplicant", "templateId", "accessLink", "organisation"],
+    "properties": {
+        "recipients": {
+            "$ref": "../common/recipients.schema.json"
+        },
+        "application": {
+            "$ref": "application.schema.json"
+        },
+        "leadApplicant": {
+            "$ref": "applicant.schema.json"
+        },
+        "organisation": {
+            "$ref": "../organisation/shared/organisation.schema.json"
+        },
+        "accessLink": {
+            "description": "link to access application",
+            "type": "string"
+        },
+        "templateId": {
+            "type": "string",
+            "enum": ["applicationAccess"]
+        }
+    }
+}

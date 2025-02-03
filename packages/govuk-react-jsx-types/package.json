@@ -1,0 +1,16 @@
+{
+    "name": "@ukri-tfs/govuk-react-jsx-types",
+    "version": "1.0.0",
+    "description": "Type declarations for GOV.UK React Components module",
+    "main": "",
+    "types": "govuk-react-jsx/index.d.ts",
+    "scripts": {},
+    "keywords": [
+        "govuk",
+        "react",
+        "jsx",
+        "types"
+    ],
+    "author": "ben.rees@kerv.com",
+    "license": "MIT"
+}

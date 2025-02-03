@@ -1,0 +1,14 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/erm/event/v1/cancelInvites.schema.json",
+    "title": "Cancelled Invites",
+    "description": "An object describing a set of cancelling invites",
+    "type": "object",
+    "properties": {
+        "inviteIds": {
+            "description": "An array of Invite Ids",
+            "type": "array"
+        }
+    },
+    "required": ["inviteIds"]
+}

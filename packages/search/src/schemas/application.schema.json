@@ -1,0 +1,140 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/search/index/application.schema.json",
+    "title": "Opensearch Expert Review Application Index schema",
+    "description": "Opensearch Expert Review Application Index configuration",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+        "id",
+        "displayId",
+        "opportunityId",
+        "opportunityApplicationWorkflowComponentId",
+        "name",
+        "applicationStatus",
+        "reviewStatus",
+        "reviewStatusPriority",
+        "responseStatus",
+        "responseStatusPriority",
+        "reviewStats",
+        "invitationStats"
+    ],
+    "properties": {
+        "id": {
+            "description": "The application id",
+            "type": "number",
+            "examples": [10007]
+        },
+        "displayId": {
+            "description": "The application display id",
+            "type": "string",
+            "examples": ["APP10007"]
+        },
+        "opportunityId": {
+            "description": "The application opportunity id",
+            "type": "number",
+            "examples": [10637]
+        },
+        "opportunityApplicationWorkflowComponentId": {
+            "description": "The application opportunity workflow component id",
+            "type": "number",
+            "examples": [1201]
+        },
+        "name": {
+            "description": "The name of the application",
+            "type": "string",
+            "examples": ["Navigating the ethical complexities of human neural implants"]
+        },
+        "applicationStatus": {
+            "description": "The status of the application",
+            "type": "string",
+            "enum": [
+                "Draft",
+                "Submitted",
+                "Not submitted",
+                "Sent to research office",
+                "Return to applicant",
+                "Failed checks",
+                "Passed checks",
+                "Unsuccessful checks",
+                "Awaiting assessment",
+                "Successful",
+                "Unsuccessful"
+            ]
+        },
+        "reviewStatus": {
+            "description": "The review status of the application",
+            "type": "string",
+            "enum": [
+                "Passed Checks",
+                "In Expert Review",
+                "Sent For Response",
+                "Expert Review Complete",
+                "Failed Review",
+                "Successful",
+                "Unsuccessful",
+                "Pending Checks"
+            ]
+        },
+        "reviewStatusPriority": {
+            "description": "The review status priority of the application",
+            "type": "number",
+            "examples": [8]
+        },
+        "responseStatus": {
+            "description": "The response status of the application",
+            "type": "string",
+            "enum": ["Provided", "Requested", "Not provided", "Not applicable"]
+        },
+        "responseStatusPriority": {
+            "description": "The response status priority of the application",
+            "type": "number",
+            "examples": [3]
+        },
+        "reviewStats": {
+            "description": "The review stats of the application",
+            "type": "object",
+            "properties": {
+                "pendingCount": {
+                    "description": "The review pending count of the application",
+                    "type": "number",
+                    "examples": [0]
+                },
+                "usableCount": {
+                    "description": "The review usable count of the application",
+                    "type": "number",
+                    "examples": [0]
+                },
+                "toCheckCount": {
+                    "description": "The review to check count of the application",
+                    "type": "number",
+                    "examples": [0]
+                }
+            },
+            "required": ["pendingCount", "usableCount", "toCheckCount"]
+        },
+        "invitationStats": {
+            "description": "The invitation stats of the application",
+            "type": "object",
+            "properties": {
+                "noResponseCount": {
+                    "description": "The invitation no response count of the application",
+                    "type": "number",
+                    "examples": [0]
+                },
+                "declinedCount": {
+                    "description": "The invitation declined count of the application",
+                    "type": "number",
+                    "examples": [0]
+                }
+            },
+            "required": ["noResponseCount", "declinedCount"]
+        },
+        "reviewFailedDate": {
+            "description": "The review failed date of the application",
+            "type": "string",
+            "format": "date-time",
+            "examples": ["2024-10-20T12:57:00.350Z"]
+        }
+    }
+}

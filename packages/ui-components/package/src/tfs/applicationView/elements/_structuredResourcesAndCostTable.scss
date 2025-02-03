@@ -1,0 +1,134 @@
+.structured-costs-table {
+    &-table {
+        .govuk-table {
+            margin-bottom: 0 !important;
+        }
+
+        .govuk-table__header,
+        .govuk-table__cell {
+            border: 0 none;
+        }
+
+        .govuk-table__header {
+            padding-top: 2px;
+            padding-bottom: 10px;
+        }
+
+        .govuk-table__cell {
+            padding-top: 2px;
+            padding-bottom: 2px;
+        }
+
+        .structured-costs-table-table {
+            .govuk-table__header,
+            .govuk-table__cell {
+                &:first-child {
+                    padding-left: 0;
+                }
+            }
+
+            .govuk-table__header {
+                padding-bottom: 2px;
+            }
+
+            .govuk-table__cell {
+                padding-top: 6px;
+                padding-bottom: 6px;
+            }
+        }
+    }
+}
+
+.structured-costs-org-table {
+    table {
+        margin-bottom: 0;
+    }
+
+    .responsive-table {
+        margin-bottom: 15px;
+    }
+
+    .govuk-table__cell {
+        padding-bottom: 0.5rem;
+        border-bottom: 0 none;
+        padding-top: 0.5rem;
+    }
+
+    .govuk-table__row {
+        &:nth-child(n + 2) {
+            .govuk-table__cell {
+                padding-top: 0;
+                padding-bottom: 0.6rem;
+            }
+        }
+
+        &:last-child {
+            border-bottom: 1px solid #b1b4b6;
+
+            .govuk-table__cell {
+                padding-top: 0.5rem;
+            }
+        }
+    }
+
+    .structured-costs-total {
+        display: flex;
+        justify-content: flex-end;
+
+        @media (max-width: 400px) {
+            flex-direction: column;
+            align-items: flex-end;
+        }
+
+        & > div {
+            margin-left: 20px;
+        }
+
+        &--organisation {
+            margin-bottom: 5rem;
+        }
+        &--application {
+            padding-top: 1rem;
+            border-top: 4px solid #777;
+        }
+    }
+
+    $level_padding: 2.5rem;
+
+    .organisation-table {
+        &-category {
+            &--level-0 {
+                border-top: 1px solid #b1b4b6;
+
+                &:first-child {
+                    border-top: 0 none;
+                }
+            }
+
+            &--level-1 {
+                padding-left: calc(1 * $level_padding);
+            }
+
+            &--level-2 {
+                padding-left: calc(2 * $level_padding);
+            }
+        }
+
+        &-row {
+            &--level-0 {
+                .govuk-table__cell,
+                .govuk-table__cell:nth-child(n) {
+                    padding-top: 1rem;
+                    border-top: 1px solid #b1b4b6;
+                }
+            }
+
+            &--last-child-of-parent {
+                .govuk-table__cell,
+                .govuk-table__cell:nth-child(n) {
+                    padding-bottom: 1rem;
+                }
+            }
+        }
+    }
+}

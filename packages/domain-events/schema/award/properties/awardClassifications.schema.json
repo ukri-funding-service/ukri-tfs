@@ -1,0 +1,16 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/award/event/properties/awardClassifications.schema.json",
+    "title": "Award Classifications",
+    "description": "Award classifications for an award",
+    "type": "object",
+    "required": ["primaryClassification"],
+    "properties": {
+        "primaryClassification": {
+            "$ref": "./classification.schema.json"
+        },
+        "secondaryClassification": {
+            "$ref": "./classification.schema.json"
+        }
+    }
+}

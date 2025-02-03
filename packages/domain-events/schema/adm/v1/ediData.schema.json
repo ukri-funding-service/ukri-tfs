@@ -1,0 +1,25 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/adm/event/v1/ediData.schema.json",
+    "title": "EdiData",
+    "description": "A person's response to an Equality, Diversity & Inclusion (EDI) survey.",
+    "type": "object",
+    "properties": {
+        "userId": {
+            "description": "The userId of the person surveyed",
+            "type": "number"
+        },
+        "personId": {
+            "description": "The pesonId of the person surveyed",
+            "type": "number"
+        },
+        "ediResponses": {
+            "type": "array",
+            "description": "Unordered list of the person's responses to their EDI survey",
+            "items": {
+                "$ref": "ediResponse.schema.json"
+            }
+        }
+    },
+    "required": ["userId"]
+}

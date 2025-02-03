@@ -1,0 +1,23 @@
+{
+    "definitions": {},
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/notification/event/v1/application/sendApplicationGroupReassignedNotificationEventBody.schema.json",
+    "title": "Send Group Reassigned Application Notification event payload data",
+    "description": "Data about the application reassigned.",
+    "type": "object",
+    "required": ["application", "recipients", "group", "templateId"],
+    "properties": {
+        "recipients": {
+            "$ref": "../common/recipients.schema.json"
+        },
+        "group": {
+            "$ref": "group.schema.json"
+        },
+        "application": {
+            "$ref": "application.schema.json"
+        },
+        "templateId": {
+            "$ref": "applicationTemplateId.schema.json"
+        }
+    }
+}

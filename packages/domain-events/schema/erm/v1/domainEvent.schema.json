@@ -1,0 +1,16 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/erm/event/v1/domainEvent.schema.json",
+    "title": "Domain Event (v1)",
+    "description": "An Event emitted by the Expert Review Management service",
+    "type": "object",
+    "oneOf": [
+        { "$ref": "cancelInvitesEvent.schema.json" },
+        { "$ref": "reviewSubmittedEvent.schema.json" },
+        { "$ref": "reviewEvaluateUsabilityEvent.schema.json" },
+        { "$ref": "reviewCancelledEvent.schema.json" },
+        { "$ref": "reviewResponseInviteEvent.schema.json" },
+        { "$ref": "reviewResponseSubmittedEvent.schema.json" },
+        { "$ref": "reviewerAddedEvent.schema.json" }
+    ]
+}

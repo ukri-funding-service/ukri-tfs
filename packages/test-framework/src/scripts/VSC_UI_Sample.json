@@ -1,0 +1,40 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "node",
+            "request": "launch",
+            "protocol": "inspector",
+            "address": "127.0.01",
+            "port": 5859,
+            "timeout": 20000,
+            "name": "Chrome-Local",
+            "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/wdio",
+            "windows": {
+                "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/wdio.cmd"
+            },
+            "cwd": "${workspaceRoot}",
+            "console": "integratedTerminal",
+            "args": [
+                // To run a specific tag, you can use:
+                // "--cucumberOpts.tagExpression", "@ui",
+                // Change the configuration to run with:
+                "./UI/config/wdio.CHROME.conf.js",
+                "--nolazy"
+                // To run the current open file, you can use:
+                // "--spec", "${relativeFile}"
+                // To run a specific file, you can use:
+                // "--spec", "UI/features/Accessibility.feature"
+            ],
+            "env": {
+                "EXECUTION_TAG": "",
+                // Set to true for debug
+                "UI_DEBUG": "false",
+                // Saucelabs USER and KEY for when using wdio.SAUCE.conf.js
+                "SAUCE_USER": "",
+                "SAUCE_KEY": "",
+                "BASE_URL": ""
+            }
+        }
+    ]
+}

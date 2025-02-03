@@ -1,0 +1,27 @@
+{
+    "definitions": {},
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/notification/event/v1/application/applicantUnsuccessfulChecksApplicationEventBody.schema.json",
+    "title": "Application unsuccessful checks Notification event payload data",
+    "description": "Data about the application submitted event.",
+    "type": "object",
+    "required": ["application", "recipients", "templateId", "leadApplicant", "userType"],
+    "properties": {
+        "recipients": {
+            "$ref": "../common/recipients.schema.json"
+        },
+        "application": {
+            "$ref": "application.schema.json"
+        },
+        "templateId": {
+            "$ref": "applicationTemplateId.schema.json"
+        },
+        "leadApplicant": {
+            "$ref": "applicant.schema.json"
+        },
+        "userType": {
+            "type": "string",
+            "enum": ["Applicant", "Research officer"]
+        }
+    }
+}

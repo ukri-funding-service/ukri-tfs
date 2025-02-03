@@ -1,0 +1,26 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/adm/event/v1/ediDataCreatedEvent.schema.json",
+    "title": "EDI Created Event",
+    "description": "An Event emitted on creation of a Equality, Diversity & Inclusion (EDI) Data record",
+    "type": "object",
+    "properties": {
+        "type": {
+            "description": "The data contained in the event",
+            "type": "string",
+            "enum": ["edi"]
+        },
+        "data": {
+            "$ref": "ediData.schema.json"
+        },
+        "method": {
+            "description": "The action that caused the event",
+            "type": "string",
+            "enum": ["create"]
+        },
+        "correlationIds": {
+            "$ref": "correlationIds.schema.json"
+        }
+    },
+    "required": ["type", "data", "method"]
+}

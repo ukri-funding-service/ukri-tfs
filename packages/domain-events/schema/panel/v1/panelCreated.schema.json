@@ -1,0 +1,32 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/panel/event/v1/panelCreated.schema.json",
+    "title": "Panel Created Object",
+    "description": "An event emitted when a panel has been created",
+    "type": "object",
+    "required": ["id", "name", "displayId", "timestamp"],
+    "additionalProperties": false,
+    "properties": {
+        "id": {
+            "description": "The panel identifier",
+            "type": "string",
+            "format": "uuid"
+        },
+        "name": {
+            "description": "The panel name",
+            "type": "string"
+        },
+        "displayId": {
+            "description": "User readable panel reference",
+            "type": "string"
+        },
+        "timestamp": {
+            "description": "The panel creation timestamp",
+            "type": "string",
+            "format": "date-time"
+        },
+        "correlationIds": {
+            "$ref": "https://funding-service.ukri.org/schema/panel/event/v1/correlationIds.schema.json"
+        }
+    }
+}

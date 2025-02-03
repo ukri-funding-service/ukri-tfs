@@ -1,0 +1,20 @@
+.print-link {
+    position: relative;
+    display: inline-block;
+    width: 128px;
+    right: 0;
+    margin-top: 12px;
+    text-align: right;
+
+    &:before {
+        content: '';
+        left: 0px;
+        width: 20px;
+        height: 20px;
+        top: 2px;
+        position: absolute;
+        background-repeat: no-repeat;
+        background-image: url(/printer_icon.svg);
+        background-size: 20px 20px;
+    }
+}

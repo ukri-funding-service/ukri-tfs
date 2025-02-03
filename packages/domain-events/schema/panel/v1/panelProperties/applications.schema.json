@@ -1,0 +1,32 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/panel/event/v1/applications.schema.json",
+    "title": "Applications",
+    "description": "The assigned applications for this panel and application members for each application",
+    "type": "array",
+    "items": {
+        "type": "object",
+        "properties": {
+            "applicationId": {
+                "description": "id of the application",
+                "type": "integer"
+            },
+            "members": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "personId": {
+                            "description": "person id of the panel member",
+                            "type": "integer"
+                        },
+                        "applicationRole": {
+                            "description": "The role of the person against the application",
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

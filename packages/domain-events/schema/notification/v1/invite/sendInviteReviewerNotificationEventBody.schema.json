@@ -1,0 +1,75 @@
+{
+    "definitions": {},
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/notification/event/v1/invite/sendInviteReviewerNotificationEventBody.schema.json",
+    "title": "Send Invite Reviewer Notification event payload data",
+    "description": "Invitation to review",
+    "type": "object",
+    "required": [
+        "recipients",
+        "templateId",
+        "applicationName",
+        "opportunityName",
+        "applicants",
+        "councilList",
+        "urlLink",
+        "reviewDeadline"
+    ],
+    "properties": {
+        "recipients": {
+            "$ref": "../common/recipients.schema.json"
+        },
+        "templateId": {
+            "type": "string",
+            "enum": ["inviteReviewer"]
+        },
+        "applicationName": {
+            "type": "string"
+        },
+        "opportunityName": {
+            "type": "string"
+        },
+        "grantSize": {
+            "type": "number"
+        },
+        "applicants": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "number"
+                    },
+                    "firstName": {
+                        "type": "string"
+                    },
+                    "lastName": {
+                        "type": "string"
+                    },
+                    "organisation": {
+                        "type": "string"
+                    },
+                    "role": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "applicationSummary": {
+            "type": "string"
+        },
+        "urlLink": {
+            "type": "string"
+        },
+        "councilList": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "reviewDeadline": {
+            "type": "string",
+            "format": "date-time"
+        }
+    }
+}

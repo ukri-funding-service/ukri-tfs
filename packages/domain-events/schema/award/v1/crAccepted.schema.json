@@ -1,0 +1,21 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/award/event/v1/crAccepted.schema.json",
+    "title": "CR Accepted",
+    "description": "An Event emitted when change request is accepted.",
+    "type": "object",
+    "properties": {
+        "type": {
+            "description": "The type of event",
+            "type": "string",
+            "enum": ["https://funding-service.ukri.org/schema/award/event/v1/crAccepted.schema.json"]
+        },
+        "data": {
+            "$ref": "crAcceptedData.schema.json"
+        },
+        "correlationIds": {
+            "$ref": "correlationIds.schema.json"
+        }
+    },
+    "required": ["data", "correlationIds", "type"]
+}

@@ -1,0 +1,397 @@
+.govuk-table__row {
+    &.row-disabled {
+        background-color: govuk-colour('light-grey');
+        color: govuk-colour('dark-grey');
+    }
+    .govuk-table__cell {
+        .cell-status-completed {
+            color: govuk-colour('green');
+        }
+
+        .cell-status-success {
+            color: govuk-colour('green');
+        }
+
+        .cell-status-failure {
+            color: govuk-colour('red');
+        }
+
+        .cell-status-info {
+            color: govuk-colour('blue');
+        }
+
+        &.cell-disabled {
+            color: govuk-colour('mid-grey');
+        }
+
+        &--inner-border-left {
+            position: relative;
+
+            &:before {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 15px;
+                height: calc(100% - 30px);
+                border-left: 1px solid $govuk-border-colour;
+            }
+        }
+
+        &.u-valign-middle {
+            .govuk-label {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+.govuk-table--error-row {
+    border-left: 5px solid govuk-colour('red');
+
+    & td:first-of-type {
+        padding-left: 10px !important;
+    }
+}
+
+td,
+th {
+    &.u-align-right {
+        text-align: right !important;
+    }
+    &.u-align-center {
+        text-align: center !important;
+    }
+    &.u-align-left {
+        text-align: left !important;
+    }
+}
+
+td div,
+td span {
+    &.secondaryText {
+        color: $govuk-secondary-text-colour;
+    }
+
+    &.errorText {
+        color: govuk-colour('red');
+    }
+}
+
+td:first-of-type {
+    padding-left: 4px;
+}
+
+th:first-of-type {
+    padding-left: 4px;
+}
+
+.custom-question-scrollable {
+    .responsive-table {
+        width: auto !important;
+        height: auto !important;
+        max-width: 100%;
+        display: block;
+        overflow-x: scroll;
+        overflow-y: visible;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    table {
+        display: inline-table;
+        width: auto;
+        white-space: nowrap;
+        border-collapse: collapse;
+    }
+
+    table th,
+    table td {
+        word-break: keep-all;
+        border: 1px solid #ccc;
+        padding: 8px;
+        height: fit-content;
+        width: fit-content;
+    }
+
+    td > p.govuk-body {
+        text-wrap: balance;
+    }
+}
+
+.readonly-view {
+    table {
+        table-layout: fixed;
+        font-size: 14px !important;
+
+        th,
+        td,
+        li,
+        p,
+        .serif {
+            font-size: 14px !important;
+        }
+
+        ul,
+        li,
+        p,
+        p.govuk-body,
+        p.govuk-body.serif,
+        p.serif {
+            margin: 0 0 0 0 !important;
+            line-height: 18px !important;
+        }
+    }
+    td * {
+        padding: 5px 5px 5px 0;
+    }
+    td {
+        white-space: normal;
+        word-wrap: break-word;
+        width: auto !important;
+    }
+}
+
+.govuk-table--stripes tr:nth-child(2n) td {
+    background-color: #f3f2f1;
+}
+
+// finance tables have internal border-lines dividng the cells
+.govuk-table--finance {
+    .govuk-table__cell,
+    .govuk-table__header {
+        border-left: 1px solid #b1b4b6;
+        border-right: 1px solid #b1b4b6;
+    }
+    .govuk-table__header {
+        vertical-align: bottom;
+    }
+
+    tfoot tr:first-of-type {
+        border-top: 2px solid #4a4a4a;
+    }
+
+    tr td:not(.govuk-table__cell--numeric),
+    tr th:not(.govuk-table__cell--numeric) {
+        padding-left: 8px;
+    }
+
+    td:first-child,
+    th:first-child {
+        border-left: 0 !important;
+    }
+
+    tr td:last-of-type,
+    tr th:last-of-type {
+        padding-right: 8px;
+        border-right: 0 !important;
+    }
+}
+
+.responsive-table {
+    @include touch {
+        width: 100%;
+        overflow-x: auto;
+    }
+
+    &__table {
+        min-width: 600px;
+    }
+}
+
+$column-fixed-width: 180px;
+$column-fixed-width-right: 120px;
+
+.scrolly {
+    // wrapper div
+    width: calc(100% - 120px);
+    overflow: auto;
+
+    &__table {
+        width: 100%;
+        font-size: 16px;
+        margin-left: $column-fixed-width;
+        border-bottom: 1px solid darkgrey;
+    }
+
+    th,
+    td {
+        white-space: nowrap;
+        padding: 10px 10px;
+        border-top: 1px solid darkgrey;
+        border-right: 1px solid darkgrey;
+    }
+
+    &__locked-td--left,
+    &__locked-th--left {
+        border-left: 2px solid darkgrey;
+        font-weight: bold;
+        padding-left: 10px;
+        padding-right: 10px;
+        border-right: 2px solid darkgrey;
+        position: absolute;
+        width: $column-fixed-width;
+        left: 0;
+        top: auto;
+        background-color: #fff;
+    }
+}
+
+.scrolly__totals-row td,
+.scrolly__totals-row .scrolly__locked-td {
+    background-color: lightgrey;
+    border-top: 1px solid #333;
+    border-bottom: 1px solid darkgrey;
+}
+
+.scrolly td.scrolly__td {
+    text-align: right;
+}
+
+td.scrolly__locked-td--right,
+th.scrolly__locked-th--right {
+    border-left: 2px solid darkgrey;
+    font-weight: bold;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-right: 2px solid darkgrey;
+    position: absolute;
+    width: $column-fixed-width-right;
+    right: 0;
+    top: auto;
+    background-color: #fff;
+    text-align: right !important;
+}
+
+.mega-table {
+    @include govuk-font($size: 16);
+
+    tr {
+        td:first-of-type {
+            padding-left: 4px;
+        }
+        td:last-of-type {
+            padding-right: 4px;
+        }
+    }
+
+    &_row {
+        &-status {
+            &--ready {
+                background-color: #e8f0f8;
+                border-left: 4px solid ufs-colour('ukri-blue');
+                .mega-table_item-status {
+                    color: ufs-colour('other-blue');
+                    // 1D70B8
+                }
+            }
+            &--change {
+                background-color: #fbf1e5;
+                border-left: 4px solid ufs-colour('sand');
+                .mega-table_item-status {
+                    color: ufs-colour('sand');
+                }
+            }
+            &--complete {
+                background-color: #e5f0eb;
+                border-left: 4px solid govuk-colour('green');
+                .mega-table_item-status {
+                    color: govuk-colour('green');
+                }
+            }
+            &--overdue {
+                background-color: #fbeae7;
+                border-left: 4px solid govuk-colour('red');
+                .mega-table_item-status {
+                    color: govuk-colour('red');
+                }
+            }
+            &--success {
+                // green
+                background-color: #f3f2f1;
+                .mega-table_item-status {
+                    color: govuk-colour('green');
+                }
+            }
+            &--danger {
+                // red
+                background-color: lighten(govuk-colour('red'), 45%);
+                border-left: 4px solid govuk-colour('red');
+            }
+            &--info {
+                // blue
+                background-color: lighten(govuk-colour('blue'), 50%);
+                border-left: 4px solid govuk-colour('blue');
+            }
+            &--flat {
+                // GREY
+                background-color: lighten(govuk-colour('mid-grey'), 25%);
+                border-left: 4px solid govuk-colour('mid-grey');
+            }
+        }
+    }
+    &__cell--fixed {
+        max-width: 280px;
+    }
+    &_item-status {
+        @include govuk-font($size: 16, $weight: bold);
+    }
+    &_item-meta {
+        display: block;
+        @include govuk-font($size: 14);
+        color: #6f777b;
+    }
+    .govuk-tag {
+        font-size: 14px;
+    }
+    .error-text {
+        @include govuk-font($size: 16, $weight: bold);
+    }
+}
+
+.sortable-link {
+    line-height: normal;
+    display: inline-block;
+    padding: 0px 10px 0px 0px;
+    position: relative;
+    text-decoration: none !important;
+}
+
+[aria-sort] .sortable-link:before {
+    content: ' \25BC';
+    position: absolute;
+    right: -1px;
+    top: 11px;
+    font-size: 0.5em;
+}
+
+[aria-sort] .sortable-link:after {
+    content: ' \25B2';
+    position: absolute;
+    right: -1px;
+    top: 0;
+    font-size: 0.5em;
+}
+
+[aria-sort='ascending'] .sortable-link:before,
+[aria-sort='descending'] .sortable-link:before {
+    content: none;
+}
+
+[aria-sort='ascending'] .sortable-link:after {
+    content: ' \25B2';
+    font-size: 0.8em;
+    position: absolute;
+    right: -5px;
+    top: 2px;
+}
+
+[aria-sort='descending'] .sortable-link:after {
+    content: ' \25BC';
+    font-size: 0.8em;
+    position: absolute;
+    right: -5px;
+    top: 2px;
+}
+
+th.column-date-width {
+    min-width: 122px;
+}

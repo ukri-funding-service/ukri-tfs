@@ -1,0 +1,21 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/decision/event/v2/decisionConfirmedEvent.schema.json",
+    "title": "Decision Confirmed Event",
+    "description": "An Event emitted on confirmation of a Decision",
+    "type": "object",
+    "properties": {
+        "type": {
+            "description": "The type of event",
+            "type": "string",
+            "enum": ["https://funding-service.ukri.org/schema/decision/event/v2/decisionConfirmedEvent.schema.json"]
+        },
+        "data": {
+            "$ref": "decisionConfirmedData.schema.json"
+        },
+        "correlationIds": {
+            "$ref": "correlationIds.schema.json"
+        }
+    },
+    "required": ["data", "correlationIds", "type"]
+}

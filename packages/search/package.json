@@ -1,0 +1,53 @@
+{
+    "name": "@ukri-tfs/search",
+    "version": "1.0.0",
+    "private": true,
+    "description": "A package for connecting to a search engine",
+    "keywords": [],
+    "license": "MIT",
+    "author": "",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "scripts": {
+        "prebuild": "npm run clean",
+        "build": "npm run compile && npm run compile:test",
+        "clean": "rimraf dist docs test_reports coverage .nyc_output",
+        "compile": "tsc --project tsconfig-build.json",
+        "compile:test": "tsc --project tsconfig-test.json",
+        "lint": "eslint .",
+        "lint:ci": "npm run lint -- -f ../../node_modules/eslint-bamboo-formatter/reporter.js",
+        "lint:fix": "npm run lint -- --fix",
+        "prettier": "prettier --check .",
+        "prettier:fix": "prettier --write .",
+        "sonar:ci": "sonar-scanner -Dsonar.login=${SONAR_API_KEY} ${SONAR_EXTRA_ARGS}",
+        "test": "jest --maxWorkers=50%",
+        "pretest:ci": "mkdirp test_reports",
+        "test:ci": "TEST_REPORT_PATH=test_reports TEST_REPORT_FILENAME=junit.xml jest",
+        "pretest:coverage": "mkdirp test_reports",
+        "test:coverage": "TEST_REPORT_PATH=test_reports TEST_REPORT_FILENAME=junit.xml jest --coverage"
+    },
+    "dependencies": {
+        "@ukri-tfs/auth": "1.0.0",
+        "@ukri-tfs/configuration": "^1.0.0",
+        "@ukri-tfs/http": "^1.0.0",
+        "@ukri-tfs/logging": "1.0.0",
+        "http-errors": "2.0.0",
+        "node-fetch": "2.6.7",
+        "slice-paginate": "^1.0.4"
+    },
+    "devDependencies": {
+        "@jest/globals": "^29.7.0",
+        "ajv": "^8.11.2",
+        "ajv-formats": "^2.1.1",
+        "eslint": "7.x",
+        "jest": "^29.7.0",
+        "jest-junit-reporter": "^1.1.0",
+        "mkdirp": "1.x",
+        "rimraf": "3.x",
+        "ts-jest": "^29.1.1",
+        "typescript": "^5.3.3"
+    },
+    "publishConfig": {
+        "registry": "https://devops.innovateuk.org/binaries/repository/npm-private/"
+    }
+}

@@ -1,0 +1,8 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/award/event/v1/returnedAwardProperties/timeSubmitted.schema.json",
+    "title": "Time Submitted",
+    "description": "The date and time the award was returned",
+    "type": "string",
+    "format": "date-time"
+}

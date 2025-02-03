@@ -1,0 +1,44 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/panel/event/v1/conflicts.schema.json",
+    "title": "Conflicts",
+    "description": "The member conflict details",
+    "type": "array",
+    "items": {
+        "type": "object",
+        "properties": {
+            "id": {
+                "description": "The id of the panel conflict",
+                "type": "number"
+            },
+            "conflictRecordExists": {
+                "description": "external user has marked themselves as conflicted",
+                "type": "boolean"
+            },
+            "isConflicted": {
+                "description": "internal user has marked the Person as conflicted",
+                "type": "boolean"
+            },
+            "applicationId": {
+                "description": "The internal panel application id that the conflict relates to",
+                "type": "number"
+            },
+            "globalApplicationId": {
+                "description": "The panel application id that the conflict relates to",
+                "type": "number"
+            },
+            "panelMemberId": {
+                "description": "The panel member id that is conflicted",
+                "type": "number"
+            },
+            "personId": {
+                "description": "The person id that is conflicted",
+                "type": "number"
+            },
+            "createdBy": {
+                "description": "User who marked the conflict",
+                "type": "string"
+            }
+        }
+    }
+}

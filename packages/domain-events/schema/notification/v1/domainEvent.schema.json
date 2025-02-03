@@ -1,0 +1,14 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/notification/event/v1/domainEvent.schema.json",
+    "title": "V1 Notifications Domain Event",
+    "description": "An Event emitted by multiple services to send a notification",
+    "type": "object",
+    "oneOf": [
+        { "$ref": "./application/sendApplicationNotificationEvent.schema.json" },
+        { "$ref": "./award/sendAwardNotificationEvent.schema.json" },
+        { "$ref": "./organisation/group/sendGroupNotificationEvent.schema.json" },
+        { "$ref": "./invite/sendInviteNotificationEvent.schema.json" },
+        { "$ref": "./review/reviewNotificationEvent.schema.json" }
+    ]
+}

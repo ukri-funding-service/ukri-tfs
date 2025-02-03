@@ -1,0 +1,12 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/om/event/v1/applicationResourcesAndCosts.schema.json",
+    "title": "Application Resources And Costs",
+    "description": "",
+    "type": "object",
+    "properties": {
+        "sequence": {
+            "type": "number"
+        }
+    }
+}

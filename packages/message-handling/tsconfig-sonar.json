@@ -1,0 +1,11 @@
+{
+  "include": [
+    "./src/**/*",
+    "./test/**/*"
+  ],
+  "exclude": [
+    "test",
+    "node_modules",
+    "dist"
+  ]
+}

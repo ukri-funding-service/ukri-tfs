@@ -1,0 +1,21 @@
+{
+    "definitions": {},
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/notification/event/v1/award/sendAwardClosedNotificationEventBody.schema.json",
+    "title": "Send award closed notification event payload data",
+    "description": "Data about the award outcome.",
+    "type": "object",
+    "required": ["recipients", "award", "templateId"],
+    "properties": {
+        "recipients": {
+            "$ref": "../common/recipients.schema.json"
+        },
+        "award": {
+            "$ref": "./shared/award.schema.json"
+        },
+        "templateId": {
+            "type": "string",
+            "enum": ["awardClosed"]
+        }
+    }
+}

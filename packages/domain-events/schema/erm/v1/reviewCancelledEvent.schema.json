@@ -1,0 +1,26 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/erm/event/v1/reviewCancelledEvent.schema.json",
+    "title": "Review Cancelled",
+    "description": "An event emitted when a review has been cancelled",
+    "type": "object",
+    "properties": {
+        "type": {
+            "type": "string",
+            "enum": ["review-cancelled"]
+        },
+        "data": {
+            "description": "The data contained in the event",
+            "$ref": "reviewCancelled.schema.json"
+        },
+        "method": {
+            "description": "The action that caused the event",
+            "type": "string",
+            "enum": ["create"]
+        },
+        "correlationIds": {
+            "$ref": "correlationIds.schema.json"
+        }
+    },
+    "required": ["type", "data"]
+}

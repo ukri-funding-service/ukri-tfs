@@ -1,0 +1,14 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/award/event/properties/classification.schema.json",
+    "title": "Classification",
+    "required": ["id"],
+    "description": "Classification for an award",
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "integer",
+            "description": "Id for a classification"
+        }
+    }
+}

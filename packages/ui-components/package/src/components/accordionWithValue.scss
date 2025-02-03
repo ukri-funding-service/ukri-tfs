@@ -1,0 +1,70 @@
+.accordion-with-value {
+    .accordion-totals {
+        position: absolute;
+        top: 10px;
+        right: 100px;
+
+        &__label {
+            @include govuk-font($size: 19, $weight: bold);
+            color: govuk-colour('black') !important;
+        }
+
+        &__input {
+            @include govuk-font($size: 24);
+        }
+
+        &--display {
+            top: 15px;
+        }
+
+        &__big-text {
+            @include govuk-font($size: 24, $weight: normal);
+            color: govuk-colour('black') !important;
+        }
+    }
+
+    .big-input {
+        font-size: 36px;
+        border: none;
+        outline: none;
+        display: inline;
+        max-width: 90%;
+        margin: 0;
+        padding: 0;
+    }
+    .big-pound {
+        font-size: 36px;
+        display: inline-block;
+        float: left;
+        width: 25px;
+    }
+
+    details {
+        max-width: 600px;
+    }
+
+    .govuk-accordion__section-header--costs {
+        background-color: #f1f1f1;
+        padding-left: 10px;
+    }
+    .govuk-input--secret {
+        text-align: right;
+        border: none !important;
+        width: 150px;
+        background-color: #fff;
+        color: #0b0c0c;
+    }
+
+    .govuk-accordion__controls {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row-reverse;
+        margin-bottom: 5px;
+        align-items: flex-end;
+
+        .govuk-details {
+            text-align: left;
+            margin-bottom: 0;
+        }
+    }
+}

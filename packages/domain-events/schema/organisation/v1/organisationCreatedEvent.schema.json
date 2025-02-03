@@ -1,0 +1,34 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/organisation/event/v1/organisationCreatedEvent.schema.json",
+    "title": "Organisation Created Event",
+    "description": "Details for an organisation that is being created",
+    "type": "object",
+    "properties": {
+        "name": {
+            "description": "An organisation's name",
+            "type": "string"
+        },
+        "canLead": {
+            "description": "Whether an organisation can lead an application",
+            "type": "boolean"
+        },
+        "isVerified": {
+            "description": "Whether an organisation has been manually verified by UKRI staff",
+            "type": "boolean"
+        },
+        "city": {
+            "description": "The organisation's city",
+            "type": "string"
+        },
+        "country": {
+            "description": "The organisation's country",
+            "type": "string"
+        },
+        "webAddress": {
+            "description": "The organisation's web address",
+            "type": "string"
+        }
+    },
+    "required": ["name"]
+}

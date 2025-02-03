@@ -1,0 +1,31 @@
+{
+    "definitions": {},
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/notification/event/v1/application/sendRemovedCoreTeamMemberNotificationEventBody.schema.json",
+    "title": "Send removed core team member Notification event payload data",
+    "description": "Data about the core team member removal.",
+    "type": "object",
+    "required": ["application", "recipients", "templateId", "coreTeamMember", "applicationOwner"],
+    "properties": {
+        "kind": {
+            "type": "string",
+            "enum": ["RemovedCoreTeamMemberNotificationEvent"]
+        },
+        "recipients": {
+            "$ref": "../common/recipients.schema.json"
+        },
+        "application": {
+            "$ref": "application.schema.json"
+        },
+        "coreTeamMember": {
+            "$ref": "coApplicant.schema.json"
+        },
+        "applicationOwner": {
+            "$ref": "applicant.schema.json"
+        },
+        "templateId": {
+            "type": "string",
+            "enum": ["removedCoreTeamMember"]
+        }
+    }
+}

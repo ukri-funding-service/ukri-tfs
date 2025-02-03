@@ -1,0 +1,7 @@
+.next
+dist
+node_modules
+
+/iac/terraform_stacks/**/README.md
+
+!/services/application-manager/app/__mocks__/@ukri-tfs/ui-components/dist/

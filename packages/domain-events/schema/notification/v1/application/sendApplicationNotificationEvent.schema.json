@@ -1,0 +1,32 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/notification/event/v1/application/sendApplicationNotificationEvent.schema.json",
+    "title": "Application Notification Event",
+    "description": "An Event emitted when a notification is required to be sent by the Application manager",
+    "type": "object",
+    "properties": {
+        "type": {
+            "description": "The type of event",
+            "type": "string",
+            "enum": ["application-notification"]
+        },
+        "data": {
+            "type": "object",
+            "anyOf": [
+                { "$ref": "sendCoApplicantNotificationEventBody.schema.json" },
+                { "$ref": "sendRemovedCoreTeamMemberNotificationEventBody.schema.json" },
+                { "$ref": "sendApplicationGroupReassignedNotificationEventBody.schema.json" },
+                { "$ref": "sendApplicationGroupAssignedNotificationEventBody.schema.json" },
+                { "$ref": "sendApplicationAccessNotificationEventBody.schema.json" },
+                { "$ref": "sendApplicationSentToResearchOfficeEventBody.schema.json" },
+                { "$ref": "applicationSubmittedNotificationEventBody.schema.json" },
+                { "$ref": "applicantUnsuccessfulChecksApplicationEventBody.schema.json" },
+                { "$ref": "sendApplicationNotificationEventBody.schema.json" }
+            ]
+        },
+        "correlationIds": {
+            "$ref": "../common/correlationIds.schema.json"
+        }
+    },
+    "required": ["data", "correlationIds", "type"]
+}

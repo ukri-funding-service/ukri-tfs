@@ -1,0 +1,24 @@
+{
+    "definitions": {},
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/notification/event/v1/invite/sendInviteChampionNotificationEventBody.schema.json",
+    "title": "Send Invite Champion Notification event payload data",
+    "description": "Invitation to champion",
+    "type": "object",
+    "required": ["templateId", "recipients", "organisationName", "inviteLink"],
+    "properties": {
+        "templateId": {
+            "type": "string",
+            "enum": ["championInvite"]
+        },
+        "recipients": {
+            "$ref": "../common/recipients.schema.json"
+        },
+        "organisationName": {
+            "type": "string"
+        },
+        "inviteLink": {
+            "type": "string"
+        }
+    }
+}

@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Merriweather:400,400i,700&display=swap');
+
+$new-font-stack: 'Roboto', sans-serif;
+
+body.new-gds,
+* {
+    font-family: $new-font-stack;
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    .govuk-heading,
+    .heading {
+        font-family: 'Roboto', sans-serif !important;
+    }
+
+    code[class*='language-'],
+    pre[class*='language-'],
+    code,
+    pre,
+    code[class*='language-'] *,
+    pre[class*='language-'] *,
+    code *,
+    pre * {
+        font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace !important;
+    }
+
+    .serif,
+    .serif .govuk-body,
+    .serif *,
+    h1.serif,
+    h2.serif,
+    h3.serif,
+    h4.serif {
+        font-family: Merriweather, serif !important;
+
+        .govuk-body,
+        .govuk-list {
+            @include govuk-font($size: 16);
+            line-height: 24px !important;
+        }
+    }
+}
+
+.govuk-link:visited {
+    color: $govuk-link-colour;
+}
+.govuk-link:visited:hover {
+    color: $govuk-link-hover-colour;
+}
+
+// override bulma defaults which removes underlines from anchor tags
+.govuk-link {
+    text-decoration: underline !important;
+}
+
+h1.govuk-heading-xl {
+    color: ufs-colour('ukri-blue');
+}
+
+.govuk-heading-xs {
+    @include govuk-font($size: 16, $weight: bold);
+    color: govuk-colour('black');
+}
+
+#global-header #logo {
+    background-image: none;
+    margin-left: 0;
+}
+
+.ufs-body-wrapper {
+    .form-label {
+        font-weight: 700;
+    }
+}
+
+.sub-button {
+    display: block;
+    @include govuk-font($size: 16);
+}
+
+.govuk-heading--link {
+    position: relative;
+    padding-right: 110px;
+}
+
+.govuk-heading_additional-link {
+    @include govuk-font($size: 19);
+    position: relative;
+    display: block;
+    margin: 4px 0 0 0;
+
+    @include govuk-media-query($from: tablet) {
+        position: absolute;
+        right: 0;
+        top: 4px;
+    }
+    a {
+        font-family: 'Roboto', sans-serif !important;
+    }
+}
+
+.govuk-caption,
+.govuk-heading-xl,
+.govuk-heading-l,
+.govuk-heading-m,
+.govuk-fieldset__legend,
+.govuk-heading-s,
+.govuk-heading-xs {
+    font-family: 'Roboto', sans-serif !important;
+    &.serif {
+        font-family: 'Merriweather', serif !important;
+    }
+}
+h1.govuk-heading-xl,
+h1.govuk-heading-l,
+h1.govuk-heading-m,
+h1.govuk-heading-s {
+    color: #2c2d62 !important;
+}
+
+.item-successful,
+.item-successful strong {
+    color: govuk-colour('green') !important;
+}
+
+.meta,
+.govuk-body.meta {
+    color: govuk-colour('dark-grey');
+}
+
+.heading-contrast {
+    background-color: ufs-colour('ukri-blue');
+    color: govuk-colour('white') !important;
+    padding: 4px 8px;
+}
+
+.govuk-body--s {
+    @include govuk-font($size: 14);
+}
+
+.status-text--green {
+    color: #00703c !important;
+}
+
+.status-text--red {
+    color: #d4351c !important;
+}
+
+.warning-text {
+    color: govuk-colour('red');
+    font-weight: 700;
+}
+
+.status-text--cross,
+.status-text--tick {
+    display: inline-block;
+    position: relative;
+    margin-left: 20px;
+}
+
+.status-text--cross:before,
+.status-text--tick:before {
+    content: '';
+    width: 18px;
+    height: 16px;
+    top: 5px;
+    position: absolute;
+    background-repeat: no-repeat;
+}
+
+.status-text--tick {
+    font-weight: normal !important;
+}
+
+.status-text--tick:before {
+    background-image: url('/images/ufs/tick.svg');
+    background-size: 38px 28px;
+    background-repeat: no-repeat;
+    left: -20px;
+}
+
+.status-text--cross {
+    font-weight: normal !important;
+}
+
+.status-text--cross:before {
+    content: '\274C';
+    left: -22px;
+    font-size: 12px;
+}
+
+.mega-table .status-text--cross:before,
+.mega-table .status-text--tick:before {
+    top: 2px;
+}
+
+.focus {
+    background-color: govuk-colour('yellow');
+    color: govuk-colour('black');
+}
+
+.icon {
+    &--s {
+        width: 16px;
+        height: 16px;
+    }
+
+    &--m {
+        width: 24px;
+        height: 24px;
+    }
+
+    &--l {
+        width: 32px;
+        height: 32px;
+    }
+}

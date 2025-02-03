@@ -1,0 +1,20 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/panel/event/v1/members.schema.json",
+    "title": "Members",
+    "description": "The assigned members and roles for this panel",
+    "type": "array",
+    "items": {
+        "type": "object",
+        "properties": {
+            "personId": {
+                "description": "person id of the panel member",
+                "type": "integer"
+            },
+            "role": {
+                "description": "The role of the person against the panel",
+                "type": "string"
+            }
+        }
+    }
+}

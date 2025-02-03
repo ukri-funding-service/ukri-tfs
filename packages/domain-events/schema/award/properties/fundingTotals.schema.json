@@ -1,0 +1,30 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/award/event/properties/fundingTotals.schema.json",
+    "title": "Funding Totals",
+    "description": "Breakdown of final indexed value for each funding heading",
+    "type": "object",
+    "required": ["directlyIncurred", "directlyAllocated", "indirectCosts", "exceptions", "totalCosts"],
+    "properties": {
+        "directlyIncurred": {
+            "description": "Cumulative award total for directly incurred costs",
+            "type": "number"
+        },
+        "directlyAllocated": {
+            "description": "Cumulative award total for directly allocated costs",
+            "type": "number"
+        },
+        "indirectCosts": {
+            "description": "Cumulative award total for indirect costs",
+            "type": "number"
+        },
+        "exceptions": {
+            "description": "Cumulative award total for exceptions",
+            "type": "number"
+        },
+        "totalCosts": {
+            "description": "Cumulative award total for total costs",
+            "type": "number"
+        }
+    }
+}

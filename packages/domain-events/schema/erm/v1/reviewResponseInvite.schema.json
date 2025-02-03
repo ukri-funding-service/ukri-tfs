@@ -1,0 +1,30 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/erm/event/v1/reviewResponseInvite.schema.json",
+    "title": "Reviews Invited for Response",
+    "description": "An object describing reviews which have been sent to an applicant for response",
+    "type": "object",
+    "properties": {
+        "applicationId": {
+            "description": "The application ID",
+            "type": "string"
+        },
+        "personId": {
+            "description": "The application person ID",
+            "type": "number"
+        },
+        "reviewIds": {
+            "description": "The review IDs being shared",
+            "type": "array"
+        },
+        "deadline": {
+            "description": "The response deadline",
+            "type": "string"
+        },
+        "timestamp": {
+            "description": "The review response invite timestamp",
+            "type": "string"
+        }
+    },
+    "required": ["applicationId", "personId", "reviewIds", "deadline", "timestamp"]
+}

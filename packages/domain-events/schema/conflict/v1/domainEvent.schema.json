@@ -1,0 +1,8 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/conflict/event/v1/domainEvent.schema.json",
+    "title": "Domain Event (v1)",
+    "description": "An Event emitted by the Conflict Service",
+    "type": "object",
+    "oneOf": [{ "$ref": "conflictReportGeneratedEvent.schema.json" }]
+}

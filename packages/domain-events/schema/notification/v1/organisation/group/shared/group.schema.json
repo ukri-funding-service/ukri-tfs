@@ -1,0 +1,26 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/notification/event/v1/organisation/group/shared/group.schema.json",
+    "title": "Group",
+    "description": "group",
+    "type": "object",
+    "required": ["id", "name", "isDefault", "organisationId"],
+    "properties": {
+        "id": {
+            "description": "the id of the group",
+            "type": "string"
+        },
+        "name": {
+            "description": "the name of the group",
+            "type": "string"
+        },
+        "isDefault": {
+            "description": "flag for isDefault group",
+            "type": "boolean"
+        },
+        "organisationId": {
+            "description": "the organisation id the group belongs to",
+            "type": "string"
+        }
+    }
+}

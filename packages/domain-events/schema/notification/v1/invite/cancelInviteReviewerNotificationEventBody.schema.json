@@ -1,0 +1,27 @@
+{
+    "definitions": {},
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/notification/event/v1/invite/cancelInviteReviewerNotificationEventBody.schema.json",
+    "title": "Cancel Invite Reviewer Notification event payload data",
+    "description": "Cancellation of review invitation",
+    "type": "object",
+    "required": ["recipients", "templateId"],
+    "properties": {
+        "recipients": {
+            "$ref": "../common/recipients.schema.json"
+        },
+        "templateId": {
+            "type": "string",
+            "enum": ["cancelReviewer"]
+        },
+        "firstName": {
+            "type": "string"
+        },
+        "lastName": {
+            "type": "string"
+        },
+        "applicationName": {
+            "type": "string"
+        }
+    }
+}

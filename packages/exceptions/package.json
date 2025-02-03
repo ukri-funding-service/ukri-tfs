@@ -1,0 +1,46 @@
+{
+    "name": "@ukri-tfs/exceptions",
+    "version": "1.0.0",
+    "private": true,
+    "description": "A package for exceptions",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "publishConfig": {
+        "registry": "https://devops.innovateuk.org/binaries/repository/npm-private/"
+    },
+    "scripts": {
+        "build": "npm run compile && npm run compile:test",
+        "compile": "tsc --project tsconfig-build.json",
+        "compile:test": "tsc --project tsconfig-test.json",
+        "clean": "rimraf dist docs test_reports coverage .nyc_output",
+        "test": "jest --maxWorkers=50%",
+        "pretest:ci": "mkdirp test_reports",
+        "test:ci": "TEST_REPORT_PATH=test_reports TEST_REPORT_FILENAME=junit.xml jest",
+        "pretest:coverage": "mkdirp test_reports",
+        "test:coverage": "TEST_REPORT_PATH=test_reports TEST_REPORT_FILENAME=junit.xml jest --coverage",
+        "sonar:ci": "sonar-scanner -Dsonar.login=${SONAR_API_KEY} ${SONAR_EXTRA_ARGS}",
+        "lint": "eslint .",
+        "lint:ci": "npm run lint -- -f ../../node_modules/eslint-bamboo-formatter/reporter.js",
+        "lint:fix": "npm run lint -- --fix",
+        "prebuild": "npm run clean",
+        "prettier": "prettier --check .",
+        "prettier:fix": "prettier --write ."
+    },
+    "keywords": [],
+    "author": "",
+    "license": "MIT",
+    "devDependencies": {
+        "@jest/globals": "^29.7.0",
+        "@types/node": "^18.19.33",
+        "@types/node-fetch": "2.x",
+        "eslint": "7.x",
+        "jest": "^29.7.0",
+        "jest-junit-reporter": "^1.1.0",
+        "jest-slow-test-reporter": "^1.0.0",
+        "mkdirp": "1.x",
+        "rimraf": "3.x",
+        "ts-jest": "^29.1.1",
+        "ts-node": "^10.9.1",
+        "typescript": "^5.3.3"
+    }
+}

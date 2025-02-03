@@ -1,0 +1,34 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/erm/event/v1/reviewSubmitted.schema.json",
+    "title": "Submitted Review",
+    "description": "An object describing a review which has been submitted",
+    "type": "object",
+    "properties": {
+        "applicationId": {
+            "description": "The application ID",
+            "type": "number"
+        },
+        "personId": {
+            "description": "The reviewer person Id",
+            "type": "number"
+        },
+        "reviewId": {
+            "description": "The review ID",
+            "type": "number"
+        },
+        "content": {
+            "description": "The review evaluation content",
+            "type": "string"
+        },
+        "score": {
+            "description": "The review evaluation score",
+            "type": "number"
+        },
+        "timestamp": {
+            "description": "The review submission timestamp",
+            "type": "string"
+        }
+    },
+    "required": ["applicationId", "personId", "reviewId", "content", "score", "timestamp"]
+}

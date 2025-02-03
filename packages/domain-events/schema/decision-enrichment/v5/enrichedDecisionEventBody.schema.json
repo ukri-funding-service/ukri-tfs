@@ -1,0 +1,330 @@
+{
+    "definitions": {},
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/decision-enrichment/event/v5/enrichedDecisionEventBody.schema.json",
+    "title": "Enriched Decision event payload data",
+    "description": "Data about the Decision following enrichment.",
+    "type": "object",
+    "required": [
+        "name",
+        "funders",
+        "proposedStartDate",
+        "leadOrganisation",
+        "teamMembers",
+        "application",
+        "opportunity",
+        "summary",
+        "summaryWordLimit",
+        "awardDurationMonths",
+        "roles",
+        "projectPartners",
+        "fundHeadings",
+        "organisationCosts"
+    ],
+    "properties": {
+        "name": {
+            "description": "The name of the decision",
+            "type": "string"
+        },
+        "funders": {
+            "description": "The funders that have made the decision to fund.",
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "proposedStartDate": {
+            "description": "The proposed start date of the award",
+            "type": "string",
+            "format": "date-time"
+        },
+        "leadOrganisation": {
+            "description": "The organisation leading the award",
+            "type": "object",
+            "required": ["name", "sourceOrganisationId"],
+            "properties": {
+                "name": {
+                    "description": "the name of the lead organisation.",
+                    "type": "string"
+                },
+                "sourceOrganisationId": {
+                    "description": "the source organisation id",
+                    "type": "integer"
+                }
+            }
+        },
+        "roles": {
+            "description": "A list of roles which can be assigned to team members on an award",
+            "type": "array",
+            "items": {
+                "description": "A role definition",
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "description": "The id of the role",
+                        "type": "number"
+                    },
+                    "name": {
+                        "description": "The name of the role",
+                        "type": "string"
+                    },
+                    "isLeadAwardHolder": {
+                        "description": "Whether the role is the lead award holder",
+                        "type": "boolean"
+                    }
+                }
+            }
+        },
+        "teamMembers": {
+            "description": "A list of all individuals associated with a decision",
+            "type": "array",
+            "default": [],
+            "items": {
+                "description": "The assigned members and roles for a decision",
+                "type": "object",
+                "required": ["sourcePersonId", "organisation", "role"],
+                "properties": {
+                    "sourcePersonId": {
+                        "description": "source person id",
+                        "type": "integer",
+                        "nullable": true
+                    },
+                    "name": {
+                        "description": "The name of the team member",
+                        "type": "string"
+                    },
+                    "email": {
+                        "description": "The team members email address",
+                        "type": "string"
+                    },
+                    "organisation": {
+                        "description": "The Organisation to which the team member belongs",
+                        "type": "object",
+                        "required": ["name", "sourceOrganisationId"],
+                        "properties": {
+                            "name": {
+                                "description": "the name of the organisation.",
+                                "type": "string"
+                            },
+                            "sourceOrganisationId": {
+                                "description": "the source organisation id",
+                                "type": "integer"
+                            }
+                        }
+                    },
+                    "role": {
+                        "description": "the role of the individual on the team",
+                        "type": "string"
+                    },
+                    "fteTimePercentage": {
+                        "description": "Percentage of a full-time equivalent (FTE) on project",
+                        "type": "integer",
+                        "examples": [100]
+                    },
+                    "fecCost": {
+                        "description": "Full economic cost in pounds",
+                        "type": "number",
+                        "examples": [15000]
+                    },
+                    "costCategory": {
+                        "description": "Cost category",
+                        "type": "string",
+                        "enum": ["Directly Allocated", "Directly Incurred", "Exception", "Unallocated"]
+                    },
+                    "staffCostId": {
+                        "description": "The staff cost ID of the team member",
+                        "type": "integer",
+                        "examples": [1]
+                    },
+                    "startDate": {
+                        "description": "The start date for a team member",
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "endDate": {
+                        "description": "The end date for a team member",
+                        "type": "string",
+                        "format": "date-time"
+                    }
+                }
+            }
+        },
+        "application": {
+            "description": "the application associated with the decision",
+            "type": "object",
+            "required": ["applicationName", "applicationId"],
+            "properties": {
+                "applicationName": {
+                    "description": "the name of the application",
+                    "type": "string"
+                },
+                "applicationId": {
+                    "description": "the source id of the application",
+                    "type": "integer"
+                }
+            }
+        },
+        "opportunity": {
+            "description": "The opportunity associated with the decision",
+            "type": "object",
+            "required": ["opportunityName", "opportunityId"],
+            "properties": {
+                "opportunityName": {
+                    "description": "the name of the opportunity",
+                    "type": "string"
+                },
+                "opportunityId": {
+                    "description": "the source id of the opportunity",
+                    "type": "integer"
+                }
+            }
+        },
+        "summary": {
+            "description": "A summary of the application, todo should probably be moved to the application object",
+            "type": "string"
+        },
+        "summaryWordLimit": {
+            "description": "The word limit for an application summary",
+            "type": "integer"
+        },
+        "awardDurationMonths": {
+            "description": "Duration of the award in months",
+            "type": "integer",
+            "default": 0
+        },
+        "projectPartners": {
+            "description": "Project partners associated with the application",
+            "type": "array",
+            "items": {
+                "description": "A project partner",
+                "type": "object",
+                "required": [
+                    "organisationName",
+                    "directContributionPence",
+                    "inKindContributionPence",
+                    "nameOfContact",
+                    "country"
+                ],
+                "properties": {
+                    "organisationName": {
+                        "description": "Organisation name",
+                        "type": "string",
+                        "examples": ["University of Birmingham"]
+                    },
+                    "directContributionPence": {
+                        "description": "Direct contribution in pence",
+                        "type": "integer",
+                        "examples": [10000]
+                    },
+                    "directContributionDescription": {
+                        "description": "Description/Label for contribution",
+                        "type": "string",
+                        "examples": ["A description"]
+                    },
+                    "inKindContributionPence": {
+                        "description": "In kind contribution in pence",
+                        "type": "integer",
+                        "examples": [0]
+                    },
+                    "inKindContributionDescription": {
+                        "description": "Description/Label for contribution",
+                        "type": "string",
+                        "examples": ["A description"]
+                    },
+                    "nameOfContact": {
+                        "description": "Name of contact",
+                        "type": "string",
+                        "examples": ["Joe Bloggs"]
+                    },
+                    "country": {
+                        "description": "Name of country",
+                        "type": "string",
+                        "examples": ["United Kingdom"]
+                    },
+                    "personId": {
+                        "description": "Id reference to a person",
+                        "type": "integer",
+                        "examples": [123]
+                    },
+                    "organisationId": {
+                        "description": "Id reference to an organisation",
+                        "type": "integer",
+                        "examples": [1234]
+                    }
+                }
+            }
+        },
+        "fundHeadings": {
+            "description": "Fund headings associated with the application",
+            "type": "array",
+            "items": {
+                "description": "A fund heading",
+                "type": "object",
+                "required": ["costCategory", "name", "fECPercentage", "fullCost"],
+                "properties": {
+                    "costCategory": {
+                        "description": "Cost category name",
+                        "type": "string",
+                        "examples": ["Directly allocated"]
+                    },
+                    "name": {
+                        "description": "Fund heading name",
+                        "type": "string",
+                        "examples": ["Estates"]
+                    },
+                    "fECPercentage": {
+                        "description": "fEC percentage",
+                        "type": "number",
+                        "examples": [80]
+                    },
+                    "fullCost": {
+                        "description": "Full cost in GBP",
+                        "type": "number",
+                        "examples": [10000]
+                    }
+                }
+            }
+        },
+        "organisationCosts": {
+            "description": "Organisation costs for all fund headings associated with the application",
+            "type": "array",
+            "items": {
+                "description": "Organisation costs",
+                "type": "object",
+                "required": ["costCategory", "name", "fecPercentage", "fullCost", "ukriContribution", "organisationId"],
+                "properties": {
+                    "costCategory": {
+                        "description": "Cost category name",
+                        "type": "string",
+                        "examples": ["Directly allocated"]
+                    },
+                    "name": {
+                        "description": "Fund heading name",
+                        "type": "string",
+                        "examples": ["Estates"]
+                    },
+                    "fecPercentage": {
+                        "description": "fec percentage",
+                        "type": "number",
+                        "examples": [80]
+                    },
+                    "fullCost": {
+                        "description": "Full cost in GBP",
+                        "type": "number",
+                        "examples": [10000]
+                    },
+                    "ukriContribution": {
+                        "description": "UKRI contribution in GBP",
+                        "type": "number",
+                        "examples": [10000]
+                    },
+                    "organisationId": {
+                        "description": "Organisation identifier",
+                        "type": "number",
+                        "examples": [1]
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,7 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/notification/event/v1/award/shared/fesUrl.schema.json",
+    "title": "Final expenditure URL",
+    "description": "Final expenditure statement page URL",
+    "type": "string"
+}

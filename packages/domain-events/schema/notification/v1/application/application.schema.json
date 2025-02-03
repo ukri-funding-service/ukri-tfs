@@ -1,0 +1,26 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/notification/event/v1/application/application.schema.json",
+    "title": "Funding Application",
+    "description": "the application associated with the decision",
+    "type": "object",
+    "required": ["applicationName", "applicationRef", "opportunityName", "opportunityRef"],
+    "properties": {
+        "applicationName": {
+            "description": "the name of the application",
+            "type": "string"
+        },
+        "applicationRef": {
+            "description": "the source id of the application",
+            "type": "string"
+        },
+        "opportunityName": {
+            "description": "the name of the opportunity",
+            "type": "string"
+        },
+        "opportunityRef": {
+            "description": "the source id of the opportunity",
+            "type": "string"
+        }
+    }
+}

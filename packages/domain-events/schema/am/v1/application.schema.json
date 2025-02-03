@@ -1,0 +1,30 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/am/event/v1/application.schema.json",
+    "title": "Application Details",
+    "description": "Application key details",
+    "type": "object",
+    "properties": {
+        "application_name": {
+            "description": "The natural language name of the Application",
+            "type": "string",
+            "minLength": 1
+        },
+        "summary": {
+            "description": "The concise description of the Application contents",
+            "type": "string",
+            "minLength": 1
+        },
+        "start_date": {
+            "description": "The date that the Applicants would like to receive funding from",
+            "type": "string",
+            "format": "date"
+        },
+        "duration_in_months": {
+            "description": "The duration of the funding period requested",
+            "type": "number",
+            "minimum": 1
+        }
+    },
+    "required": ["application_name", "summary"]
+}

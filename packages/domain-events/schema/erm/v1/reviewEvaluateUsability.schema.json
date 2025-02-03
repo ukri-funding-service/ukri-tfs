@@ -1,0 +1,30 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/erm/event/v1/reviewEvaluateUsability.schema.json",
+    "title": "Review Usability Evaluation",
+    "description": "An object describing the usability of a review",
+    "type": "object",
+    "properties": {
+        "applicationId": {
+            "description": "The application ID",
+            "type": "number"
+        },
+        "personId": {
+            "description": "The person ID",
+            "type": "number"
+        },
+        "reviewId": {
+            "description": "The review ID",
+            "type": "number"
+        },
+        "isUsable": {
+            "description": "The is usable flag",
+            "type": "number"
+        },
+        "timestamp": {
+            "description": "The timestamp when actioned",
+            "type": "string"
+        }
+    },
+    "required": ["applicationId", "personId", "reviewId", "isUsable"]
+}

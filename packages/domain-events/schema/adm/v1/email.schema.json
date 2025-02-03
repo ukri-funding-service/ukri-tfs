@@ -1,0 +1,63 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/adm/event/v1/email.schema.json",
+    "title": "Email",
+    "description": "Details of an email",
+    "type": "object",
+    "properties": {
+        "sourceEmail": {
+            "description": "The email from which this email originates",
+            "type": "string",
+            "format": "email"
+        },
+        "sourceDisplayName": {
+            "description": "The name of the person sending the email",
+            "type": "string"
+        },
+        "toAddresses": {
+            "description": "The addresses that will receive this email",
+            "type": "array",
+            "items": {
+                "type": "string",
+                "format": "email"
+            }
+        },
+        "subject": {
+            "description": "The subject line for the email",
+            "type": "string"
+        },
+        "html": {
+            "description": "The html version of the email contents",
+            "type": "string"
+        },
+        "text": {
+            "description": "The text version of the email contents",
+            "type": "string"
+        },
+        "ccAddresses": {
+            "description": "The addresses that will get added to the cc",
+            "type": "array",
+            "items": {
+                "type": "string",
+                "format": "email"
+            }
+        },
+        "bccAddresses": {
+            "description": "The addresses that will get added to the bcc",
+            "type": "array",
+            "items": {
+                "type": "string",
+                "format": "email"
+            }
+        },
+        "replyToAddresses": {
+            "description": "The addresses that will receive this email as a reply",
+            "type": "array",
+            "items": {
+                "type": "string",
+                "format": "email"
+            }
+        }
+    },
+    "required": ["sourceEmail", "sourceDisplayName", "toAddresses", "subject", "html", "text"]
+}

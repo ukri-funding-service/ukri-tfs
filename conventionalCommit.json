@@ -1,0 +1,67 @@
+{
+    "types": {
+        "build": {
+            "description": "Changes which affect CI configuration files and scripts"
+        },
+        "chore": {
+            "description": "Changes which aren't user-facing and are generated automatically. e.g. audit, lint or merge commit. Do not use for manual code or test changes."
+        },
+        "docs": {
+            "description": "Changes which affect documentation"
+        },
+        "feat": {
+            "description": "Changes which introduce a new feature"
+        },
+        "fix": {
+            "description": "Use with caution! Changes which patch a bug and require a PATCH release and therefore an increase in the module version number."
+        },
+        "perf": {
+            "description": "Changes which improve performance."
+        },
+        "refactor": {
+            "description": "Changes which neither fix a bug nor add a feature"
+        },
+        "revert": {
+            "description": "Changes which revert a previous commit"
+        },
+        "style": {
+            "description": "Changes which don't affect code logic, such as white-spaces, formatting, missing semi-colons"
+        },
+        "test": {
+            "description": "Changes which add missing tests or correct existing tests"
+        }
+    },
+    "scopes": {
+        "adm-api": {},
+        "adm-lam": {},
+        "am-api": {},
+        "am-app": {},
+        "am-lam": {},
+        "cs-api": {},
+        "cs-lam": {},
+        "ds-api": {},
+        "erm-api": {},
+        "erm-lam": {},
+        "fms-api": {},
+        "iac": {},
+        "inv-api": {},
+        "inv-lam": {},
+        "mock-gfs": {},
+        "om-api": {},
+        "om-app": {},
+        "om-lam": {},
+        "org-lam": {},
+        "org-api": {},
+        "pd-api": {},
+        "pd-app": {},
+        "pd-lam": {},
+        "pdis-app": {},
+        "ps-api": {},
+        "publish": {},
+        "search": {},
+        "si-lam": {},
+        "tmp-pkg": {},
+        "tmp-srv": {},
+        "ui-app": {}
+    }
+}

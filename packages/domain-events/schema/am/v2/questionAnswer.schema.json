@@ -1,0 +1,23 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/am/event/v2/questionAnswer.schema.json",
+    "title": "Question Answer",
+    "description": "The answer to a question on an Application",
+    "type": "object",
+    "properties": {
+        "application_id": {
+            "description": "The unique id of the Application",
+            "type": "number"
+        },
+        "custom_question_id": {
+            "description": "The unique id of the question to which this answer relates.",
+            "type": "number"
+        },
+        "answer_content": {
+            "description": "The applicant's response to the question.",
+            "type": "string"
+        }
+    },
+    "required": ["custom_question_id", "answer_content"],
+    "additionalProperties": false
+}

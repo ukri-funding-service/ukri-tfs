@@ -1,0 +1,15 @@
+.search-input-form-group {
+    display: inline-block;
+    width: calc(100% - 50px);
+    margin-right: 5px;
+}
+
+.search-button {
+    height: 40px;
+    width: 40px;
+    background-color: #1d70b8 !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    background-image: url(/search-button.png);
+    background-position: 2px 50%;
+}

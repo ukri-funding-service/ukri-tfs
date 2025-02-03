@@ -1,0 +1,12 @@
+.form-ctas {
+    display: flex;
+    flex-flow: wrap;
+    align-items: baseline;
+    margin-top: 20px;
+
+    @media (min-width: 40.0625em) {
+        *:not(:last-child) {
+            margin-right: 40px;
+        }
+    }
+}

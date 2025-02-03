@@ -1,0 +1,32 @@
+{
+    "definitions": {},
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/notification/event/v1/review/reviewReminderOverdueNotificationEventBody.schema.json",
+    "title": "Review Reminder Overdue Notification event payload data",
+    "description": "Review reminder Overdue",
+    "type": "object",
+    "required": ["recipients", "templateId", "reviewUrl", "applicationName", "reviewDeadline", "daysOverdue"],
+    "properties": {
+        "recipients": {
+            "$ref": "../common/recipients.schema.json"
+        },
+        "templateId": {
+            "type": "string",
+            "enum": ["reviewReminderOverdue"]
+        },
+        "applicationName": {
+            "type": "string"
+        },
+        "reviewDeadline": {
+            "type": "string",
+            "format": "date-time"
+        },
+        "reviewUrl": {
+            "type": "string",
+            "format": "uri"
+        },
+        "daysOverdue": {
+            "type": "integer"
+        }
+    }
+}

@@ -1,0 +1,17 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/award/event/properties/changeRequestMetaData/transfer.schema.json",
+    "title": "CR Submitted - Transfer",
+    "description": "Data in the event emitted when a change request is submitted specific to transfer request",
+    "type": "object",
+    "properties": {
+        "changeType": {
+            "const": "Transfer"
+        },
+        "receivingOrganisationId": {
+            "description": "The tfs organisation id",
+            "type": "number"
+        }
+    },
+    "required": ["changeType", "receivingOrganisationId"]
+}

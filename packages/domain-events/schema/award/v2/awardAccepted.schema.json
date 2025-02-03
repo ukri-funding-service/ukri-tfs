@@ -1,0 +1,21 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/award/event/v2/awardAccepted.schema.json",
+    "title": "Award Accepted Event",
+    "description": "An Event emitted when the RO accepted an award",
+    "type": "object",
+    "properties": {
+        "type": {
+            "description": "The type of event",
+            "type": "string",
+            "enum": ["https://funding-service.ukri.org/schema/award/event/v2/awardAccepted.schema.json"]
+        },
+        "data": {
+            "$ref": "awardAcceptedData.schema.json"
+        },
+        "correlationIds": {
+            "$ref": "../properties/correlationIds.schema.json"
+        }
+    },
+    "required": ["data", "correlationIds", "type"]
+}

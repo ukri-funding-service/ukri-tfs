@@ -1,0 +1,33 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/om/event/v1/customQuestion.schema.json",
+    "title": "Custom Question",
+    "description": "",
+    "type": "object",
+    "properties": {
+        "custom_question_id": {
+            "description": "The unique id of the question",
+            "type": "number"
+        },
+        "section_topic": {
+            "description": "",
+            "type": "string"
+        },
+        "question_text": {
+            "description": "The text of the question",
+            "type": "string"
+        },
+        "guidance_notes_content": {
+            "description": "The guidance notes for the question",
+            "type": "string"
+        },
+        "word_count": {
+            "description": "The number of words permitted",
+            "type": "number"
+        },
+        "sequence": {
+            "description": "The relative index of this question within the question set",
+            "type": "number"
+        }
+    }
+}

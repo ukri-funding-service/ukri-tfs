@@ -1,0 +1,10 @@
+[
+    {
+        "cleanName": "Opportunity Manager - Open Opportunities",
+        "realName": "om_open_opportunities_lambda"
+    },
+    {
+        "cleanName": "Admin Services - Custom Cognito Email",
+        "realName": "adm_custom_cognito_email_lambda"
+    }
+]

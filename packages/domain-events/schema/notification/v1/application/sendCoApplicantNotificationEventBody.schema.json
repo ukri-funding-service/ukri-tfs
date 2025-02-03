@@ -1,0 +1,23 @@
+{
+    "definitions": {},
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/notification/event/v1/application/sendCoApplicantNotificationEventBody.schema.json",
+    "title": "Send co-applicant Notification event payload data",
+    "description": "Data about the co-applicant outcome.",
+    "type": "object",
+    "required": ["application", "recipients", "templateId", "coApplicant"],
+    "properties": {
+        "recipients": {
+            "$ref": "../common/recipients.schema.json"
+        },
+        "application": {
+            "$ref": "application.schema.json"
+        },
+        "coApplicant": {
+            "$ref": "coApplicant.schema.json"
+        },
+        "templateId": {
+            "$ref": "coApplicantTemplateId.schema.json"
+        }
+    }
+}

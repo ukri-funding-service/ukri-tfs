@@ -1,0 +1,7 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/award/event/properties/publishToGatewayToResearch.schema.json",
+    "title": "Publish to Gateway to Research",
+    "description": "Flag that allows publishing award data to Gateway to Research",
+    "type": "boolean"
+}

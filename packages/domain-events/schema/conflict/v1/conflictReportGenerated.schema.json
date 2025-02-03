@@ -1,0 +1,69 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/conflict/event/v1/conflictReportGenerated.schema.json",
+    "title": "Conflict Report Generated",
+    "description": "An object describing a Conflict Report that has been generated",
+    "type": "object",
+    "required": ["originatorRef", "personId", "reportId", "applicationId", "status", "rules"],
+    "properties": {
+        "reportId": {
+            "description": "The universal unique identifier of the report",
+            "type": "string",
+            "examples": ["6b8e68b7-6772-482b-93c1-a5e5c760fa5a"]
+        },
+        "originatorRef": {
+            "description": "The identifier reference of the origin resource that the report was initiated from",
+            "type": "string",
+            "examples": ["3a7380fd-b5c6-455c-a36f-e58141ff56a7"]
+        },
+        "personId": {
+            "description": "The reviewer person Id",
+            "type": "number",
+            "examples": [1]
+        },
+        "organisationIds": {
+            "description": "The organisation ids of the person the report is associated with",
+            "type": "array",
+            "items": {
+                "type": "number"
+            },
+            "examples": [[1, 2]]
+        },
+        "applicationId": {
+            "description": "The application Id",
+            "type": "number",
+            "examples": [2]
+        },
+        "status": {
+            "description": "The status of the report",
+            "type": "string",
+            "enum": ["PENDING", "COMPLETED", "FAILED"],
+            "examples": ["COMPLETED"]
+        },
+        "policy": {
+            "description": "The policy of the report",
+            "type": "string",
+            "enum": ["HARD", "SOFT"],
+            "examples": ["HARD"]
+        },
+        "result": {
+            "description": "The result of the report",
+            "type": "string",
+            "enum": ["PASSED", "FAILED"],
+            "examples": ["FAILED"]
+        },
+        "evaluatedAt": {
+            "description": "The time the conflict report was evaluated",
+            "format": "date-time",
+            "type": "string",
+            "examples": ["2023-07-13T00:00:01.000Z"]
+        },
+        "rules": {
+            "description": "Evaluated rules of the generated Conflict Report",
+            "type": "array",
+            "items": {
+                "$ref": "conflictReportRules.schema.json"
+            }
+        }
+    }
+}

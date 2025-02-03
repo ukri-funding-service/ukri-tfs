@@ -1,0 +1,22 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/inv/event/v1/cancelInvite.schema.json",
+    "title": "Cancel Invite Event",
+    "description": "An event emitted when invite is cancelled",
+    "type": "object",
+    "properties": {
+        "invite_id": {
+            "description": "The invite ID",
+            "type": "number"
+        },
+        "invite_status": {
+            "description": "The current invite status",
+            "type": "string"
+        },
+        "invite_timestamp": {
+            "description": "The invite timestamp",
+            "type": "string"
+        }
+    },
+    "required": ["invite_id", "invite_status", "invite_timestamp"]
+}

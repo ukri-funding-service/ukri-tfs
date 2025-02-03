@@ -1,0 +1,55 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/award/event/v3/crSubmittedData.schema.json",
+    "title": "CR Submitted",
+    "description": "Data in the event emitted when a change request is submitted",
+    "type": "object",
+    "required": [
+        "tfsAwardReference",
+        "changeRequestReference",
+        "changeType",
+        "submittedBy",
+        "timestamp",
+        "justification"
+    ],
+    "properties": {
+        "tfsAwardReference": {
+            "$ref": "../properties/tfsAwardReference.schema.json"
+        },
+        "changeRequestReference": {
+            "$ref": "../properties/changeRequestReference.schema.json"
+        },
+        "submittedBy": {
+            "$ref": "../properties/submittedBy.schema.json"
+        },
+        "timestamp": {
+            "$ref": "../properties/timestamp.schema.json"
+        },
+        "justification": {
+            "$ref": "../properties/justification.schema.json"
+        }
+    },
+    "oneOf": [
+        {
+            "$ref": "./changeRequestMetaData/extension.schema.json"
+        },
+        {
+            "$ref": "./changeRequestMetaData/suspension.schema.json"
+        },
+        {
+            "$ref": "../properties/changeRequestMetaData/startDate.schema.json"
+        },
+        {
+            "$ref": "../properties/changeRequestMetaData/resumption.schema.json"
+        },
+        {
+            "$ref": "../properties/changeRequestMetaData/transfer.schema.json"
+        },
+        {
+            "$ref": "../properties/changeRequestMetaData/termination.schema.json"
+        },
+        {
+            "$ref": "../properties/changeRequestMetaData/additionalFunding.schema.json"
+        }
+    ]
+}

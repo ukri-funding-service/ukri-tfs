@@ -1,0 +1,14 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/award/event/properties/tag.schema.json",
+    "title": "Tag",
+    "description": "Tag for an award",
+    "type": "object",
+    "properties": {
+        "id": {
+            "description": "The id of the tag",
+            "type": "string"
+        }
+    },
+    "required": ["id"]
+}

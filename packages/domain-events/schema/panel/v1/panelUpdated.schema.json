@@ -1,0 +1,53 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/panel/event/v1/panelUpdated.schema.json",
+    "title": "Panel Updated Object",
+    "description": "An event emitted when a panel has been updated",
+    "type": "object",
+    "required": ["id", "name", "displayId", "updatedTimestamp", "meetingDetails", "members", "conflicts", "prescores"],
+    "additionalProperties": false,
+    "properties": {
+        "id": {
+            "description": "The panel identifier",
+            "type": "string",
+            "format": "uuid"
+        },
+        "name": {
+            "description": "The panel name",
+            "type": "string"
+        },
+        "displayId": {
+            "description": "User readable panel reference",
+            "type": "string"
+        },
+        "updatedTimestamp": {
+            "description": "The panel updated timestamp",
+            "type": "string",
+            "format": "date-time"
+        },
+        "meetingDetails": {
+            "$ref": "https://funding-service.ukri.org/schema/panel/event/v1/meetingDetails.schema.json"
+        },
+        "members": {
+            "$ref": "https://funding-service.ukri.org/schema/panel/event/v1/members.schema.json"
+        },
+        "definedRoles": {
+            "$ref": "https://funding-service.ukri.org/schema/panel/event/v1/definedRoles.schema.json"
+        },
+        "applicationIds": {
+            "$ref": "https://funding-service.ukri.org/schema/panel/event/v1/applicationIds.schema.json"
+        },
+        "applications": {
+            "$ref": "https://funding-service.ukri.org/schema/panel/event/v1/applications.schema.json"
+        },
+        "conflicts": {
+            "$ref": "https://funding-service.ukri.org/schema/panel/event/v1/conflicts.schema.json"
+        },
+        "prescores": {
+            "$ref": "https://funding-service.ukri.org/schema/panel/event/v1/prescores.schema.json"
+        },
+        "correlationIds": {
+            "$ref": "https://funding-service.ukri.org/schema/panel/event/v1/correlationIds.schema.json"
+        }
+    }
+}

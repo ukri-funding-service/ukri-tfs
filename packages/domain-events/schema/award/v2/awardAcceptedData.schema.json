@@ -1,0 +1,36 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/award/event/v2/awardAcceptedData.schema.json",
+    "title": "Award Accepted",
+    "description": "Data in the event emitted when an RO has accepted an award",
+    "type": "object",
+    "required": [
+        "tfsAwardReference",
+        "gfsAwardReference",
+        "awardStatus",
+        "statusUpdatedAt",
+        "statusUpdatedBy",
+        "publishToGatewayToResearch"
+    ],
+    "additionalProperties": false,
+    "properties": {
+        "awardStatus": {
+            "$ref": "../properties/awardStatus.schema.json"
+        },
+        "tfsAwardReference": {
+            "$ref": "../properties/tfsAwardReference.schema.json"
+        },
+        "gfsAwardReference": {
+            "$ref": "../properties/gfsAwardReference.schema.json"
+        },
+        "statusUpdatedAt": {
+            "$ref": "../properties/statusUpdatedAt.schema.json"
+        },
+        "statusUpdatedBy": {
+            "$ref": "../properties/statusUpdatedBy.schema.json"
+        },
+        "publishToGatewayToResearch": {
+            "$ref": "../properties/publishToGatewayToResearch.schema.json"
+        }
+    }
+}

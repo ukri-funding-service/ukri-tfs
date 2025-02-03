@@ -1,0 +1,126 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/award/event/domainEvent.schema.json",
+    "title": "Domain Event",
+    "description": "An Event emitted by the Award domain.  This schema exists to define the current valid event schema versions supported (note the prefix of the referenced schemas).",
+    "type": "object",
+    "oneOf": [
+        {
+            "$ref": "v1/sentForAuthorisation.schema.json"
+        },
+        {
+            "$ref": "v2/sentForAuthorisation.schema.json"
+        },
+        {
+            "$ref": "v3/sentForAuthorisation.schema.json"
+        },
+        {
+            "$ref": "v4/sentForAuthorisation.schema.json"
+        },
+        {
+            "$ref": "v5/sentForAuthorisation.schema.json"
+        },
+        {
+            "$ref": "v6/sentForAuthorisation.schema.json"
+        },
+        {
+            "$ref": "v1/sentForAcceptance.schema.json"
+        },
+        {
+            "$ref": "v2/sentForAcceptance.schema.json"
+        },
+        {
+            "$ref": "v1/awardAccepted.schema.json"
+        },
+        {
+            "$ref": "v2/awardAccepted.schema.json"
+        },
+        {
+            "$ref": "v1/awardMetadataChanged.schema.json"
+        },
+        {
+            "$ref": "v2/awardMetadataChanged.schema.json"
+        },
+        {
+            "$ref": "v1/awardStarted.schema.json"
+        },
+        {
+            "$ref": "v1/awardClosed.schema.json"
+        },
+        {
+            "$ref": "v1/awardCreated.schema.json"
+        },
+        {
+            "$ref": "v2/awardCreated.schema.json"
+        },
+        {
+            "$ref": "v1/crSubmitted.schema.json"
+        },
+        {
+            "$ref": "v2/crSubmitted.schema.json"
+        },
+        {
+            "$ref": "v3/crSubmitted.schema.json"
+        },
+        {
+            "$ref": "v1/crSentForApproval.schema.json"
+        },
+        {
+            "$ref": "v2/crSentForApproval.schema.json"
+        },
+        {
+            "$ref": "v1/crRejected.schema.json"
+        },
+        {
+            "$ref": "v2/crRejected.schema.json"
+        },
+        {
+            "$ref": "v1/crAccepted.schema.json"
+        },
+        {
+            "$ref": "v1/crCompleted.schema.json"
+        },
+        {
+            "$ref": "v2/crCompleted.schema.json"
+        },
+        {
+            "$ref": "v1/crReturned.schema.json"
+        },
+        {
+            "$ref": "v2/crReturned.schema.json"
+        },
+        {
+            "$ref": "v1/crCancelled.schema.json"
+        },
+        {
+            "$ref": "v1/crFailed.schema.json"
+        },
+        {
+            "$ref": "v1/returnedForAmendments.schema.json"
+        },
+        {
+            "$ref": "v2/returnedForAmendments.schema.json"
+        },
+        {
+            "$ref": "v1/returnedByResearchOffice.schema.json"
+        },
+        {
+            "$ref": "v2/returnedByResearchOffice.schema.json"
+        },
+        {
+            "$ref": "v1/fesUpdated.schema.json"
+        },
+        {
+            "$ref": "v1/tesUpdated.schema.json"
+        },
+        {
+            "$ref": "v1/draftAwardChanged.schema.json"
+        },
+        {
+            "$ref": "v1/importedDirectAwardCreated.schema.json"
+        },
+        {
+            "$ref": "v1/awardDeleted.schema.json"
+        }
+    ]
+}

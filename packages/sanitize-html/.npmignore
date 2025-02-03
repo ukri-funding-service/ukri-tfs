@@ -1,0 +1,5 @@
+.eslint*
+test/
+node_modules/
+sonar*
+tsconfig*

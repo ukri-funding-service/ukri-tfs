@@ -1,0 +1,27 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/award/event/v1/tesUpdatedData.schema.json",
+    "title": "tES Updated",
+    "description": "Data in the event emitted when a tES is updated",
+    "type": "object",
+    "required": ["tfsAwardReference", "tesState", "actionedBy"],
+    "additionalProperties": false,
+    "properties": {
+        "tfsAwardReference": {
+            "$ref": "../properties/tfsAwardReference.schema.json"
+        },
+        "tesState": {
+            "description": "The new state of the tES",
+            "type": "string",
+            "enum": ["tES issued", "tES submitted", "tES rejected and re-issued", "tES accepted"]
+        },
+        "reason": {
+            "description": "The reason for tES being updated (optional)",
+            "type": "string"
+        },
+        "actionedBy": {
+            "description": "The tfsUserId of the user or system user who triggered the update",
+            "type": "string"
+        }
+    }
+}

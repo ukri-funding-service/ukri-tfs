@@ -1,0 +1,22 @@
+.back-to-top__icon {
+    display: inline-block;
+    width: 0.8em;
+    height: 1em;
+    margin-top: -5px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.back-to-top {
+    padding: 1rem;
+
+    &--sticky {
+        z-index: 99;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        padding: 1rem;
+        background: govuk-colour('white');
+        max-width: 1344px;
+    }
+}

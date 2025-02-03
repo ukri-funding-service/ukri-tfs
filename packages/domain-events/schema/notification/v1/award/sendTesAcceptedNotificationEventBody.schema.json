@@ -1,0 +1,27 @@
+{
+    "definitions": {},
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/notification/event/v1/award/sendTesAcceptedNotificationEventBody.schema.json",
+    "title": "Send transfer expenditure statement accepted notification event payload data",
+    "description": "Data about the transfer expenditure statement outcome.",
+    "type": "object",
+    "required": ["recipients", "award", "tesSubmittedDate", "tesUrl", "templateId"],
+    "properties": {
+        "recipients": {
+            "$ref": "../common/recipients.schema.json"
+        },
+        "award": {
+            "$ref": "./shared/award.schema.json"
+        },
+        "tesSubmittedDate": {
+            "$ref": "./shared/tesSubmittedDate.schema.json"
+        },
+        "tesUrl": {
+            "$ref": "./shared/tesUrl.schema.json"
+        },
+        "templateId": {
+            "type": "string",
+            "enum": ["tesAccepted"]
+        }
+    }
+}

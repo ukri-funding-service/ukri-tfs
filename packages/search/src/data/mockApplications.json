@@ -1,0 +1,675 @@
+[
+    {
+        "id": 1000003,
+        "displayId": "APP1000003",
+        "opportunityId": 1301,
+        "opportunityApplicationWorkflowComponentId": 1301,
+        "name": "[Mock] Submitted Complete Application",
+        "applicationStatus": "Passed checks",
+        "reviewStatus": "Passed Checks",
+        "reviewStatusPriority": 1,
+        "responseStatus": "Requested",
+        "responseStatusPriority": 2,
+        "reviewStats": {
+            "pendingCount": 0,
+            "usableCount": 0,
+            "toCheckCount": 0
+        },
+        "invitationStats": {
+            "noResponseCount": 0,
+            "declinedCount": 0
+        }
+    },
+    {
+        "id": 1000006,
+        "displayId": "APP1000006",
+        "opportunityId": 1401,
+        "opportunityApplicationWorkflowComponentId": 1401,
+        "name": "[Mock] Application For Review",
+        "applicationStatus": "Passed checks",
+        "reviewStatus": "Pending Checks",
+        "reviewStatusPriority": 8,
+        "responseStatus": "Not applicable",
+        "responseStatusPriority": 1,
+        "reviewStats": {
+            "pendingCount": 0,
+            "usableCount": 0,
+            "toCheckCount": 0
+        },
+        "invitationStats": {
+            "noResponseCount": 0,
+            "declinedCount": 0
+        }
+    },
+    {
+        "id": 1000022,
+        "displayId": "APP1000022",
+        "opportunityId": 1301,
+        "opportunityApplicationWorkflowComponentId": 1301,
+        "name": "[Mock] Submitted Complete Application 1",
+        "applicationStatus": "Awaiting assessment",
+        "reviewStatus": "In Expert Review",
+        "reviewStatusPriority": 2,
+        "responseStatus": "Not applicable",
+        "responseStatusPriority": 1,
+        "reviewStats": {
+            "pendingCount": 0,
+            "usableCount": 0,
+            "toCheckCount": 0
+        },
+        "invitationStats": {
+            "noResponseCount": 0,
+            "declinedCount": 0
+        }
+    },
+    {
+        "id": 1000023,
+        "displayId": "APP1000023",
+        "opportunityId": 1301,
+        "opportunityApplicationWorkflowComponentId": 1301,
+        "name": "[Mock] Submitted Complete Application 2",
+        "applicationStatus": "Submitted",
+        "reviewStatus": "Pending Checks",
+        "reviewStatusPriority": 8,
+        "responseStatus": "Provided",
+        "responseStatusPriority": 3,
+        "reviewStats": {
+            "pendingCount": 0,
+            "usableCount": 0,
+            "toCheckCount": 0
+        },
+        "invitationStats": {
+            "noResponseCount": 0,
+            "declinedCount": 0
+        }
+    },
+    {
+        "id": 1000049,
+        "displayId": "APP1000049",
+        "opportunityId": 1301,
+        "opportunityApplicationWorkflowComponentId": 1301,
+        "name": "[Mock] Expert Review Terms Accepted",
+        "applicationStatus": "Unsuccessful",
+        "reviewStatus": "Unsuccessful",
+        "reviewStatusPriority": 7,
+        "responseStatus": "Provided",
+        "responseStatusPriority": 3,
+        "reviewStats": {
+            "pendingCount": 0,
+            "usableCount": 0,
+            "toCheckCount": 0
+        },
+        "invitationStats": {
+            "noResponseCount": 0,
+            "declinedCount": 0
+        }
+    },
+    {
+        "id": 1000050,
+        "displayId": "APP1000050",
+        "opportunityId": 1301,
+        "opportunityApplicationWorkflowComponentId": 1301,
+        "name": "[Mock] Expert Review Terms Not Accepted",
+        "applicationStatus": "Passed checks",
+        "reviewStatus": "Sent For Response",
+        "reviewStatusPriority": 3,
+        "responseStatus": "Provided",
+        "responseStatusPriority": 3,
+        "reviewStats": {
+            "pendingCount": 0,
+            "usableCount": 0,
+            "toCheckCount": 0
+        },
+        "invitationStats": {
+            "noResponseCount": 0,
+            "declinedCount": 0
+        }
+    },
+    {
+        "id": 1000052,
+        "displayId": "APP1000052",
+        "opportunityId": 1451,
+        "opportunityApplicationWorkflowComponentId": 1451,
+        "name": "[Mock] Expert Review Terms Not Accepted",
+        "applicationStatus": "Submitted",
+        "reviewStatus": "Pending Checks",
+        "reviewStatusPriority": 8,
+        "responseStatus": "Provided",
+        "responseStatusPriority": 3,
+        "reviewStats": {
+            "pendingCount": 0,
+            "usableCount": 0,
+            "toCheckCount": 0
+        },
+        "invitationStats": {
+            "noResponseCount": 0,
+            "declinedCount": 0
+        }
+    },
+    {
+        "id": 1000154,
+        "displayId": "APP1000154",
+        "opportunityId": 1301,
+        "opportunityApplicationWorkflowComponentId": 1301,
+        "name": "[Mock] Submitted Complete Application 3",
+        "applicationStatus": "Successful",
+        "reviewStatus": "Expert Review Complete",
+        "reviewStatusPriority": 4,
+        "responseStatus": "Provided",
+        "responseStatusPriority": 3,
+        "reviewStats": {
+            "pendingCount": 0,
+            "usableCount": 0,
+            "toCheckCount": 0
+        },
+        "invitationStats": {
+            "noResponseCount": 0,
+            "declinedCount": 0
+        }
+    },
+    {
+        "id": 1000155,
+        "displayId": "APP1000155",
+        "opportunityId": 1301,
+        "opportunityApplicationWorkflowComponentId": 1301,
+        "name": "[Mock] Reviewed Application 1",
+        "applicationStatus": "Submitted",
+        "reviewStatus": "Failed Review",
+        "reviewStatusPriority": 5,
+        "responseStatus": "Provided",
+        "responseStatusPriority": 3,
+        "reviewStats": {
+            "pendingCount": 0,
+            "usableCount": 0,
+            "toCheckCount": 0
+        },
+        "invitationStats": {
+            "noResponseCount": 0,
+            "declinedCount": 0
+        },
+        "reviewFailedDate": "2024-05-08T12:57:00.350Z"
+    },
+    {
+        "id": 1000156,
+        "displayId": "APP1000156",
+        "opportunityId": 1301,
+        "opportunityApplicationWorkflowComponentId": 1301,
+        "name": "[Mock] Reviewed Application 2",
+        "applicationStatus": "Passed checks",
+        "reviewStatus": "Pending Checks",
+        "reviewStatusPriority": 8,
+        "responseStatus": "Provided",
+        "responseStatusPriority": 3,
+        "reviewStats": {
+            "pendingCount": 0,
+            "usableCount": 0,
+            "toCheckCount": 0
+        },
+        "invitationStats": {
+            "noResponseCount": 0,
+            "declinedCount": 0
+        }
+    },
+    {
+        "id": 1000157,
+        "displayId": "APP1000157",
+        "opportunityId": 1301,
+        "opportunityApplicationWorkflowComponentId": 1301,
+        "name": "[Mock] Reviewed Application 3",
+        "applicationStatus": "Passed checks",
+        "reviewStatus": "Pending Checks",
+        "reviewStatusPriority": 8,
+        "responseStatus": "Provided",
+        "responseStatusPriority": 3,
+        "reviewStats": {
+            "pendingCount": 0,
+            "usableCount": 0,
+            "toCheckCount": 0
+        },
+        "invitationStats": {
+            "noResponseCount": 0,
+            "declinedCount": 0
+        }
+    },
+    {
+        "id": 1000158,
+        "displayId": "APP1000158",
+        "opportunityId": 1301,
+        "opportunityApplicationWorkflowComponentId": 1301,
+        "name": "[Mock] Usable Reviewed Application 1",
+        "applicationStatus": "Passed checks",
+        "reviewStatus": "Pending Checks",
+        "reviewStatusPriority": 8,
+        "responseStatus": "Provided",
+        "responseStatusPriority": 3,
+        "reviewStats": {
+            "pendingCount": 0,
+            "usableCount": 0,
+            "toCheckCount": 0
+        },
+        "invitationStats": {
+            "noResponseCount": 0,
+            "declinedCount": 0
+        }
+    },
+    {
+        "id": 1000159,
+        "displayId": "APP1000159",
+        "opportunityId": 1301,
+        "opportunityApplicationWorkflowComponentId": 1301,
+        "name": "[Mock] Usable Reviewed Application 2",
+        "applicationStatus": "Passed checks",
+        "reviewStatus": "Pending Checks",
+        "reviewStatusPriority": 8,
+        "responseStatus": "Provided",
+        "responseStatusPriority": 3,
+        "reviewStats": {
+            "pendingCount": 0,
+            "usableCount": 0,
+            "toCheckCount": 0
+        },
+        "invitationStats": {
+            "noResponseCount": 0,
+            "declinedCount": 0
+        }
+    },
+    {
+        "id": 1000160,
+        "displayId": "APP1000160",
+        "opportunityId": 1401,
+        "opportunityApplicationWorkflowComponentId": 1401,
+        "name": "[Mock] Submitted Complete Application For Award",
+        "applicationStatus": "Passed checks",
+        "reviewStatus": "Pending Checks",
+        "reviewStatusPriority": 8,
+        "responseStatus": "Provided",
+        "responseStatusPriority": 3,
+        "reviewStats": {
+            "pendingCount": 0,
+            "usableCount": 0,
+            "toCheckCount": 0
+        },
+        "invitationStats": {
+            "noResponseCount": 0,
+            "declinedCount": 0
+        }
+    },
+    {
+        "id": 1000162,
+        "displayId": "APP1000162",
+        "opportunityId": 1461,
+        "opportunityApplicationWorkflowComponentId": 1461,
+        "name": "[Mock] Submitted Complete Application For Decision 1",
+        "applicationStatus": "Passed checks",
+        "reviewStatus": "Pending Checks",
+        "reviewStatusPriority": 8,
+        "responseStatus": "Provided",
+        "responseStatusPriority": 3,
+        "reviewStats": {
+            "pendingCount": 0,
+            "usableCount": 0,
+            "toCheckCount": 0
+        },
+        "invitationStats": {
+            "noResponseCount": 0,
+            "declinedCount": 0
+        }
+    },
+    {
+        "id": 1000163,
+        "displayId": "APP1000163",
+        "opportunityId": 1461,
+        "opportunityApplicationWorkflowComponentId": 1461,
+        "name": "[Mock] Submitted Complete Application For Decision 2",
+        "applicationStatus": "Passed checks",
+        "reviewStatus": "Pending Checks",
+        "reviewStatusPriority": 8,
+        "responseStatus": "Provided",
+        "responseStatusPriority": 3,
+        "reviewStats": {
+            "pendingCount": 0,
+            "usableCount": 0,
+            "toCheckCount": 0
+        },
+        "invitationStats": {
+            "noResponseCount": 0,
+            "declinedCount": 0
+        }
+    },
+    {
+        "id": 1000164,
+        "displayId": "APP1000164",
+        "opportunityId": 1461,
+        "opportunityApplicationWorkflowComponentId": 1461,
+        "name": "[Mock] Submitted Complete Application For Decision 3",
+        "applicationStatus": "Passed checks",
+        "reviewStatus": "Pending Checks",
+        "reviewStatusPriority": 8,
+        "responseStatus": "Provided",
+        "responseStatusPriority": 3,
+        "reviewStats": {
+            "pendingCount": 0,
+            "usableCount": 0,
+            "toCheckCount": 0
+        },
+        "invitationStats": {
+            "noResponseCount": 0,
+            "declinedCount": 0
+        }
+    },
+    {
+        "id": 1000165,
+        "displayId": "APP1000165",
+        "opportunityId": 1461,
+        "opportunityApplicationWorkflowComponentId": 1461,
+        "name": "[Mock] Submitted Complete Application For Decision 4",
+        "applicationStatus": "Passed checks",
+        "reviewStatus": "Pending Checks",
+        "reviewStatusPriority": 8,
+        "responseStatus": "Provided",
+        "responseStatusPriority": 3,
+        "reviewStats": {
+            "pendingCount": 0,
+            "usableCount": 0,
+            "toCheckCount": 0
+        },
+        "invitationStats": {
+            "noResponseCount": 0,
+            "declinedCount": 0
+        }
+    },
+    {
+        "id": 1000170,
+        "displayId": "APP1000170",
+        "opportunityId": 2242,
+        "opportunityApplicationWorkflowComponentId": 2242,
+        "name": "[Mock] Submitted Complete Application 01",
+        "applicationStatus": "Passed checks",
+        "reviewStatus": "Pending Checks",
+        "reviewStatusPriority": 8,
+        "responseStatus": "Provided",
+        "responseStatusPriority": 3,
+        "reviewStats": {
+            "pendingCount": 0,
+            "usableCount": 0,
+            "toCheckCount": 0
+        },
+        "invitationStats": {
+            "noResponseCount": 0,
+            "declinedCount": 0
+        }
+    },
+    {
+        "id": 1000171,
+        "displayId": "APP1000171",
+        "opportunityId": 2242,
+        "opportunityApplicationWorkflowComponentId": 2242,
+        "name": "[Mock] Submitted Complete Application 02",
+        "applicationStatus": "Passed checks",
+        "reviewStatus": "Pending Checks",
+        "reviewStatusPriority": 8,
+        "responseStatus": "Provided",
+        "responseStatusPriority": 3,
+        "reviewStats": {
+            "pendingCount": 0,
+            "usableCount": 0,
+            "toCheckCount": 0
+        },
+        "invitationStats": {
+            "noResponseCount": 0,
+            "declinedCount": 0
+        }
+    },
+    {
+        "id": 1000172,
+        "displayId": "APP1000172",
+        "opportunityId": 2242,
+        "opportunityApplicationWorkflowComponentId": 2242,
+        "name": "[Mock] Submitted Complete Application 03",
+        "applicationStatus": "Passed checks",
+        "reviewStatus": "Pending Checks",
+        "reviewStatusPriority": 8,
+        "responseStatus": "Provided",
+        "responseStatusPriority": 3,
+        "reviewStats": {
+            "pendingCount": 0,
+            "usableCount": 0,
+            "toCheckCount": 0
+        },
+        "invitationStats": {
+            "noResponseCount": 0,
+            "declinedCount": 0
+        }
+    },
+    {
+        "id": 1000173,
+        "displayId": "APP1000173",
+        "opportunityId": 2242,
+        "opportunityApplicationWorkflowComponentId": 2242,
+        "name": "[Mock] Submitted Complete Application 04",
+        "applicationStatus": "Passed checks",
+        "reviewStatus": "Pending Checks",
+        "reviewStatusPriority": 8,
+        "responseStatus": "Provided",
+        "responseStatusPriority": 3,
+        "reviewStats": {
+            "pendingCount": 0,
+            "usableCount": 0,
+            "toCheckCount": 0
+        },
+        "invitationStats": {
+            "noResponseCount": 0,
+            "declinedCount": 0
+        }
+    },
+    {
+        "id": 1000174,
+        "displayId": "APP1000174",
+        "opportunityId": 2242,
+        "opportunityApplicationWorkflowComponentId": 2242,
+        "name": "[Mock] Submitted Complete Application 05",
+        "applicationStatus": "Passed checks",
+        "reviewStatus": "Pending Checks",
+        "reviewStatusPriority": 8,
+        "responseStatus": "Provided",
+        "responseStatusPriority": 3,
+        "reviewStats": {
+            "pendingCount": 0,
+            "usableCount": 0,
+            "toCheckCount": 0
+        },
+        "invitationStats": {
+            "noResponseCount": 0,
+            "declinedCount": 0
+        }
+    },
+    {
+        "id": 1000175,
+        "displayId": "APP1000175",
+        "opportunityId": 2242,
+        "opportunityApplicationWorkflowComponentId": 2242,
+        "name": "[Mock] Submitted Complete Application 06",
+        "applicationStatus": "Passed checks",
+        "reviewStatus": "Pending Checks",
+        "reviewStatusPriority": 8,
+        "responseStatus": "Provided",
+        "responseStatusPriority": 3,
+        "reviewStats": {
+            "pendingCount": 0,
+            "usableCount": 0,
+            "toCheckCount": 0
+        },
+        "invitationStats": {
+            "noResponseCount": 0,
+            "declinedCount": 0
+        }
+    },
+    {
+        "id": 1000176,
+        "displayId": "APP1000176",
+        "opportunityId": 2242,
+        "opportunityApplicationWorkflowComponentId": 2242,
+        "name": "[Mock] Submitted Complete Application 07",
+        "applicationStatus": "Passed checks",
+        "reviewStatus": "Pending Checks",
+        "reviewStatusPriority": 8,
+        "responseStatus": "Provided",
+        "responseStatusPriority": 3,
+        "reviewStats": {
+            "pendingCount": 0,
+            "usableCount": 0,
+            "toCheckCount": 0
+        },
+        "invitationStats": {
+            "noResponseCount": 0,
+            "declinedCount": 0
+        }
+    },
+    {
+        "id": 1000177,
+        "displayId": "APP1000177",
+        "opportunityId": 2242,
+        "opportunityApplicationWorkflowComponentId": 2242,
+        "name": "[Mock] Submitted Complete Application 08",
+        "applicationStatus": "Passed checks",
+        "reviewStatus": "Pending Checks",
+        "reviewStatusPriority": 8,
+        "responseStatus": "Provided",
+        "responseStatusPriority": 3,
+        "reviewStats": {
+            "pendingCount": 0,
+            "usableCount": 0,
+            "toCheckCount": 0
+        },
+        "invitationStats": {
+            "noResponseCount": 0,
+            "declinedCount": 0
+        }
+    },
+    {
+        "id": 1000178,
+        "displayId": "APP1000178",
+        "opportunityId": 2242,
+        "opportunityApplicationWorkflowComponentId": 2242,
+        "name": "[Mock] Submitted Complete Application 09",
+        "applicationStatus": "Passed checks",
+        "reviewStatus": "Pending Checks",
+        "reviewStatusPriority": 8,
+        "responseStatus": "Provided",
+        "responseStatusPriority": 3,
+        "reviewStats": {
+            "pendingCount": 0,
+            "usableCount": 0,
+            "toCheckCount": 0
+        },
+        "invitationStats": {
+            "noResponseCount": 0,
+            "declinedCount": 0
+        }
+    },
+    {
+        "id": 1000179,
+        "displayId": "APP1000179",
+        "opportunityId": 2242,
+        "opportunityApplicationWorkflowComponentId": 2242,
+        "name": "[Mock] Submitted Complete Application 10",
+        "applicationStatus": "Passed checks",
+        "reviewStatus": "Pending Checks",
+        "reviewStatusPriority": 8,
+        "responseStatus": "Provided",
+        "responseStatusPriority": 3,
+        "reviewStats": {
+            "pendingCount": 0,
+            "usableCount": 0,
+            "toCheckCount": 0
+        },
+        "invitationStats": {
+            "noResponseCount": 0,
+            "declinedCount": 0
+        }
+    },
+    {
+        "id": 1000183,
+        "displayId": "APP1000183",
+        "opportunityId": 1471,
+        "opportunityApplicationWorkflowComponentId": 1471,
+        "name": "[Mock] Submitted Complete Structured Costs Application For Award",
+        "applicationStatus": "Passed checks",
+        "reviewStatus": "Pending Checks",
+        "reviewStatusPriority": 8,
+        "responseStatus": "Provided",
+        "responseStatusPriority": 3,
+        "reviewStats": {
+            "pendingCount": 0,
+            "usableCount": 0,
+            "toCheckCount": 0
+        },
+        "invitationStats": {
+            "noResponseCount": 0,
+            "declinedCount": 0
+        }
+    },
+    {
+        "id": 1000185,
+        "displayId": "APP1000185",
+        "opportunityId": 1311,
+        "opportunityApplicationWorkflowComponentId": 1311,
+        "name": "[Mock] Expert review reject application flow",
+        "applicationStatus": "Passed checks",
+        "reviewStatus": "Pending Checks",
+        "reviewStatusPriority": 8,
+        "responseStatus": "Provided",
+        "responseStatusPriority": 3,
+        "reviewStats": {
+            "pendingCount": 0,
+            "usableCount": 0,
+            "toCheckCount": 0
+        },
+        "invitationStats": {
+            "noResponseCount": 0,
+            "declinedCount": 0
+        }
+    },
+    {
+        "id": 1000186,
+        "displayId": "APP1000186",
+        "opportunityId": 1301,
+        "opportunityApplicationWorkflowComponentId": 1301,
+        "name": "[Mock] Expert review application",
+        "applicationStatus": "Passed checks",
+        "reviewStatus": "Pending Checks",
+        "reviewStatusPriority": 8,
+        "responseStatus": "Provided",
+        "responseStatusPriority": 3,
+        "reviewStats": {
+            "pendingCount": 0,
+            "usableCount": 0,
+            "toCheckCount": 0
+        },
+        "invitationStats": {
+            "noResponseCount": 0,
+            "declinedCount": 0
+        }
+    },
+    {
+        "id": 1000187,
+        "displayId": "APP1000187",
+        "opportunityId": 1311,
+        "opportunityApplicationWorkflowComponentId": 1311,
+        "name": "[Mock] Expert review cancel application flow",
+        "applicationStatus": "Passed checks",
+        "reviewStatus": "Pending Checks",
+        "reviewStatusPriority": 8,
+        "responseStatus": "Provided",
+        "responseStatusPriority": 3,
+        "reviewStats": {
+            "pendingCount": 0,
+            "usableCount": 0,
+            "toCheckCount": 0
+        },
+        "invitationStats": {
+            "noResponseCount": 0,
+            "declinedCount": 0
+        }
+    }
+]

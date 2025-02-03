@@ -1,0 +1,57 @@
+// Importing govuk/all includes all govuk CSS into each file that its imported into.
+// This causes a large amount of duplicated CSS. If govuk functions are required, only import govuk/base
+@import '~govuk-frontend/govuk/base';
+
+.govuk-footer.tfs-footer {
+    background-color: govuk-colour('black');
+    color: govuk-colour('white');
+
+    * {
+        color: govuk-colour('white');
+    }
+
+    .govuk-footer__link {
+        color: govuk-colour('white');
+
+        &:hover {
+            text-decoration: underline;
+        }
+        &:focus {
+            color: govuk-colour('black');
+        }
+    }
+
+    .govuk-footer__list {
+        margin-top: 0;
+        margin-bottom: 30px;
+    }
+
+    .govuk-footer__list-item {
+        margin-bottom: 5px;
+    }
+
+    .govuk-heading-m {
+        border-bottom: 1px solid govuk-colour('white');
+        padding-bottom: 10px;
+        margin-bottom: 40px;
+    }
+
+    .govuk-footer__section-break {
+        height: 1px;
+        border-bottom: 1px solid govuk-colour('white');
+    }
+}
+
+.govuk-footer__link {
+    font-weight: bold;
+    @include govuk-font($size: 16, $weight: bold);
+}
+
+.govuk-footer__link--logo {
+    border-bottom: none;
+    display: block;
+    height: 30px;
+    background-repeat: no-repeat;
+    background-size: 30px 30px;
+    padding: 6px 0 0 40px;
+}

@@ -1,0 +1,36 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/award/event/v2/crCompletedData.schema.json",
+    "title": "CR Completed",
+    "description": "Data in the event emitted when a change request is completed",
+    "type": "object",
+    "required": ["tfsAwardReference", "changeRequestReference", "changeType", "submittedBy", "timestamp"],
+    "additionalProperties": false,
+    "properties": {
+        "tfsAwardReference": {
+            "$ref": "../properties/tfsAwardReference.schema.json"
+        },
+        "changeRequestReference": {
+            "$ref": "../properties/changeRequestReference.schema.json"
+        },
+        "changeType": {
+            "description": "The type of Change Request",
+            "type": "string",
+            "enum": [
+                "Extension",
+                "Suspension",
+                "Start Date",
+                "Resumption",
+                "Transfer",
+                "Termination",
+                "Additional Funding"
+            ]
+        },
+        "submittedBy": {
+            "$ref": "../properties/submittedBy.schema.json"
+        },
+        "timestamp": {
+            "$ref": "../properties/timestamp.schema.json"
+        }
+    }
+}

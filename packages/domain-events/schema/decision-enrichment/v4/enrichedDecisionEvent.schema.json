@@ -1,0 +1,23 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/decision-enrichment/event/v4/enrichedDecisionEvent.schema.json",
+    "title": "Enriched Decision Event",
+    "description": "An Event emitted following enrichment of a simple Decision Event, containing additional information about the associated Application & Opportunity",
+    "type": "object",
+    "properties": {
+        "type": {
+            "description": "The type of event",
+            "type": "string",
+            "enum": [
+                "https://funding-service.ukri.org/schema/decision-enrichment/event/v4/enrichedDecisionEvent.schema.json"
+            ]
+        },
+        "data": {
+            "$ref": "enrichedDecisionEventBody.schema.json"
+        },
+        "correlationIds": {
+            "$ref": "correlationIds.schema.json"
+        }
+    },
+    "required": ["data", "correlationIds", "type"]
+}

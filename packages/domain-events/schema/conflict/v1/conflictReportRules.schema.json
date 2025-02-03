@@ -1,0 +1,32 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/conflict/event/v1/conflictReportRules.schema.json",
+    "title": "Conflict Report Rules",
+    "description": "The rules that were checked in the Conflict Report",
+    "type": "object",
+    "required": ["ruleType", "description", "status", "policy"],
+    "properties": {
+        "ruleType": {
+            "description": "Internal identifier for type of Rule being checked",
+            "type": "string",
+            "examples": ["OnApplication"]
+        },
+        "description": {
+            "description": "Description of the rule in common language",
+            "type": "string",
+            "examples": ["Rule that checks X"]
+        },
+        "status": {
+            "description": "Status of the calculated Rule",
+            "type": "string",
+            "enum": ["PENDING", "PASSED", "FAILED"],
+            "examples": ["FAILED"]
+        },
+        "policy": {
+            "description": "The Policy of the Rule",
+            "type": "string",
+            "enum": ["HARD", "SOFT"],
+            "examples": ["HARD"]
+        }
+    }
+}

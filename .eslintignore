@@ -1,0 +1,5 @@
+**/node_modules
+**/dist
+**/docs/assets/js
+**/app/public/tinymce/
+**/app/public/govuk-frontend-3.2.0.min.js

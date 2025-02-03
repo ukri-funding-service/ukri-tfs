@@ -1,0 +1,8 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/decision-enrichment/event/domainEvent.schema.json",
+    "title": "Domain Event",
+    "description": "An Event emitted by the Decision Enrichment domain service.  This schema exists to define the current valid event schema versions supported (note the prefix of the referenced schemas).",
+    "type": "object",
+    "oneOf": [{ "$ref": "v4/domainEvent.schema.json" }, { "$ref": "v5/domainEvent.schema.json" }]
+}

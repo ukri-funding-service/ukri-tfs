@@ -1,0 +1,26 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/am/event/v2/questionAnswerEvent.schema.json",
+    "title": "Question Answer Event",
+    "description": "An event emitted on submission of an Application for each of the application's custom sections",
+    "type": "object",
+    "properties": {
+        "type": {
+            "description": "The data contained in the event",
+            "type": "string",
+            "enum": ["https://funding-service.ukri.org/schema/am/event/v2/questionAnswerEvent.schema.json"]
+        },
+        "data": {
+            "$ref": "questionAnswer.schema.json"
+        },
+        "method": {
+            "description": "The action that caused the event",
+            "type": "string",
+            "enum": ["create"]
+        },
+        "correlationIds": {
+            "$ref": "correlationIds.schema.json"
+        }
+    },
+    "required": ["type", "data", "correlationIds"]
+}

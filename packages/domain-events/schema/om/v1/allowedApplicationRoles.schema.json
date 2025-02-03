@@ -1,0 +1,19 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/om/event/v1/allowedApplicationRoles.schema.json",
+    "title": "Allowed Application Roles",
+    "description": "",
+    "type": "object",
+    "properties": {
+        "roles_included": {
+            "description": "The set of allowed application Role Ids",
+            "type": "array",
+            "items": {
+                "type": "number"
+            }
+        },
+        "sequence": {
+            "type": "number"
+        }
+    }
+}

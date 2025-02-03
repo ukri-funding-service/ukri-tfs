@@ -1,0 +1,4 @@
+node_modules
+tests/API/reports/
+tests/Performance/results/
+tests/Performance/jmeter/bin/jmeter.log

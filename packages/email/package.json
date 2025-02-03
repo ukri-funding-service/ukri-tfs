@@ -1,0 +1,86 @@
+{
+    "name": "@ukri-tfs/email",
+    "version": "1.0.0",
+    "private": "true",
+    "description": "",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "publishConfig": {
+        "registry": "https://devops.innovateuk.org/binaries/repository/npm-private/"
+    },
+    "scripts": {
+        "build": "npm run compile && npm run compile:test",
+        "compile": "tsc --project tsconfig-build.json",
+        "compile:test": "tsc --project tsconfig-test.json",
+        "clean": "rimraf dist test_reports coverage .nyc_output .scannerwork ${ESLINT_FILE%/*} tsconfig.build.tsbuildinfo eslint.json",
+        "lint": "eslint .",
+        "lint:ci": "mkdirp ${ESLINT_FILE%/*}; npm run lint -- -f ../../node_modules/eslint-bamboo-formatter/reporter.js",
+        "lint:fix": "npm run lint -- --fix",
+        "prebuild": "npm run clean",
+        "preversion": "npm test",
+        "prettier": "prettier --check .",
+        "prettier:fix": "prettier --write .",
+        "publish": "npm publish",
+        "sonar:ci": "sonar-scanner -Dsonar.login=${SONAR_API_KEY} ${SONAR_EXTRA_ARGS}",
+        "test": "cross-env TS_NODE_TRANSPILE_ONLY=true mocha",
+        "test:ci": "mkdirp test_reports && npm run test -- -R mocha-bamboo-reporter --reporter-options output=test_reports/mocha.json",
+        "test:coverage": "mkdirp test_reports && nyc --check-coverage mocha -R mocha-bamboo-reporter --reporter-options output=test_reports/mocha.json"
+    },
+    "mocha": {
+        "recursive": "true",
+        "require": [
+            "ts-node/register"
+        ],
+        "spec": "**/*.test.ts",
+        "timeout": "5000"
+    },
+    "nyc": {
+        "all": true,
+        "branches": 90,
+        "check-coverage": true,
+        "exclude": [
+            "**/*.js",
+            "test/",
+            "coverage/",
+            "**/*.d.ts",
+            "**/*.test.ts"
+        ],
+        "extension": [
+            ".ts"
+        ],
+        "functions": 72,
+        "lines": 89,
+        "reporter": [
+            "text-summary",
+            "lcov"
+        ],
+        "statements": 91
+    },
+    "keywords": [],
+    "author": "",
+    "license": "MIT",
+    "dependencies": {
+        "@aws-sdk/client-ses": "^3.121.0",
+        "nodemailer": "^6.5.0"
+    },
+    "devDependencies": {
+        "@types/chai": "^4.2.12",
+        "@types/mocha": "10.x",
+        "@types/node": "^18.19.33",
+        "@types/nodemailer": "^6.4.1",
+        "@types/sinon": "^9.0.0",
+        "@types/sinon-chai": "^3.2.5",
+        "chai": "^4.3.4",
+        "cross-env": "^6.0.3",
+        "eslint": "7.x",
+        "mkdirp": "1.x",
+        "mocha": "10.x",
+        "mocha-bamboo-reporter": "^1.1.2",
+        "nyc": "^15.1.0",
+        "rimraf": "^3.0.2",
+        "sinon": "^9.2.4",
+        "sinon-chai": "3.5.0",
+        "ts-node": "^10.4.0",
+        "typescript": "^4.9.5"
+    }
+}

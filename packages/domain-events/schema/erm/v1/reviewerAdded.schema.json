@@ -1,0 +1,28 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/erm/event/v1/reviewerAdded.schema.json",
+    "title": "Reviewer Added",
+    "description": "An object describing an expert reviewer added to an application",
+    "type": "object",
+    "properties": {
+        "originatorRef": {
+            "description": "The universal unique identifier of the originator",
+            "type": "string"
+        },
+        "personId": {
+            "description": "The reviewer person Id",
+            "type": "number"
+        },
+        "context": {
+            "type": "object",
+            "properties": {
+                "applicationId": {
+                    "description": "The application id",
+                    "type": "number"
+                }
+            },
+            "required": ["applicationId"]
+        }
+    },
+    "required": ["originatorRef", "personId", "context"]
+}

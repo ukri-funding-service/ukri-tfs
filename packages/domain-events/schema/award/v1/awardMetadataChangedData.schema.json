@@ -1,0 +1,38 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/award/event/v1/awardMetadataChangedData.schema.json",
+    "title": "Award Metadata Changed",
+    "description": "Data in the event emitted when a user changes an awards metadata",
+    "type": "object",
+    "required": [
+        "tfsAwardReference",
+        "gfsAwardReference",
+        "awardStatus",
+        "publishToGatewayToResearch",
+        "updatedAt",
+        "updatedBy"
+    ],
+    "additionalProperties": false,
+    "properties": {
+        "awardStatus": {
+            "$ref": "awardProperties/awardStatus.schema.json"
+        },
+        "tfsAwardReference": {
+            "$ref": "awardProperties/tfsAwardReference.schema.json"
+        },
+        "gfsAwardReference": {
+            "$ref": "awardProperties/gfsAwardReference.schema.json"
+        },
+        "publishToGatewayToResearch": {
+            "type": "boolean"
+        },
+        "updatedAt": {
+            "type": "string",
+            "format": "date-time"
+        },
+        "updatedBy": {
+            "type": "string",
+            "format": "uuid"
+        }
+    }
+}

@@ -1,0 +1,22 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/erm/event/v1/reviewGroupFailed.schema.json",
+    "title": "Failed Review Group",
+    "description": "An object describing a review group which has been failed",
+    "type": "object",
+    "properties": {
+        "applicationId": {
+            "description": "The application ID",
+            "type": "number"
+        },
+        "reviewGroupStatus": {
+            "description": "The review group status",
+            "type": "string"
+        },
+        "timestamp": {
+            "description": "The review group failed timestamp",
+            "type": "string"
+        }
+    },
+    "required": ["applicationId", "reviewGroupStatus", "timestamp"]
+}

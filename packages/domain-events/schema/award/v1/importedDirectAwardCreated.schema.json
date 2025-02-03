@@ -1,0 +1,30 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/award/event/v1/importedDirectAwardCreated.schema.json",
+    "title": "Imported Direct Award Created",
+    "description": "An Event emitted when an imported direct award is created",
+    "type": "object",
+    "properties": {
+        "type": {
+            "description": "The type of event",
+            "type": "string",
+            "enum": ["https://funding-service.ukri.org/schema/award/event/v1/importedDirectAwardCreated.schema.json"]
+        },
+        "data": {
+            "type": "object",
+            "required": ["importedDirectAwardId", "directAwardBulkImportId"],
+            "properties": {
+                "importedDirectAwardId": {
+                    "type": "number"
+                },
+                "directAwardBulkImportId": {
+                    "type": "number"
+                }
+            }
+        },
+        "correlationIds": {
+            "$ref": "correlationIds.schema.json"
+        }
+    },
+    "required": ["data", "correlationIds", "type"]
+}

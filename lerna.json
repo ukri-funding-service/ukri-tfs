@@ -1,0 +1,19 @@
+{
+    "$schema": "https://raw.githubusercontent.com/lerna/lerna/main/packages/lerna/schemas/lerna-schema.json",
+    "command": {
+        "version": {
+            "allowBranch": "develop",
+            "message": "chore(publish): publish"
+        }
+    },
+    "ignoreChanges": ["**/*.md", "**/test/**", "**/tests/**"],
+    "loglevel": "info",
+    "packages": [
+        "packages/ui-components/*",
+        "packages/*",
+        "services/**"
+    ],
+    "version": "independent",
+    "useNx": true,
+    "npmClientArgs": ["--legacy-peer-deps"]
+}

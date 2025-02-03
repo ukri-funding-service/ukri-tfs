@@ -1,0 +1,96 @@
+.toggle-checkboxes-button {
+    border: none;
+    font-size: inherit;
+    color: #1d70b8;
+    background-color: inherit;
+    cursor: pointer;
+}
+
+.collapsible-checkboxes {
+    background-color: govuk-colour('light-grey');
+    margin: 0 0 15px;
+    padding: 0;
+    border: 4px solid #f3f2f1;
+    .collapsible-heading {
+        align-items: baseline;
+        display: flex;
+        padding: 10px;
+        width: 100%;
+    }
+
+    .collapsible-checkbox-items {
+        margin-top: 5px;
+
+        &--horizontal {
+            @extend .collapsible-checkbox-items;
+            align-items: baseline;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        &--vertical {
+            @extend .collapsible-checkbox-items;
+            display: block;
+        }
+    }
+
+    .gov-checkboxes-base {
+        background: white;
+        display: inline-block !important;
+    }
+
+    .collapsible-checkbox-items--vertical .govuk-checkboxes__item {
+        @extend .gov-checkboxes-base;
+        width: 100% !important;
+        border-bottom: 1px solid #f3f2f1;
+    }
+
+    .collapsible-checkbox-items--horizontal .govuk-checkboxes__item {
+        @extend .gov-checkboxes-base;
+        margin-left: 10px;
+        margin-bottom: 10px;
+        width: auto !important;
+    }
+
+    .govuk-checkboxes--small {
+        .govuk-checkboxes__item {
+            align-items: baseline;
+            display: flex;
+            flex-wrap: wrap;
+
+            &:last-child {
+                border-bottom: none;
+            }
+
+            .govuk-checkboxes__label {
+                padding-left: govuk-spacing(4);
+
+                &::after {
+                    margin-left: govuk-spacing(2);
+                }
+
+                &::before {
+                    margin-left: govuk-spacing(2);
+                }
+            }
+        }
+    }
+}
+
+.js-only,
+.js-only--block,
+.js-only--inline {
+    display: none !important;
+}
+.js-enabled {
+    .js-hidden {
+        display: none;
+    }
+    .js-only,
+    .js-only--inline {
+        display: inline-block !important;
+    }
+    .js-only--block {
+        display: block !important;
+    }
+}

@@ -1,0 +1,38 @@
+{
+    "name": "@ukri-tfs/domain-events",
+    "version": "1.0.0",
+    "private": "true",
+    "description": "",
+    "license": "MIT",
+    "author": "UKRI",
+    "main": "index.js",
+    "type": "module",
+    "files": [
+        "schema",
+        "README.md"
+    ],
+    "publishConfig": {
+        "registry": "https://devops.innovateuk.org/binaries/repository/npm-private/"
+    },
+    "scripts": {
+        "docs": "node ./collateSchemaMarkdown",
+        "predocs": "rimraf ./docs/",
+        "lint": "eslint .",
+        "lint:fix": "npm run lint -- --fix",
+        "prettier": "prettier --check .",
+        "prettier:fix": "prettier --write .",
+        "publish": "npm publish"
+    },
+    "devDependencies": {
+        "@adobe/jsonschema2md": "7.x",
+        "archiver": "^5.3.1",
+        "eslint": "7.x",
+        "fs-extra": "^11.1.1",
+        "mkdirp": "^3.0.1",
+        "readdirp": "3.x",
+        "rimraf": "3.x"
+    },
+    "prettier": {
+        "tabWidth": 4
+    }
+}

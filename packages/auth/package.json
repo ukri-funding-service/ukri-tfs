@@ -1,0 +1,111 @@
+{
+    "name": "@ukri-tfs/auth",
+    "version": "1.0.0",
+    "private": "true",
+    "description": "",
+    "license": "MIT",
+    "author": "UKRI",
+    "main": "dist/lib/index.js",
+    "types": "dist/lib/index.d.ts",
+    "files": [
+        "dist",
+        "README.md"
+    ],
+    "publishConfig": {
+        "registry": "https://devops.innovateuk.org/binaries/repository/npm-private/"
+    },
+    "scripts": {
+        "build": "npm run compile && npm run compile:test",
+        "clean": "rimraf dist docs test_reports coverage .nyc_output .scannerwork ${ESLINT_FILE%/*}",
+        "compile": "tsc --project tsconfig-build.json",
+        "compile:test": "tsc --project tsconfig-test.json",
+        "lint:ci": "mkdirp ${ESLINT_FILE%/*}; npm run lint -- -f ../../node_modules/eslint-bamboo-formatter/reporter.js",
+        "lint": "eslint .",
+        "lint:fix": "npm run lint -- --fix",
+        "prebuild": "npm run clean",
+        "prettier": "prettier --check .",
+        "prettier:fix": "prettier --write .",
+        "preversion": "npm test",
+        "publish": "npm publish",
+        "sonar:ci": "sonar-scanner -Dsonar.login=${SONAR_API_KEY} ${SONAR_EXTRA_ARGS}",
+        "start": "rollup -c rollup.config.ts -w",
+        "test": "cross-env TS_NODE_TRANSPILE_ONLY=true mocha",
+        "test:ci": "mkdirp test_reports && npm run test -- -R mocha-bamboo-reporter --reporter-options output=test_reports/mocha.json",
+        "test:coverage": "mkdirp test_reports && cross-env-shell TS_NODE_PROJECT=tsconfig.json nyc --check-coverage mocha -R mocha-bamboo-reporter --reporter-options output=test_reports/mocha.json",
+        "version:snapshot:ci": "npm-snapshot ${SNAPSHOT_VERSION}"
+    },
+    "mocha": {
+        "recursive": "true",
+        "extension": [
+            "ts"
+        ],
+        "require": [
+            "ts-node/register"
+        ],
+        "spec": "**/*.test.ts",
+        "timeout": "5000"
+    },
+    "nyc": {
+        "all": true,
+        "check-coverage": true,
+        "exclude": [
+            "**/*.js",
+            "test/",
+            "coverage/",
+            "**/*.d.ts",
+            "**/*.test.ts",
+            "**/rollup.config.ts"
+        ],
+        "extension": [
+            ".ts",
+            ".tsx"
+        ],
+        "statements": 89,
+        "branches": 81,
+        "functions": 87,
+        "lines": 88,
+        "reporter": [
+            "text-summary",
+            "lcov"
+        ]
+    },
+    "typings": "dist/lib/index.d.ts",
+    "dependencies": {
+        "@ukri-tfs/configuration": "^1.0.0",
+        "@ukri-tfs/logging": "1.0.0",
+        "@ukri-tfs/tfs-request": "^1.0.0",
+        "form-data": "4.0.0",
+        "http-status-codes": "1.4.0",
+        "isomorphic-unfetch": "3.0.0",
+        "jsonwebtoken": "^9.0.2",
+        "jwk-to-pem": "2.0.x",
+        "node-cache": "5.1.2",
+        "node-fetch": "2.6.7"
+    },
+    "devDependencies": {
+        "@types/chai": "^4.2.12",
+        "@types/chai-as-promised": "^7.1.2",
+        "@types/jsonwebtoken": "^9.0.7",
+        "@types/jwk-to-pem": "^2.0.0",
+        "@types/mocha": "10.x",
+        "@types/node": "^18.19.33",
+        "@types/node-fetch": "^2.6.2",
+        "@types/sinon": "^9.0.0",
+        "@types/sinon-chai": "^3.2.4",
+        "@types/uuid": "^8.3.0",
+        "chai": "^4.2.0",
+        "chai-as-promised": "^7.1.1",
+        "cross-env": "^6.0.3",
+        "eslint": "7.x",
+        "mkdirp": "1.x",
+        "mocha": "10.x",
+        "mocha-bamboo-reporter": "^1.1.2",
+        "npm-snapshot": "^1.0.3",
+        "nyc": "15.x",
+        "rimraf": "^3.0.2",
+        "sinon": "^9.0.2",
+        "sinon-chai": "^3.5.0",
+        "ts-node": "^8.10.2",
+        "typescript": "^4.9.5"
+    }
+}

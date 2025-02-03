@@ -1,0 +1,38 @@
+{
+    "git.ignoreLimitWarning": true,
+    "cucumberautocomplete.steps": [
+        "API/steps/*.js",
+        "UI/helpers/steps/*.js",
+        "node_modules/@ukri-tfs/test-framework/API/steps/*.js",
+        "node_modules/@ukri-tfs/test-framework/UI/steps/**/*.js"
+    ],
+    "cucumberautocomplete.syncfeatures": "features/*feature",
+    "cucumberautocomplete.strictGherkinCompletion": true,
+    "cucumberautocomplete.smartSnippets": true,
+    "cucumberautocomplete.stepsInvariants": true,
+    "cucumberautocomplete.skipDocStringsFormat": true,
+    "cucumberautocomplete.customParameters": [
+        {
+            "parameter": "{ab}",
+            "value": "(a|b)"
+        },
+        {
+            "parameter": "(s)",
+            "value": "(s|)"
+        },
+        {
+            "parameter": "(d)",
+            "value": "(d|)"
+        }
+    ],
+    "cucumberautocomplete.formatConfOverride": {
+        "And": 3,
+        "But": "relative"
+    },
+    "cucumberautocomplete.onTypeFormat": true,
+    "editor.quickSuggestions": {
+        "comments": false,
+        "strings": true,
+        "other": true
+    }
+}

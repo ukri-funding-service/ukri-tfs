@@ -1,0 +1,7 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/award/event/properties/duration.schema.json",
+    "title": "Duration",
+    "description": "The duration of the award",
+    "type": "number"
+}

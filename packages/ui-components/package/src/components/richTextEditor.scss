@@ -1,0 +1,13 @@
+.rte-wrapper textarea.rte-textarea {
+    margin-bottom: 0;
+}
+
+// hide our textarea if javascript is enabled
+.js-enabled textarea.rte-textarea {
+    display: none;
+}
+
+// hide the textarea created by the rich text editor
+.rte-wrapper textarea:nth-child(2) {
+    display: none;
+}

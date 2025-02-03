@@ -1,0 +1,59 @@
+.grouped-checkboxes {
+    border: 4px solid govuk-colour('light-grey');
+    padding: 0;
+    margin: 0 0 30px;
+
+    .grouped-checkboxes__title {
+        width: 100%;
+        background-color: govuk-colour('light-grey');
+        padding: 5px;
+    }
+
+    .govuk-checkboxes--small {
+        .govuk-checkboxes__item {
+            width: 100%;
+            border-bottom: 1px solid govuk-colour('light-grey');
+
+            &:last-child {
+                border-bottom: none;
+            }
+
+            .govuk-checkboxes__label {
+                padding-left: govuk-spacing(4);
+
+                &::after {
+                    margin-left: govuk-spacing(2);
+                }
+
+                &::before {
+                    margin-left: govuk-spacing(2);
+                }
+            }
+        }
+    }
+
+    .show-full-list {
+        background-color: #f3f2f1;
+        width: 100%;
+        padding: 5px;
+    }
+
+    legend {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &.hidden {
+        .govuk-checkboxes--small {
+            display: none;
+        }
+
+        legend {
+            margin-bottom: 0;
+        }
+
+        .show-full-list {
+            display: none;
+        }
+    }
+}

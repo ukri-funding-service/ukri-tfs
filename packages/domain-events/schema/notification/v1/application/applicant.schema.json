@@ -1,0 +1,24 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/notification/event/v1/application/applicant.schema.json",
+    "title": "Applicant",
+    "description": "the applicant associated with the application",
+    "type": "object",
+    "required": ["firstName", "lastName"],
+    "properties": {
+        "firstName": {
+            "description": "the first name of the applicant",
+            "type": "string"
+        },
+        "lastName": {
+            "description": "the last name of the applicant",
+            "type": "string"
+        },
+        "role": {
+            "type": "string"
+        },
+        "email": {
+            "type": "string"
+        }
+    }
+}

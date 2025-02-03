@@ -1,0 +1,45 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/am/event/v2/applicationStatusChangedData.schema.json",
+    "title": "Application status changed data",
+    "description": "The payload for application status change event",
+    "type": "object",
+    "properties": {
+        "application_id": {
+            "description": "The unique id of the application",
+            "type": "number"
+        },
+        "application_status": {
+            "description": "The application status name",
+            "type": "string",
+            "enum": [
+                "Draft",
+                "Submitted",
+                "Not submitted",
+                "Sent to research office",
+                "Return to applicant",
+                "Failed checks",
+                "Passed checks",
+                "Unsuccessful checks",
+                "Awaiting assessment",
+                "Successful",
+                "Unsuccessful"
+            ]
+        },
+        "tags": {
+            "description": "A list of the tags that are currently associated with the application",
+            "type": "array",
+            "items": { "$ref": "tag.schema.json" }
+        },
+        "classifications": {
+            "description": "The classifications that are currently associated with the application",
+            "$ref": "classifications.schema.json"
+        },
+        "updated_at": {
+            "description": "The published date of the Application status change event",
+            "type": "string",
+            "format": "date-time"
+        }
+    },
+    "required": ["application_id", "application_status", "updated_at"]
+}

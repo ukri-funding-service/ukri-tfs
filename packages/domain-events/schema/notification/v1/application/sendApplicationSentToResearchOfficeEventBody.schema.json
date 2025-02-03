@@ -1,0 +1,26 @@
+{
+    "definitions": {},
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/notification/event/v1/application/sendApplicationSentToResearchOfficeEventBody.schema.json",
+    "title": "Send Application sent to research office Notification event payload data",
+    "description": "Data about the application sent to research office.",
+    "type": "object",
+    "required": ["application", "recipients", "templateId", "opportunityCloseTime"],
+    "properties": {
+        "recipients": {
+            "$ref": "../common/recipients.schema.json"
+        },
+        "application": {
+            "$ref": "application.schema.json"
+        },
+        "templateId": {
+            "$ref": "applicationTemplateId.schema.json"
+        },
+        "applicant": {
+            "$ref": "applicant.schema.json"
+        },
+        "opportunityCloseTime": {
+            "type": "string"
+        }
+    }
+}

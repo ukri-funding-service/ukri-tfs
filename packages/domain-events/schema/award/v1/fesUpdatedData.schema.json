@@ -1,0 +1,27 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/award/event/v1/fesUpdatedData.schema.json",
+    "title": "fES Updated",
+    "description": "Data in the event emitted when a final expenditure statement is updated",
+    "type": "object",
+    "required": ["tfsAwardReference", "fesState", "actionedBy"],
+    "additionalProperties": false,
+    "properties": {
+        "tfsAwardReference": {
+            "$ref": "../properties/tfsAwardReference.schema.json"
+        },
+        "fesState": {
+            "description": "The new state of the final expenditure statement",
+            "type": "string",
+            "enum": ["fES issued", "fES submitted", "fES rejected and re-issued", "fES accepted"]
+        },
+        "reason": {
+            "description": "The reason for fES being updated (optional)",
+            "type": "string"
+        },
+        "actionedBy": {
+            "description": "The tfsUserId of the user or system user who triggered the update",
+            "type": "string"
+        }
+    }
+}

@@ -1,0 +1,29 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/om/event/v1/expertReviewWorkflow.schema.json",
+    "title": "Expert Review Workflow",
+    "description": "",
+    "type": "object",
+    "properties": {
+        "workflow_component_id": {
+            "description": "The workflow component Id",
+            "type": "number"
+        },
+        "deadline": {
+            "description": "The review deadline",
+            "type": "string"
+        },
+        "word_count": {
+            "description": "The permitted word count for the expert review submission",
+            "type": "number"
+        },
+        "guidelines": {
+            "description": "The guidelines text",
+            "type": "string"
+        },
+        "sequence": {
+            "description": "The relative index of the workflow item within the group",
+            "type": "number"
+        }
+    }
+}

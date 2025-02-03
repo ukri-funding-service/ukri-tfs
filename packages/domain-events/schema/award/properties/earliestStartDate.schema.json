@@ -1,0 +1,8 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/award/event/properties/earliestStartDate.schema.json",
+    "title": "Earliest Start Date",
+    "description": "The earliest start date of the award",
+    "type": "string",
+    "format": "date-time"
+}

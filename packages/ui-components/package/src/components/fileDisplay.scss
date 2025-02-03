@@ -1,0 +1,97 @@
+// Importing govuk/all includes all govuk CSS into each file that its imported into.
+// This causes a large amount of duplicated CSS. If govuk functions are required, only import govuk/base
+@import '~govuk-frontend/govuk/base';
+
+$module: 'files';
+.#{$module} {
+    margin-top: govuk-spacing(0);
+    margin-bottom: govuk-spacing(2);
+    position: relative;
+    @include govuk-font($size: 19);
+
+    &__item {
+        background-color: govuk-colour('white');
+        border: 2px solid govuk-colour('mid-grey');
+        margin-bottom: 10px;
+        padding: 20px;
+        min-height: 68px;
+        @include clearfix;
+
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+    }
+
+    &__name {
+        float: left;
+        width: 60%;
+
+        @include touch {
+            float: none;
+            width: 100%;
+        }
+
+        form input[type='submit'] {
+            width: 100%;
+            white-space: normal;
+            word-wrap: break-word;
+            text-align: justify;
+        }
+    }
+
+    &__meta {
+        float: right;
+        width: 40%;
+        text-align: right;
+
+        @include touch {
+            float: none;
+            width: 100%;
+            text-align: left;
+            margin-top: 20px;
+        }
+    }
+
+    &__activity {
+        clear: both;
+        margin: 40px 0 0 0;
+        background: linear-gradient(
+            45deg,
+            rgba(191, 193, 195, 1) 0%,
+            rgba(191, 193, 195, 1) 33%,
+            rgba(222, 224, 226, 1) 33.1%,
+            rgba(222, 224, 226, 1) 33.1%,
+            rgba(222, 224, 226, 1) 66%,
+            rgba(191, 193, 195, 1) 67%,
+            rgba(191, 193, 195, 1) 91%
+        );
+        width: 100%;
+        height: 20px;
+        background-size: 40px 20px;
+        animation: load 1s linear infinite;
+    }
+    @keyframes load {
+        0% {
+            background-position-x: 0;
+        }
+        100% {
+            background-position-x: 40px;
+        }
+    }
+
+    &__size,
+    &__action {
+        display: inline-block;
+    }
+
+    &__action {
+        margin-left: 20px;
+    }
+}
+
+.file-upload {
+    &--error {
+        padding-left: 20px;
+        border-left: 5px solid govuk-colour('red');
+    }
+}

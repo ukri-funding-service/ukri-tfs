@@ -1,0 +1,23 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/award/event/v2/returnedForAmendmentsData.schema.json",
+    "title": "Returned For Amendments",
+    "description": "Data in the event emitted when an internal user has returned an award for amendments",
+    "type": "object",
+    "required": ["tfsAwardReference", "submittedBy", "timeSubmitted", "publishToGatewayToResearch"],
+    "additionalProperties": false,
+    "properties": {
+        "tfsAwardReference": {
+            "$ref": "../properties/tfsAwardReference.schema.json"
+        },
+        "submittedBy": {
+            "$ref": "../properties/submittedBy.schema.json"
+        },
+        "timeSubmitted": {
+            "$ref": "../properties/timeSubmitted.schema.json"
+        },
+        "publishToGatewayToResearch": {
+            "$ref": "../properties/publishToGatewayToResearch.schema.json"
+        }
+    }
+}

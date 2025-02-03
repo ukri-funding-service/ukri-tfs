@@ -1,0 +1,19 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/notification/event/v1/common/recipientByTfsId.schema.json",
+    "title": "Notification recipient by tfs id",
+    "description": "The user personId will be used to get the notification address",
+    "type": "object",
+    "required": ["tfsId", "type"],
+    "properties": {
+        "tfsId": {
+            "description": "The tfs-id of the recipient",
+            "type": "string"
+        },
+        "type": {
+            "description": "type identifier",
+            "type": "string",
+            "enum": ["RecipientByTfsId"]
+        }
+    }
+}

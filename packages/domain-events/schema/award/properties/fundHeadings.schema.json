@@ -1,0 +1,65 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/award/event/properties/fundHeadings.schema.json",
+    "title": "Fund Headings",
+    "description": "The cost category fund headings for the award",
+    "type": "array",
+    "items": {
+        "type": "object",
+        "properties": {
+            "fundHeadings": {
+                "description": "Cost category fund headings for the award",
+                "type": "object",
+                "required": [
+                    "costCategory",
+                    "fundHeading",
+                    "fullCost",
+                    "fecPercentage",
+                    "fecIndexation",
+                    "totalFec",
+                    "ukriContribution",
+                    "ukriIndexation",
+                    "total"
+                ],
+                "properties": {
+                    "costCategory": {
+                        "type": "string",
+                        "description": "cost category of the fund heading"
+                    },
+                    "fundHeading": {
+                        "type": "string",
+                        "description": "fund heading name"
+                    },
+                    "fullCost": {
+                        "type": "number",
+                        "description": "fund heading full cost"
+                    },
+                    "fecPercentage": {
+                        "type": "number",
+                        "description": "fund heading fec percentage"
+                    },
+                    "fecIndexation": {
+                        "type": "number",
+                        "description": "fund heading fec indexation"
+                    },
+                    "totalFec": {
+                        "type": "number",
+                        "description": "fund heading total fec percentage"
+                    },
+                    "ukriContribution": {
+                        "type": "number",
+                        "description": "fund heading ukri contribution"
+                    },
+                    "ukriIndexation": {
+                        "type": "number",
+                        "description": "fund heading ukri indexation"
+                    },
+                    "total": {
+                        "type": "number",
+                        "description": "fund heading total"
+                    }
+                }
+            }
+        }
+    }
+}

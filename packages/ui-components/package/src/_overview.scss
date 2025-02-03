@@ -1,0 +1,100 @@
+$module: 'overview';
+.#{$module} {
+    &-items {
+        background-color: ufs-colour('ukri-blue');
+        padding: 10px 10px 10px 10px;
+        margin-bottom: 30px;
+        &__heading {
+            color: govuk-colour('white');
+            margin-bottom: 0;
+        }
+        & > .columns {
+            margin-bottom: 0;
+        }
+    }
+    &-item {
+        padding: 10px;
+        margin-bottom: 10px;
+        background-color: govuk-colour('white');
+        &--inactive {
+            background-color: govuk-colour('light-grey');
+        }
+        &__title {
+            @include govuk-font($size: 19, $weight: bold);
+        }
+        &__meta {
+            text-align: center;
+            height: 100%;
+            @include touch {
+                height: auto;
+                text-align: left;
+            }
+            @include mobile {
+                br {
+                    display: none;
+                }
+            }
+            a {
+                font-weight: 400;
+            }
+            &--right {
+                border-left: 1px dotted govuk-colour('mid-grey');
+                padding-left: 6px;
+                @include touch {
+                    border: none;
+                    padding-left: 0;
+                }
+            }
+            &--success {
+                color: govuk-colour('green') !important;
+            }
+            &--danger,
+            &--danger * {
+                color: govuk-colour('red') !important;
+            }
+            &-list {
+                margin-top: 4px;
+                @include govuk-font($size: 16);
+            }
+            &-item {
+                margin-bottom: 4px;
+            }
+        }
+    }
+    &-items--plain {
+        background-color: govuk-colour('white');
+        padding: 0;
+        margin-bottom: 30px;
+        .#{$module}-item {
+            border-bottom: 1px solid govuk-colour('mid-grey');
+            margin-bottom: 0;
+            &:first-of-type {
+                border-top: 1px solid govuk-colour('mid-grey');
+            }
+        }
+    }
+}
+.u-align-setup-vertical {
+    display: table;
+    height: 100%;
+}
+.u-align-setup-vertical.u-align-center {
+    text-align: center;
+    width: 100%;
+    @include touch {
+        width: auto;
+        text-align: left;
+    }
+}
+.u-align-cell {
+    display: table-cell;
+    vertical-align: middle;
+
+    &--bottom {
+        vertical-align: bottom;
+    }
+}
+
+.overview-item__meta--success strong {
+    color: govuk-colour('green') !important;
+}

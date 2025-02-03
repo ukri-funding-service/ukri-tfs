@@ -1,0 +1,14 @@
+.tfs-tabs {
+    width: 100%;
+    position: static;
+    background-color: white;
+    margin-top: 0px;
+}
+
+.tabs-sticky {
+    z-index: 99;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    max-width: 1344px;
+}

@@ -1,0 +1,27 @@
+# Terraform pre-commit hooks configuration
+files: \.tf$
+repos:
+  # Newrelic stack require providers to pass validate test
+  - repo: local
+    hooks:
+      - id: terraform init newrelic stack
+        name: terraform init newrelic stack
+        require_serial: true
+        entry: iac/terraform_stacks/tfs/70-newrelic/deploy.sh infradev-1 pre-commit
+        language: script
+        files: \.tf(vars)?$
+        pass_filenames: false
+  - repo: https://github.com/antonbabenko/pre-commit-terraform
+    rev: v1.92.1
+    hooks:
+      - id: terraform_fmt
+      - id: terraform_validate
+        args:
+          - --hook-config=--retry-once-with-cleanup=true # Boolean. true or false
+      - id: terraform_trivy
+        files: ^iac/
+        args:
+          - --args=--severity=CRITICAL,HIGH
+          - --args=--skip-dirs="**/holding-page" # Trivy crashs due to https://github.com/aquasecurity/trivy/discussions/8091
+      # - id: terraform_docs
+      # - id: terraform_checkov

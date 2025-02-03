@@ -1,0 +1,40 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/om/event/v1/applicationWorkflow.schema.json",
+    "title": "Application Workflow",
+    "description": "An Opportunity's Application Workflow",
+    "type": "object",
+    "properties": {
+        "workflow_id": {
+            "description": "The Workflow Id",
+            "type": "number"
+        },
+        "open_date_time": {
+            "description": "The Application workflow open date",
+            "type": "string"
+        },
+        "close_date_time": {
+            "description": "The Application workflow closed date",
+            "type": "string"
+        },
+        "application_details": {
+            "$ref": "applicationDetails.schema.json"
+        },
+        "post_submission": {
+            "$ref": "postSubmissionDetails.schema.json"
+        },
+        "allowed_application_roles": {
+            "$ref": "allowedApplicationRoles.schema.json"
+        },
+        "application_resources_and_costs": {
+            "$ref": "applicationResourcesAndCosts.schema.json"
+        },
+        "custom_questions": {
+            "type": "array",
+            "description": "Array of Custom questions linked to Opportunity",
+            "items": {
+                "$ref": "customQuestion.schema.json"
+            }
+        }
+    }
+}

@@ -1,0 +1,23 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/notification/event/v1/common/recipientByOrganisationGroupId.schema.json",
+    "title": "Notification recipient by org group id",
+    "description": "The recipient identified by organisation group-id",
+    "type": "object",
+    "required": ["organisationId", "groupId", "type"],
+    "properties": {
+        "organisationId": {
+            "description": "id of the organisation to group",
+            "type": "string"
+        },
+        "groupId": {
+            "description": "id of group in organisation",
+            "type": "string"
+        },
+        "type": {
+            "description": "type identifier",
+            "type": "string",
+            "enum": ["RecipientsByOrganisationGroupId"]
+        }
+    }
+}

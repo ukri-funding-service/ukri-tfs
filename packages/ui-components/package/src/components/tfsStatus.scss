@@ -1,0 +1,46 @@
+.tfs-status {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    &--info {
+        color: govuk-colour('blue');
+    }
+
+    &--cancelled {
+        color: govuk-colour('mid-grey');
+    }
+
+    &--success,
+    &--cross {
+        &:before {
+            content: '';
+            margin-right: 10px;
+            background-repeat: no-repeat;
+        }
+    }
+
+    &--success {
+        border-color: govuk-colour('green');
+        color: govuk-colour('green');
+
+        &:before {
+            background-image: url(/images/ufs/tick.svg);
+            width: 18px;
+            height: 14px;
+            background-size: 38px 28px;
+            background-repeat: no-repeat;
+            top: 16px;
+        }
+    }
+
+    &--cross {
+        border-color: govuk-colour('red');
+        color: govuk-colour('red');
+
+        &:before {
+            content: '\274C';
+            font-size: 12px;
+        }
+    }
+}

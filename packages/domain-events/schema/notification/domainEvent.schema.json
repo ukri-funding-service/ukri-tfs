@@ -1,0 +1,8 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/notification/event/domainEvent.schema.json",
+    "title": "Domain Event",
+    "description": "An Event emitted by multiple services in order to send an notification. This schema exists to define the current valid event schema versions supported (note the prefix of the referenced schemas).",
+    "type": "object",
+    "oneOf": [{ "$ref": "v1/domainEvent.schema.json" }]
+}

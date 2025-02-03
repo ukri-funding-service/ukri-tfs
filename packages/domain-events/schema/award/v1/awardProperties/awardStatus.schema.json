@@ -1,0 +1,18 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/award/event/v1/awardProperties/awardStatus.schema.json",
+    "title": "Award Status",
+    "description": "The status of the award",
+    "type": "string",
+    "enum": [
+        "Draft",
+        "Awaiting authorisation",
+        "Awaiting acceptance",
+        "Announced",
+        "Active",
+        "Suspended",
+        "Finished",
+        "Closed",
+        "Transfer initiated"
+    ]
+}

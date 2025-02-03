@@ -1,0 +1,14 @@
+{
+    "extends": "../../tsconfig.base.json",
+    "compilerOptions": {
+        "jsx": "react",
+        "moduleResolution": "node",
+        "lib": ["ES2020", "DOM"],
+        "allowSyntheticDefaultImports": true,
+        "noEmit": true,
+        "noImplicitAny": true,
+        "declarationDir": "dist/lib",
+        "outDir": "dist/lib",
+    },
+    "include": ["src", "test"]
+}

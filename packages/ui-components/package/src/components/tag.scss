@@ -1,0 +1,42 @@
+.govuk-tag {
+    vertical-align: middle;
+    padding-top: 6px;
+    padding-bottom: 5px;
+
+    &--solid-red {
+        background-color: $govuk-error-colour;
+    }
+
+    &--solid-yellow {
+        background-color: govuk-colour('yellow');
+    }
+
+    &--solid-green {
+        background-color: govuk-colour('green');
+    }
+
+    &--solid-blue {
+        background-color: govuk-colour('blue');
+    }
+
+    &--light-blue {
+        color: #0c2d4a;
+        background-color: #e8f1f8;
+    }
+
+    &--solid-purple {
+        background-color: govuk-colour('purple');
+    }
+
+    &--solid-pink {
+        background-color: govuk-colour('pink');
+    }
+
+    &--solid-orange {
+        background-color: govuk-colour('orange');
+    }
+
+    &--solid-turquoise {
+        background-color: govuk-colour('turquoise');
+    }
+}

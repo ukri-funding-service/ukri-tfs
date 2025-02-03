@@ -1,0 +1,104 @@
+{
+    "scripts": [
+        {
+            "name": "test:API:component",
+            "description": "run the component test",
+            "command": "node %cucumber-js% --tags @component %testApiFeatures% -r %frameworkApiSteps% -r %testApiSteps% -r %frameworkApiHooks% -f json:%testApiOutputReports%/cucumber-report.json -f html:%testApiOutputReports%/cucumber-report.html"
+        },
+        {
+            "name": "test:API:integration",
+            "description": "run the integration test",
+            "command": "node %cucumber-js% --tags @integration %testApiFeatures% -r %frameworkApiSteps% -r %testApiSteps% -r %frameworkApiHooks%  -f json:%testApiOutputReports%/cucumber-report.json -f html:%testApiOutputReports%/cucumber-report.html"
+        },
+        {
+            "name": "test:API:all",
+            "description": "run all tests",
+            "command": "node %cucumber-js% %testApiFeatures% -r %frameworkApiSteps% -r %testApiSteps% -r %frameworkApiHooks%  -f json:%testApiOutputReports%/cucumber-report.json -f html:%testApiOutputReports%/cucumber-report.html"
+        },
+        {
+            "name": "test:API:tag",
+            "description": "Run test specifying tag to run",
+            "command": "node %cucumber-js% --tags $tag %testApiFeatures% -r %frameworkApiSteps% -r %testApiSteps% -r %frameworkApiHooks% -f json:%testApiOutputReports%/cucumber-report.json -f html:%testApiOutputReports%/cucumber-report.html"
+        },
+        {
+            "name": "test:API:report",
+            "description": "Build the HTML report",
+            "command": "echo 'disabled, should be doing this automatically'"
+        },
+        {
+            "name": "test:API:report:junit",
+            "description": "Build the JUnit report",
+            "command": "node %frameworkScripts%/APIcreateJunit.js"
+        },
+        {
+            "name": "test:API:debug",
+            "description": "debug the component test",
+            "command": "node --nolazy --inspect-brk=9898 %cucumber-js% %testApiFeatures% -r %frameworkApiSteps% -r %testApiSteps% -r %frameworkApiHooks% -r %testApiHooks%"
+        },
+        {
+            "name": "test:performance",
+            "description": "Build the report",
+            "command": "sh %frameworkScripts%/runPerformance.sh"
+        },
+        {
+            "name": "config:apitest",
+            "description": "configure test framework",
+            "command": "sh %frameworkScripts%/installAPI.sh"
+        },
+        {
+            "name": "config:uitest",
+            "description": "configure test framework",
+            "command": "sh %frameworkScripts%/installUI.sh"
+        },
+        {
+            "name": "config:perftest",
+            "description": "configure test framework",
+            "command": "sh %frameworkScripts%/installPerf.sh"
+        },
+        {
+            "name": "test:UI",
+            "description": "run test framework",
+            "command": "%wdio% %testUIConfig%/wdio.CHROME.conf.js"
+        },
+        {
+            "name": "test:UI:headless",
+            "description": "run test framework",
+            "command": "%wdio% %testUIConfig%/wdio.CHROMEHEADLESS.conf.js"
+        },
+        {
+            "name": "test:UI:chromenojs",
+            "description": "run test framework",
+            "command": "%wdio% %testUIConfig%/wdio.CHROMEnojs.conf.js"
+        },
+        {
+            "name": "test:UI:firefox",
+            "description": "run test framework",
+            "command": "%wdio% %testUIConfig%/wdio.FIREFOX.conf.js"
+        },
+        {
+            "name": "test:UI:GRID",
+            "description": "run test framework",
+            "command": "%wdio% %testUIConfig%/wdio.GRID.conf.js"
+        },
+        {
+            "name": "test:UI:GRIDnojs",
+            "description": "run test framework",
+            "command": "%wdio% %testUIConfig%/wdio.GRIDnojs.conf.js"
+        },
+        {
+            "name": "test:UI:sauce",
+            "description": "run test framework",
+            "command": "%wdio% %testUIConfig%/wdio.SAUCE.conf.js"
+        },
+        {
+            "name": "test:UI:tag",
+            "description": "Run test specifying tag to run",
+            "command": "sh %frameworkScripts%/runTagTests.UI.sh"
+        },
+        {
+            "name": "test:UI:report",
+            "description": "Build the report",
+            "command": "allure generate --clean -o ./UI/output/reports/allure/Output ./UI/output/reports/allure"
+        }
+    ]
+}

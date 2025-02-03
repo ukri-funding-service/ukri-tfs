@@ -1,0 +1,146 @@
+{
+    "name": "@ukri-tfs/frontend-utils",
+    "version": "1.1.0",
+    "private": "true",
+    "description": "UKRI TFS Frontend Utilities Module",
+    "license": "MIT",
+    "author": "UKRI",
+    "main": "dist/lib/index.js",
+    "types": "dist/lib/index.d.ts",
+    "files": [
+        "dist",
+        "README.md"
+    ],
+    "config": {
+        "commitizen": {
+            "path": "node_modules/cz-conventional-changelog"
+        }
+    },
+    "publishConfig": {
+        "registry": "https://devops.innovateuk.org/binaries/repository/npm-private/"
+    },
+    "scripts": {
+        "build": "npm run compile && npm run compile:test",
+        "clean": "rimraf dist test_reports coverage .nyc_output .scannerwork ${ESLINT_FILE%/*}",
+        "commit": "git-cz",
+        "compile": "tsc --project tsconfig-build.json",
+        "compile:test": "tsc --project tsconfig-test.json",
+        "lint:ci": "mkdirp ${ESLINT_FILE%/*}; npm run lint -- -f ../../node_modules/eslint-bamboo-formatter/reporter.js",
+        "lint": "eslint . --max-warnings=7",
+        "lint:fix": "npm run lint -- --fix",
+        "prebuild": "npm run clean",
+        "prettier": "prettier --check .",
+        "prettier:fix": "prettier --write .",
+        "preversion": "npm test",
+        "publish": "npm publish",
+        "sonar:ci": "sonar-scanner -Dsonar.login=${SONAR_API_KEY} ${SONAR_EXTRA_ARGS}",
+        "test:ci": "mkdirp test_reports && npm run test -- -R mocha-bamboo-reporter --reporter-options output=test_reports/mocha.json",
+        "test:coverage": "mkdirp test_reports && cross-env-shell TS_NODE_PROJECT=tsconfig-test.json nyc --check-coverage mocha --exit -R mocha-bamboo-reporter --reporter-options output=test_reports/mocha.json",
+        "test": "cross-env TS_NODE_TRANSPILE_ONLY=true mocha --exit",
+        "version:snapshot:ci": "npm-snapshot ${SNAPSHOT_VERSION}"
+    },
+    "lint-staged": {
+        "*.{ts,tsx,js,jsx,mjs,cjs}": [
+            "eslint --fix --max-warnings=7",
+            "prettier --write"
+        ],
+        "*.{json,md}": [
+            "prettier --write"
+        ]
+    },
+    "mocha": {
+        "recursive": "true",
+        "extension": [
+            "ts"
+        ],
+        "require": [
+            "ts-node/register",
+            "jsdom-global/register"
+        ],
+        "spec": "test/**/*.test.ts*",
+        "timeout": "5000"
+    },
+    "nyc": {
+        "all": true,
+        "branches": 80,
+        "check-coverage": true,
+        "exclude": [
+            "**/*.js",
+            "test/",
+            "coverage/",
+            "dist/",
+            "**/*.d.ts",
+            "**/rollup.config.ts"
+        ],
+        "extension": [
+            ".ts",
+            ".tsx"
+        ],
+        "functions": 90,
+        "lines": 90,
+        "reporter": [
+            "text-summary",
+            "lcov"
+        ],
+        "statements": 90
+    },
+    "typings": "dist/lib/index.d.ts",
+    "dependencies": {
+        "@ukri-tfs/exceptions": "^1.0.0",
+        "@ukri-tfs/auth": "^1.0.0",
+        "@ukri-tfs/http": "^1.0.0",
+        "@ukri-tfs/logging": "^1.0.0",
+        "@ukri-tfs/permissions": "^1.0.0",
+        "@ukri-tfs/tfs-request": "^1.0.0",
+        "@ukri-tfs/validation": "^1.0.0",
+        "formidable": "1.2.2",
+        "http-status-codes": "1.4.0",
+        "next": "^12.3.4",
+        "node-fetch": "2.6.7",
+        "uuid": "8.3.2"
+    },
+    "peerDependencies": {
+        "react": "17.x",
+        "react-dom": "17.x"
+    },
+    "devDependencies": {
+        "@testing-library/react": "^12.1.5",
+        "@types/chai": "4.2.7",
+        "@types/chai-as-promised": "7.1.2",
+        "@types/formidable": "1.2.4",
+        "@types/jsdom": "16.2.x",
+        "@types/mocha": "10.x",
+        "@types/node": "^18.19.33",
+        "@types/node-fetch": "2.x",
+        "@types/react": "17.0.46",
+        "@types/react-dom": "17.x",
+        "@types/sinon": "9.0.4",
+        "@types/sinon-chai": "3.2.5",
+        "@types/uuid": "8.3.4",
+        "chai": "4.2.0",
+        "chai-as-promised": "7.1.1",
+        "cross-env": "6.0.3",
+        "eslint": "7.x",
+        "eslint-config-next": "^12.3.4",
+        "jsdom": "19.0.x",
+        "jsdom-global": "3.0.2",
+        "mkdirp": "1.x",
+        "mocha": "10.x",
+        "mocha-bamboo-reporter": "1.1.2",
+        "npm-snapshot": "1.0.3",
+        "nyc": "15.0.1",
+        "react": "17.x",
+        "react-dom": "17.x",
+        "rimraf": "3.0.2",
+        "sinon": "9.0.2",
+        "sinon-chai": "3.5.0",
+        "sonar-scanner": "3.1.0",
+        "ts-node": "8.4.1",
+        "typescript": "^4.9.5"
+    },
+    "overrides": {
+        "ip": {
+            ".": "^2.0.1"
+        }
+    }
+}

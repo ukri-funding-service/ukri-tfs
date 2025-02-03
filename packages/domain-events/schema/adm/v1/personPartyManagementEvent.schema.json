@@ -1,0 +1,15 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/adm/event/v1/personPartyManagementEvent.schema.json",
+    "title": "Person/Party Management Event",
+    "description": "An Event emitted by the Person/Party Management service",
+    "type": "object",
+    "oneOf": [
+        { "$ref": "ediDataCreatedEvent.schema.json" },
+        { "$ref": "personCreatedEvent.schema.json" },
+        { "$ref": "userCreatedEvent.schema.json" },
+        { "$ref": "contactInviteCreatedEvent.schema.json" },
+        { "$ref": "groupUserAddedEvent.schema.json" },
+        { "$ref": "groupUserRemovedEvent.schema.json" }
+    ]
+}

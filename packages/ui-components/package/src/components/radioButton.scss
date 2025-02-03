@@ -1,0 +1,19 @@
+input[type='radio'].govuk-radios__input ~ div.govuk-radios__conditional {
+    display: none;
+}
+
+input[type='radio'].govuk-radios__input:checked ~ div.govuk-radios__conditional {
+    display: block;
+}
+
+.govuk-radios__item:has(> input[type='radio'].govuk-radios__input) {
+    & + div.govuk-radios__conditional {
+        display: none;
+    }
+}
+
+.govuk-radios__item:has(> input[type='radio'].govuk-radios__input:checked) {
+    & + div.govuk-radios__conditional {
+        display: block;
+    }
+}

@@ -1,0 +1,23 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/award/event/v1/awardDeletedData.schema.json",
+    "title": "Award Deleted",
+    "description": "Data in the event emitted when an award is deleted",
+    "type": "object",
+    "required": ["tfsAwardReference", "awardStatus", "updatedAt", "updatedBy"],
+    "additionalProperties": false,
+    "properties": {
+        "awardStatus": {
+            "$ref": "awardProperties/awardStatus.schema.json"
+        },
+        "tfsAwardReference": {
+            "$ref": "awardProperties/tfsAwardReference.schema.json"
+        },
+        "updatedAt": {
+            "$ref": "awardProperties/statusUpdatedAt.schema.json"
+        },
+        "updatedBy": {
+            "$ref": "awardProperties/statusUpdatedBy.schema.json"
+        }
+    }
+}

@@ -1,0 +1,94 @@
+{
+    "name": "@ukri-tfs/strings",
+    "version": "1.0.0",
+    "private": true,
+    "description": "UKRI TFS Strings Management Library",
+    "license": "MIT",
+    "author": "UKRI",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "files": [
+        "dist",
+        "README.md"
+    ],
+    "publishConfig": {
+        "registry": "https://devops.innovateuk.org/binaries/repository/npm-private/"
+    },
+    "scripts": {
+        "build": "npm run compile && npm run compile:test",
+        "compile": "tsc --project tsconfig-build.json",
+        "compile:test": "tsc --project tsconfig-test.json",
+        "clean": "rimraf dist test_reports coverage .nyc_output .scannerwork ${ESLINT_FILE%/*}",
+        "lint": "eslint .",
+        "lint:ci": "mkdirp ${ESLINT_FILE%/*}; npm run lint -- -f ../../node_modules/eslint-bamboo-formatter/reporter.js || true",
+        "prebuild": "npm run clean",
+        "prettier": "prettier --check .",
+        "prettier:fix": "prettier --write .",
+        "preversion": "npm test",
+        "publish": "npm publish",
+        "sonar:ci": "sonar-scanner -Dsonar.login=${SONAR_API_KEY}",
+        "test": "cross-env TS_NODE_PROJECT=tsconfig-test.json TS_NODE_TRANSPILE_ONLY=true mocha",
+        "test:ci": "mkdirp test_reports && npm run test -- -R mocha-bamboo-reporter --reporter-options output=test_reports/mocha.json",
+        "test:coverage": "mkdirp test_reports && nyc cross-env-shell TS_NODE_PROJECT=tsconfig-test.json TS_NODE_TRANSPILE_ONLY=true mocha -R mocha-bamboo-reporter --reporter-options output=test_reports/mocha.json",
+        "version:snapshot:ci": "npm-snapshot ${SNAPSHOT_VERSION}"
+    },
+    "mocha": {
+        "recursive": "true",
+        "extension": [
+            "ts"
+        ],
+        "require": [
+            "ts-node/register",
+            "source-map-support/register"
+        ],
+        "spec": "**/*.test.ts",
+        "timeout": "5000"
+    },
+    "nyc": {
+        "all": true,
+        "branches": 75,
+        "check-coverage": true,
+        "exclude": [
+            "**/*.js",
+            "test/",
+            "coverage/",
+            "**/*.d.ts"
+        ],
+        "extension": [
+            ".ts",
+            ".tsx"
+        ],
+        "functions": 90,
+        "lines": 82,
+        "reporter": [
+            "text-summary",
+            "lcov"
+        ],
+        "statements": 82
+    },
+    "typings": "dist/index.d.ts",
+    "devDependencies": {
+        "@types/chai": "4.x",
+        "@types/chai-as-promised": "7.x",
+        "@types/mocha": "10.x",
+        "@types/node": "^18.19.33",
+        "@types/sinon": "9.x",
+        "@types/sinon-chai": "3.x",
+        "chai": "4.x",
+        "chai-as-promised": "7.x",
+        "cross-env": "^6.0.3",
+        "eslint": "7.x",
+        "lodash.camelcase": "^4.3.0",
+        "mkdirp": "1.x",
+        "mocha": "10.x",
+        "mocha-bamboo-reporter": "^1.1.2",
+        "npm-snapshot": "^1.0.3",
+        "nyc": "15.x",
+        "rimraf": "^3.0.2",
+        "sinon": "9.x",
+        "sinon-chai": "3.x",
+        "source-map-support": "0.5.x",
+        "ts-node": "10.x",
+        "typescript": "^4.9.5"
+    }
+}

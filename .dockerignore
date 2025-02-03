@@ -1,0 +1,28 @@
+**/node_modules
+**/dist
+# allow precompiled modules
+!packages/bpk-components/dist
+
+**/.terragrunt-cache
+
+# TSC build files
+tsconfig.build.tsbuildinfo
+
+# Markdown files
+**/*.md
+**/md/
+
+**/packaged-lambdas
+**/test_reports
+**/coverage
+**/allure-report
+
+# Environment files
+**/.env
+# Allow env file for E2E tests only
+!services/end-to-end-tests/.env
+
+# Docker / compose files
+**/*Dockerfile*
+**/docker-.*
+**/*compose*.(yml|yaml)

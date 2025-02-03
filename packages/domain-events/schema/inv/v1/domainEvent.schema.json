@@ -1,0 +1,12 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/inv/event/v1/domainEvent.schema.json",
+    "title": "Domain Event",
+    "description": "An Event emitted by the Invite service",
+    "type": "object",
+    "oneOf": [
+        { "$ref": "reviewerInviteSentEvent.schema.json" },
+        { "$ref": "reviewerInviteDeclineEvent.schema.json" },
+        { "$ref": "cancelInviteEvent.schema.json" }
+    ]
+}

@@ -1,0 +1,28 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/panel/event/v1/meetingDetails.schema.json",
+    "title": "Meeting details",
+    "description": "The metadata and times of all meetings for this panel",
+    "type": "object",
+    "required": ["meetings"],
+    "properties": {
+        "meetings": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "start": {
+                        "description": "A panel meeting start date and time",
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "end": {
+                        "description": "A panel meeting end date and time",
+                        "type": "string",
+                        "format": "date-time"
+                    }
+                }
+            }
+        }
+    }
+}

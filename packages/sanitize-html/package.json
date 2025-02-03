@@ -1,0 +1,86 @@
+{
+    "name": "@ukri-tfs/sanitize-html",
+    "version": "1.27.3",
+    "private": true,
+    "description": "Clean up user-submitted HTML, preserving whitelisted elements and whitelisted attributes on a per-element basis",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/apostrophecms/sanitize-html.git"
+    },
+    "author": "Apostrophe Technologies, Inc.",
+    "keywords": [
+        "html",
+        "parser",
+        "sanitizer",
+        "apostrophecms"
+    ],
+    "main": "./src/index.js",
+    "types": "./src/index.d.ts",
+    "files": [
+        "src",
+        "README.md"
+    ],
+    "publishConfig": {
+        "registry": "https://devops.innovateuk.org/binaries/repository/npm-private/"
+    },
+    "scripts": {
+        "test": "TS_NODE_TRANSPILE_ONLY=true mocha ./test/sanitizeHtml.test.js",
+        "test:coverage": "mkdirp test_reports && nyc --check-coverage mocha -R mocha-bamboo-reporter --reporter-options output=test_reports/mocha.json",
+        "prettier": "prettier --check '*.{j,t}s' --check '{src,test}/**/*.{j,t}s'",
+        "prettier:fix": "prettier --write '*.{j,t}s' --write '{src,test}/**/*.{j,t}s'",
+        "preversion": "npm test",
+        "publish": "npm publish"
+    },
+    "mocha": {
+        "recursive": "true",
+        "extension": [
+            "ts"
+        ],
+        "require": [
+            "ts-node/register"
+        ],
+        "spec": "./test/**.js",
+        "timeout": "5000"
+    },
+    "nyc": {
+        "all": true,
+        "check-coverage": true,
+        "statements": 91,
+        "branches": 90,
+        "functions": 97,
+        "lines": 91,
+        "exclude": [
+            "test/",
+            "coverage/",
+            "**/*.d.ts",
+            "**/*.test.ts"
+        ],
+        "extension": [
+            ".ts",
+            ".tsx"
+        ],
+        "reporter": [
+            "text-summary",
+            "lcov"
+        ]
+    },
+    "sideEffects": false,
+    "typings": "./src/index.d.js",
+    "dependencies": {
+        "htmlparser2": "4.1.0",
+        "lodash": "^4.17.21",
+        "parse-srcset": "1.0.2",
+        "postcss": "^8.4.47"
+    },
+    "devDependencies": {
+        "@types/node": "^18.19.33",
+        "cross-env": "6.0.3",
+        "mocha": "10.x",
+        "mocha-bamboo-reporter": "1.1.2",
+        "nyc": "15.x",
+        "sinon": "9.0.2",
+        "ts-node": "^10.9.2",
+        "typescript": "^5.5.3"
+    }
+}

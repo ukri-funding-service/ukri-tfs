@@ -1,0 +1,8 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/erm/event/domainEvent.schema.json",
+    "title": "Expert Review Domain Event Root",
+    "description": "An Event emitted by the Expert Review Management service.  This schema exists to define the current valid event schema versions supported (note the prefix of the referenced schemas).",
+    "type": "object",
+    "oneOf": [{ "$ref": "v1/domainEvent.schema.json" }]
+}

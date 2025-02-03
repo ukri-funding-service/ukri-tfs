@@ -1,0 +1,26 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/award/event/v1/crSubmittedData.schema.json",
+    "title": "CR Submitted",
+    "description": "Data in the event emitted when a change request is submitted",
+    "type": "object",
+    "required": ["tfsAwardReference", "changeRequestReference", "changeType", "submittedBy", "timestamp"],
+    "additionalProperties": false,
+    "properties": {
+        "tfsAwardReference": {
+            "$ref": "../properties/tfsAwardReference.schema.json"
+        },
+        "changeRequestReference": {
+            "$ref": "../properties/changeRequestReference.schema.json"
+        },
+        "changeType": {
+            "$ref": "enums/changeType.schema.json"
+        },
+        "submittedBy": {
+            "$ref": "../properties/submittedBy.schema.json"
+        },
+        "timestamp": {
+            "$ref": "../properties/timestamp.schema.json"
+        }
+    }
+}

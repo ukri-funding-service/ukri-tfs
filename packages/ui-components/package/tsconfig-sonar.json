@@ -1,0 +1,10 @@
+{
+  "include": [
+    "src",
+  ],
+  "exclude": [
+    "images",
+    "node_modules",
+    "test",
+  ]
+}

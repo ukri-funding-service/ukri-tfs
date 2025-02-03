@@ -1,0 +1,52 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/award/event/v1/awardStartedData.schema.json",
+    "title": "Award Started",
+    "description": "Data in the event emitted when an award is started",
+    "type": "object",
+    "required": [
+        "tfsAwardReference",
+        "gfsAwardReference",
+        "awardStatus",
+        "statusUpdatedAt",
+        "statusUpdatedBy",
+        "dateSubmitted",
+        "endDate",
+        "duration"
+    ],
+    "additionalProperties": false,
+    "properties": {
+        "awardStatus": {
+            "$ref": "awardProperties/awardStatus.schema.json"
+        },
+        "tfsAwardReference": {
+            "$ref": "awardProperties/tfsAwardReference.schema.json"
+        },
+        "gfsAwardReference": {
+            "$ref": "awardProperties/gfsAwardReference.schema.json"
+        },
+        "statusUpdatedAt": {
+            "$ref": "awardProperties/statusUpdatedAt.schema.json"
+        },
+        "statusUpdatedBy": {
+            "$ref": "awardProperties/statusUpdatedBy.schema.json"
+        },
+        "dateSubmitted": {
+            "title": "New date submitted",
+            "description": "The date and time the award was submitted",
+            "type": "string",
+            "format": "date-time"
+        },
+        "endDate": {
+            "title": "Award End date",
+            "description": "The date and time the award should be granted",
+            "type": "string",
+            "format": "date-time"
+        },
+        "duration": {
+            "title": "Award Duration",
+            "description": "Duration of the award between start and end date",
+            "type": "number"
+        }
+    }
+}

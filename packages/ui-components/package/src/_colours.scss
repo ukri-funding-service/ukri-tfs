@@ -1,0 +1,13 @@
+// new colours
+$ufs-colours: (
+    'ukri-blue': #2c2d62,
+    'light-purple': #a74499,
+    'sand': #f89c21,
+    'ochre': #d57927,
+    'jade': #00a787,
+    'lime': #67c04d,
+);
+
+@function ufs-colour($colour) {
+    @return map-get($ufs-colours, $colour);
+}

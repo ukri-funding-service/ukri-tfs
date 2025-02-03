@@ -1,0 +1,107 @@
+{
+    "name": "@ukri-tfs/message-handling",
+    "version": "1.0.0",
+    "private": true,
+    "description": "package for handling AWS SNS topics",
+    "keywords": [],
+    "license": "MIT",
+    "author": "UKRI",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "scripts": {
+        "prebuild": "npm run clean",
+        "build": "npm run compile && npm run compile:test",
+        "clean": "rimraf dist test_reports .nyc_output coverage .scannerwork ${ESLINT_FILE%/*} tsconfig.build.tsbuildinfo",
+        "compile": "tsc --project tsconfig-build.json",
+        "compile:test": "tsc --project tsconfig-test.json",
+        "lint": "eslint . --max-warnings=0",
+        "prelint:ci": "mkdirp ${ESLINT_FILE%/*}",
+        "lint:ci": "npm run lint -- -f ../../node_modules/eslint-bamboo-formatter/reporter.js",
+        "lint:fix": "npm run lint -- --fix",
+        "prettier": "prettier --check .",
+        "prettier:fix": "prettier --write .",
+        "publish": "npm publish",
+        "sonar:ci": "sonar-scanner -Dsonar.login=${SONAR_API_KEY} ${SONAR_EXTRA_ARGS}",
+        "test": "cross-env TS_NODE_TRANSPILE_ONLY=true mocha",
+        "test:ci": "mkdirp test_reports && npm run test -- -R mocha-bamboo-reporter --reporter-options output=test_reports/mocha.json",
+        "test:coverage": "mkdirp test_reports && nyc --check-coverage mocha -R mocha-bamboo-reporter --reporter-options output=test_reports/mocha.json",
+        "preversion": "npm test"
+    },
+    "mocha": {
+        "recursive": "true",
+        "require": [
+            "ts-node/register",
+            "test/unitTestSetup.ts"
+        ],
+        "spec": "./test/**/*.test.ts",
+        "timeout": "5000"
+    },
+    "nyc": {
+        "all": true,
+        "branches": 100,
+        "check-coverage": true,
+        "exclude": [
+            "**/*.js",
+            "test/",
+            "coverage/",
+            "**/*.d.ts"
+        ],
+        "extension": [
+            ".ts",
+            ".tsx"
+        ],
+        "functions": 100,
+        "lines": 100,
+        "reporter": [
+            "text-summary",
+            "lcov"
+        ],
+        "statements": 100
+    },
+    "dependencies": {
+        "@ukri-tfs/tfs-request": "^1.0.0",
+        "ajv": "^8.12.0",
+        "ajv-formats": "^2.1.1",
+        "node-schedule": "^2.0.0",
+        "uuid": "8.3.2"
+    },
+    "devDependencies": {
+        "@aws-sdk/client-sns": "3.x",
+        "@aws-sdk/client-sqs": "3.x",
+        "@types/chai": "4.3.x",
+        "@types/chai-as-promised": "7.x",
+        "@types/mocha": "10.x",
+        "@types/node": "^18.19.33",
+        "@types/node-schedule": "^1.3.1",
+        "@types/sinon": "10.x",
+        "@types/sinon-chai": "3.x",
+        "@types/uuid": "8.3.4",
+        "chai": "4.x",
+        "chai-as-promised": "7.x",
+        "cross-env": "6.0.3",
+        "mkdirp": "1.x",
+        "mocha": "10.x",
+        "mocha-bamboo-reporter": "^1.1.2",
+        "nyc": "15.x",
+        "rimraf": "3.0.2",
+        "sinon": "13.x",
+        "sinon-chai": "3.x",
+        "ts-node": "^10.4.0",
+        "typescript": "^4.9.5"
+    },
+    "peerDependencies": {
+        "@aws-sdk/client-sns": ">=3.632.0",
+        "@aws-sdk/client-sqs": ">=3.632.0"
+    },
+    "peerDependenciesMeta": {
+        "@aws-sdk/client-sns": {
+            "optional": true
+        },
+        "@aws-sdk/client-sqs": {
+            "optional": true
+        }
+    },
+    "publishConfig": {
+        "registry": "https://devops.innovateuk.org/binaries/repository/npm-private/"
+    }
+}

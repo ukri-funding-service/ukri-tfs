@@ -1,0 +1,23 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/notification/event/v1/common/recipientByOrganisationUserRole.schema.json",
+    "title": "Notification recipient by org id",
+    "description": "The recipient identified by organisation-id",
+    "type": "object",
+    "required": ["organisationId", "role", "type"],
+    "properties": {
+        "organisationId": {
+            "description": "id of the organisation to user",
+            "type": "string"
+        },
+        "role": {
+            "description": "role of the users to receive the notification",
+            "type": "string"
+        },
+        "type": {
+            "description": "type identifier",
+            "type": "string",
+            "enum": ["RecipientsByOrganisationUserRole"]
+        }
+    }
+}

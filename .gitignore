@@ -1,0 +1,131 @@
+# IDE and local files
+.idea/
+local/
+
+!utils/local/
+
+# Ignore vim files (eg. Sessions and local config)
+**/*.vim
+
+# OS Files
+.DS_Store
+
+# Self signed certificates shouldn't be committed
+certificates/
+# exclude certificates folders configured as symlinks
+**/certificates
+
+# Node
+.next/
+.nyc_output/
+coverage/
+dist/
+node_modules/
+
+# Tests
+test_reports
+test-report.xml
+test-report.json
+allure-report
+
+# Node version manager
+.nvmrc
+
+# Typescript docs
+docs/
+
+storybook-static/
+.out/
+
+# Log
+*.log
+
+# TBD
+coverage/
+**/.scannerwork
+eslint.json
+**/mocha.json
+.awcache
+.rpt2_cache
+compiled/
+sitespeed-result/
+
+# These should be simplied with a commmon directory naming standard as per DR003
+**/newrelic_agent.log
+
+services/**/_results_/allure-raw/**
+!services/**/_results_/allure-raw/
+!services/**/_results_/allure-raw/.gitkeep
+services/**/tests/**/logs/
+services/**/tests/**/logfiles/
+services/**/tests/**/output/
+services/**/tests/**/reports/
+services/**/tests/**/reports/accessibility/
+services/**/tests/**/reports/junit-results/
+services/**/tests/**/reports/logs/
+services/**/tests/**/reports/reports/
+services/**/tests/**/reports/screenshots/
+services/**/tests/**/reports/videos/
+
+services/**/tests/Performance/jmeter/bin/jmeter.log
+services/**/tests/Performance/results
+
+services/**/tests/UI/output/junit-results/
+services/**/tests/UI/Image-Compare/actual/
+services/**/tests/UI/Image-Compare/baseline/
+services/**/tests/UI/Image-Compare/diff/
+
+services/**/cypress/screenshots/
+services/**/cypress/videos/
+
+# Lambda/Serverless related files
+services/**/lambdas/jspm_packages
+services/**/lambdas/.serverless
+services/**/lambdas/.build
+services/**/lambdas/localoutput
+services/**/packaged-lambdas
+
+services/opportunity-manager/tests/UI/integrationDetails.csv
+
+# Infrastructure
+.terraform
+terraform.tfstate
+**/_pre*
+**/*.backup
+.terragrunt-cache
+infrastructure/modules/README.md
+infrastructure/environments/_output/**
+terraform/.terragrunt
+terraform/vars/backend/
+*.tfvars.json
+infrastructure/_cache/*
+venv/*
+venv
+
+# Binaries
+sonar-scanner*.zip
+sonar-scanner*/
+
+# Dotenv files for development
+.env.dev
+
+# TSC build files
+tsconfig-test.tsbuildinfo
+tsconfig.build.tsbuildinfo
+
+!/services/application-manager/app/__mocks__/@ukri-tfs/ui-components/dist/
+
+C:\\Users*/**
+
+# ignore nx cache
+.nx/
+
+# stryker
+.stryker-tmp
+**/*/mutation.html
+
+# NPM audit
+npm-audit-vulnerabilities.json
+
+# Next
+services/**/app/next-env.d.ts

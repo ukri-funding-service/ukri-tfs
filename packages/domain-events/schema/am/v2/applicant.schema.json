@@ -1,0 +1,53 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/am/event/v2/applicant.schema.json",
+    "title": "Applicant",
+    "description": "Details of a person who has submitted an Application",
+    "type": "object",
+    "properties": {
+        "applicant_id": {
+            "description": "The unique TFS user id of the Applicant",
+            "type": "number"
+        },
+        "first_name": {
+            "description": "The person's first name",
+            "type": "string",
+            "minLength": 1
+        },
+        "last_name": {
+            "description": "The person's last or family name",
+            "type": "string",
+            "minLength": 1
+        },
+        "email_address": {
+            "description": "The person's primary email address",
+            "type": "string",
+            "format": "email"
+        },
+        "organisation_id": {
+            "description": "The unique id of the Organisation the person is representing",
+            "type": "number"
+        },
+        "organisation_name": {
+            "description": "The name of the Organisation the person is representing",
+            "type": "string"
+        },
+        "role": {
+            "type": "number"
+        },
+        "is_lead_applicant": {
+            "description": "true if the person is the lead Applicant for the Application, false otherwise",
+            "type": "boolean"
+        }
+    },
+    "required": [
+        "applicant_id",
+        "first_name",
+        "last_name",
+        "email_address",
+        "organisation_id",
+        "organisation_name",
+        "role",
+        "is_lead_applicant"
+    ]
+}

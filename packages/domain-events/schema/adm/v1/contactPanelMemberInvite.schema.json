@@ -1,0 +1,49 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/adm/event/v1/contactPanelMemberInvite.schema.json",
+    "title": "Contact Panel Member Invite",
+    "description": "Details of a panel member invite for a contact",
+    "type": "object",
+    "properties": {
+        "emailAddress": {
+            "description": "The contact's email address",
+            "type": "string",
+            "format": "email"
+        },
+        "panelDisplayId": {
+            "description": "The panel display ID",
+            "type": "string"
+        },
+        "panelName": {
+            "description": "The panel name",
+            "type": "string"
+        },
+        "meetingStartTime": {
+            "description": "The meeting start time",
+            "type": "string",
+            "format": "date-time"
+        },
+        "meetingEndTime": {
+            "description": "The meeting end time",
+            "type": "string",
+            "format": "date-time"
+        },
+        "memberRole": {
+            "description": "The member role",
+            "type": "string"
+        },
+        "prescoreCommentsRequired": {
+            "description": "Whether pre-score comments are required",
+            "type": "boolean"
+        }
+    },
+    "required": [
+        "emailAddress",
+        "panelDisplayId",
+        "panelName",
+        "meetingStartTime",
+        "meetingEndTime",
+        "memberRole",
+        "prescoreCommentsRequired"
+    ]
+}

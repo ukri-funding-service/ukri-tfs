@@ -1,0 +1,21 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/award/event/v1/crRejected.schema.json",
+    "title": "CR Rejected",
+    "description": "An Event emitted when change request is rejected",
+    "type": "object",
+    "properties": {
+        "type": {
+            "description": "The type of event",
+            "type": "string",
+            "enum": ["https://funding-service.ukri.org/schema/award/event/v1/crRejected.schema.json"]
+        },
+        "data": {
+            "$ref": "crRejectedData.schema.json"
+        },
+        "correlationIds": {
+            "$ref": "correlationIds.schema.json"
+        }
+    },
+    "required": ["data", "correlationIds", "type"]
+}

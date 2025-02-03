@@ -1,0 +1,21 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/award/event/v2/awardMetadataChanged.schema.json",
+    "title": "Award Metadata Changed Event",
+    "description": "An Event emitted when a user changes the award metadata",
+    "type": "object",
+    "properties": {
+        "type": {
+            "description": "The type of event",
+            "type": "string",
+            "enum": ["https://funding-service.ukri.org/schema/award/event/v2/awardMetadataChanged.schema.json"]
+        },
+        "data": {
+            "$ref": "awardMetadataChangedData.schema.json"
+        },
+        "correlationIds": {
+            "$ref": "../properties/correlationIds.schema.json"
+        }
+    },
+    "required": ["data", "correlationIds", "type"]
+}

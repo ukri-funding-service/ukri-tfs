@@ -1,0 +1,8 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/award/event/properties/createdBy.schema.json",
+    "title": "Award created by",
+    "description": "The TFS user who created the award",
+    "type": "string",
+    "format": "uuid"
+}

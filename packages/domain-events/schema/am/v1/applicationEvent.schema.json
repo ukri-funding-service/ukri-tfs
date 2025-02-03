@@ -1,0 +1,8 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/am/event/v1/applicationEvent.schema.json",
+    "title": "Application Event",
+    "description": "An Event emitted by the AM service",
+    "type": "object",
+    "oneOf": [{ "$ref": "applicationCreatedEvent.schema.json" }]
+}

@@ -1,0 +1,11 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/panel/event/v1/definedRoles.schema.json",
+    "title": "Defined roles",
+    "description": "The defined application roles for this panel",
+    "type": "array",
+    "items": {
+        "description": "The role of the person against the panel",
+        "type": "string"
+    }
+}

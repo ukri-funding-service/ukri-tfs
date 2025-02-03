@@ -1,0 +1,13 @@
+{
+    "extends": "../../tsconfig.base.json",
+    "compilerOptions": {
+        "allowSyntheticDefaultImports": true,
+        "declarationDir": "dist/lib",
+        "lib": ["ES2020", "DOM"],
+        "moduleResolution": "node",
+        "outDir": "dist/lib",
+        "noEmit": true
+    },
+    "include": ["src", "test"],
+    "exclude": ["node_modules", "dist"]
+}

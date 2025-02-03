@@ -1,0 +1,101 @@
+{
+    "name": "@ukri-tfs/fastify-server-startup",
+    "version": "1.0.0",
+    "private": "true",
+    "description": "",
+    "keywords": [],
+    "author": "",
+    "license": "MIT",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "publishConfig": {
+        "registry": "https://devops.innovateuk.org/binaries/repository/npm-private/"
+    },
+    "scripts": {
+        "build": "npm run compile && npm run compile:test",
+        "compile": "tsc --project tsconfig-build.json",
+        "compile:test": "tsc --project tsconfig-test.json",
+        "clean": "rimraf dist test_reports coverage .nyc_output .scannerwork tsconfig.build.tsbuildinfo",
+        "lint": "eslint .",
+        "lint:ci": "npm run lint",
+        "lint:fix": "npm run lint -- --fix",
+        "prebuild": "npm run clean",
+        "prettier": "prettier --check .",
+        "prettier:fix": "prettier --write .",
+        "preversion": "npm test",
+        "publish": "npm publish",
+        "test": "cross-env TS_NODE_PROJECT=tsconfig-test.json mocha",
+        "test:ci": "mkdirp test_reports && npm run test -- -R mocha-bamboo-reporter --reporter-options output=test_reports/mocha.json",
+        "test:coverage": "mkdirp test_reports && cross-env TS_NODE_PROJECT=tsconfig-test.json nyc --check-coverage mocha -R mocha-bamboo-reporter --reporter-options output=test_reports/mocha.json",
+        "test:watch": "npm run test -- --watch --watch-extensions ts"
+    },
+    "dependencies": {
+        "@types/http-errors": "1.8.0",
+        "@ukri-tfs/auth": "1.0.0",
+        "@ukri-tfs/tfs-middleware": "1.0.0",
+        "@ukri-tfs/configuration": "^1.0.0",
+        "@ukri-tfs/html-utils": "^1.0.0",
+        "@ukri-tfs/http": "^1.0.0",
+        "@ukri-tfs/logging": "1.0.0",
+        "@ukri-tfs/tfs-request": "^1.0.0",
+        "fastify": "^3.29.5",
+        "fastify-oas": "3.0.8",
+        "http-errors": "1.8.0",
+        "middie": "5.2.0"
+    },
+    "devDependencies": {
+        "@types/chai": "4.2.0",
+        "@types/chai-as-promised": "7.1.1",
+        "@types/express": "4.17.9",
+        "@types/mocha": "10.x",
+        "@types/node": "^18.19.33",
+        "@types/sinon": "9.0.2",
+        "@types/sinon-chai": "3.2.5",
+        "chai": "4.2.0",
+        "chai-as-promised": "7.1.1",
+        "cross-env": "6.0.3",
+        "eslint": "7.x",
+        "fastify-error": "^0.3.0",
+        "jsonwebtoken": ">=8.5.1",
+        "mocha": "10.x",
+        "mocha-bamboo-reporter": "1.1.2",
+        "nyc": "15.x",
+        "rimraf": "3.0.2",
+        "sinon": "9.0.2",
+        "sinon-chai": "3.5.0",
+        "ts-node": "10.x",
+        "typescript": "^4.9.5"
+    },
+    "peerDependencies": {
+        "fastify": ">=3.29.5 <4"
+    },
+    "mocha": {
+        "recursive": "true",
+        "require": [
+            "ts-node/register"
+        ],
+        "spec": "test/**/*.test.ts*"
+    },
+    "nyc": {
+        "all": true,
+        "branches": 66,
+        "check-coverage": true,
+        "exclude": [
+            "**/*.js",
+            "test/",
+            "coverage/",
+            "**/*.d.ts"
+        ],
+        "extension": [
+            ".ts",
+            ".tsx"
+        ],
+        "functions": 79,
+        "lines": 80,
+        "reporter": [
+            "text-summary",
+            "lcov"
+        ],
+        "statements": 82
+    }
+}

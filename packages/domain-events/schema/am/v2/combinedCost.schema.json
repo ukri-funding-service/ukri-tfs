@@ -1,0 +1,51 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/am/event/v2/combinedCost.schema.json",
+    "title": "Combined Costs",
+    "description": "All possible costs associated with an Application",
+    "type": "array",
+    "items": {
+        "type": "object",
+        "properties": {
+            "organisation": {
+                "type": "object",
+                "properties": {
+                    "id": { "type": "number" },
+                    "name": { "type": "string" }
+                }
+            },
+            "directly_incurred": {
+                "$ref": "cost.schema.json"
+            },
+            "directly_allocated": {
+                "$ref": "cost.schema.json"
+            },
+            "indirect_costs": {
+                "$ref": "cost.schema.json"
+            },
+            "exceptions": {
+                "$ref": "cost.schema.json"
+            },
+            "staff_costs": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "applicant_id": { "anyOf": [{ "type": "number" }, { "type": "null" }] },
+                        "unnamed_role_id": { "anyOf": [{ "type": "number" }, { "type": "null" }] },
+                        "unnamed_label": { "anyOf": [{ "type": "string" }, { "type": "null" }] },
+                        "fte_percentage": { "type": "number" },
+                        "full_economic_cost_pence": { "type": "number" },
+                        "costPolicy": {
+                            "$ref": "https://funding-service.ukri.org/schema/am/event/v2/costPolicy.schema.json"
+                        },
+                        "start_date": { "type": "string", "format": "date-time" },
+                        "end_date": { "type": "string", "format": "date-time" },
+                        "id": { "type": "number" }
+                    }
+                }
+            }
+        }
+    },
+    "additionalProperties": false
+}

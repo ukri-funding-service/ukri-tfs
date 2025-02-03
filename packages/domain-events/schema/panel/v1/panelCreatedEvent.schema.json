@@ -1,0 +1,22 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/panel/event/v1/panelCreatedEvent.schema.json",
+    "title": "Panel Created Event",
+    "description": "An Event emitted on creation of a panel",
+    "type": "object",
+    "properties": {
+        "type": {
+            "description": "The data contained in the event",
+            "type": "string",
+            "enum": ["panel-created-gz"]
+        },
+        "unzippedType": { "type": "string", "enum": ["panel-created"] },
+        "data": {
+            "$ref": "panelCreated.schema.json"
+        },
+        "correlationIds": {
+            "$ref": "https://funding-service.ukri.org/schema/panel/event/v1/correlationIds.schema.json"
+        }
+    },
+    "required": ["type", "data"]
+}

@@ -1,0 +1,21 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/award/event/properties/changeRequestMetaData/termination.schema.json",
+    "title": "CR Submitted - Termination",
+    "description": "Data in the event emitted when a change request is submitted specific to a termination request",
+    "type": "object",
+    "properties": {
+        "changeType": {
+            "const": "Termination"
+        },
+        "terminationReasonType": {
+            "description": "The reason type for the termination, if 'Other' see terminationReason for more detail",
+            "type": "string"
+        },
+        "terminationReason": {
+            "description": "Custom reason for termination when the terminationReasonType is 'Other'",
+            "type": "string"
+        }
+    },
+    "required": ["changeType", "terminationReasonType"]
+}

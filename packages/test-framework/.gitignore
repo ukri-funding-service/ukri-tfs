@@ -1,0 +1,11 @@
+.idea
+node_modules
+dist
+src/logs
+tests/UI/logs
+src/UI/reports
+src/API/output/reports/cucumber-report.json
+src/API/features/localdev.feature
+
+# OS files
+.DS_Store

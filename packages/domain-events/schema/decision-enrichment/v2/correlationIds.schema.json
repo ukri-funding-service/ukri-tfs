@@ -1,0 +1,22 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/decision-enrichment/event/v2/correlationIds.schema.json",
+    "title": "Correlation IDs",
+    "description": "The request correlation IDs",
+    "type": "object",
+    "properties": {
+        "root": {
+            "description": "The root correlation ID",
+            "type": "string"
+        },
+        "parent": {
+            "description": "The parent correlation ID",
+            "type": "string"
+        },
+        "current": {
+            "description": "The current correlation ID",
+            "type": "string"
+        }
+    },
+    "required": ["root", "current"]
+}

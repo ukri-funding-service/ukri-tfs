@@ -1,0 +1,42 @@
+@media only screen and (max-width: 768px) {
+    .labelled-values-container {
+        > *:not(:first-child) {
+            padding-top: 1rem;
+        }
+
+        > *:not(:last-child) {
+            padding-bottom: 1rem;
+        }
+    }
+}
+
+@media only screen and (min-width: 769px) {
+    .labelled-values-container {
+        display: flex;
+        align-items: stretch;
+
+        .labelled-title {
+            display: flex;
+            max-width: 200px;
+            min-height: 2.65rem;
+            margin-bottom: 0.8rem;
+            align-items: flex-end;
+
+            &--top {
+                align-items: flex-start;
+            }
+        }
+
+        .labelled-title-text {
+            line-height: 1;
+        }
+
+        > *:not(:last-child) {
+            padding-right: 1rem;
+        }
+
+        > *:not(:first-child) {
+            padding-left: 1rem;
+        }
+    }
+}

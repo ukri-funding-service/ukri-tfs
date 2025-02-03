@@ -1,0 +1,8 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/decision-enrichment/event/v3/domainEvent.schema.json",
+    "title": "Domain Event",
+    "description": "An Event emitted by the Decision Enrichment service",
+    "type": "object",
+    "oneOf": [{ "$ref": "enrichedDecisionEvent.schema.json" }]
+}

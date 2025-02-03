@@ -1,0 +1,27 @@
+[
+    {
+        "id": "2000001",
+        "user_role": "TfsAdmin",
+        "tfs_id": "aaa77110-8ec2-11ea-aefd-85cb2e4f17f1"
+    },
+    {
+        "id": "2000002",
+        "user_role": "Applicant",
+        "tfs_id": "f9c86a00-a807-11ea-911c-333e061aa004"
+    },
+    {
+        "id": "2000004",
+        "user_role": "AdminApplicantUser",
+        "tfs_id": "gggggggg-a807-11ea-911c-333e061aa004"
+    },
+    {
+        "id": "2000005",
+        "user_role": "System",
+        "tfs_id": "systemsystem-a807-11ea-911c-333e061aa004"
+    },
+    {
+        "id": "2000006",
+        "user_role": "Champion",
+        "tfs_id": "d1ca133f-15c2-46c5-beab-0689b96839b5"
+    }
+]

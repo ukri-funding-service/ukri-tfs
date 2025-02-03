@@ -1,0 +1,34 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/adm/event/v1/contactInviteCreatedEvent.schema.json",
+    "title": "Contact Invite Created Event",
+    "description": "An Event emitted on creation of an invite for a contact",
+    "type": "object",
+    "properties": {
+        "type": {
+            "description": "The data contained in the event",
+            "type": "string",
+            "enum": ["contactInvite"]
+        },
+        "data": {
+            "type": "object",
+            "anyOf": [
+                {
+                    "$ref": "contactChampionInvite.schema.json"
+                },
+                {
+                    "$ref": "contactPanelMemberInvite.schema.json"
+                }
+            ]
+        },
+        "method": {
+            "description": "The action that caused the event",
+            "type": "string",
+            "enum": ["create"]
+        },
+        "correlationIds": {
+            "$ref": "correlationIds.schema.json"
+        }
+    },
+    "required": ["type", "data", "method"]
+}

@@ -1,0 +1,43 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "cognitoId": "testuser1",
+            "tfsId": "a56dccb2-e9f7-4add-a844-ea65932839b8",
+            "displayName": "TestUser1",
+            "roles": [
+                {
+                    "id": 1,
+                    "name": "TfsAdmin",
+                    "displayName": "Tfs Admin"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "cognitoId": "testuser2",
+            "tfsId": "b00193b4-479e-4586-b4d1-d371e7f41145",
+            "displayName": "TestUser2",
+            "roles": [
+                {
+                    "id": 2,
+                    "name": "Applicant",
+                    "displayName": "Applicant"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "cognitoId": "systemuser",
+            "tfsId": "a3916718-93a7-4022-8713-77b6aa7d5a6b",
+            "displayName": "System User",
+            "roles": [
+                {
+                    "id": 3,
+                    "name": "System",
+                    "displayName": "System"
+                }
+            ]
+        }
+    ]
+}

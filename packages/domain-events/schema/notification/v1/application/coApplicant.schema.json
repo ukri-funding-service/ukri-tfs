@@ -1,0 +1,22 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/notification/event/v1/application/coApplicant.schema.json",
+    "title": "Co-applicant",
+    "description": "the co-applicant associated with the application",
+    "type": "object",
+    "required": ["firstName", "lastName", "role"],
+    "properties": {
+        "firstName": {
+            "description": "the first name of the co-applicant",
+            "type": "string"
+        },
+        "lastName": {
+            "description": "the last name of the co-applicant",
+            "type": "string"
+        },
+        "role": {
+            "description": "the role of the co-applicant",
+            "type": "string"
+        }
+    }
+}

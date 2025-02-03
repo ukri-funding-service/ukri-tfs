@@ -1,0 +1,33 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/om/event/v1/applicationDetails.schema.json",
+    "title": "Application Details",
+    "description": "",
+    "type": "object",
+    "properties": {
+        "application_title_label": {
+            "type": "string"
+        },
+        "application_sub_title_label": {
+            "type": "string"
+        },
+        "summary_title": {
+            "type": "string"
+        },
+        "summary_hint": {
+            "type": "string"
+        },
+        "guidance_notes_label": {
+            "type": "string"
+        },
+        "guidance_notes_content": {
+            "type": "string"
+        },
+        "guidance_word_count": {
+            "type": "number"
+        },
+        "sequence": {
+            "type": "number"
+        }
+    }
+}

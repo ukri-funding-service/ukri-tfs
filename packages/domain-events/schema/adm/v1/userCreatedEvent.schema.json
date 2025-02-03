@@ -1,0 +1,26 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/adm/event/v1/userCreatedEvent.schema.json",
+    "title": "User Created Event",
+    "description": "An Event emitted on creation of a User record",
+    "type": "object",
+    "properties": {
+        "type": {
+            "description": "The data contained in the event",
+            "type": "string",
+            "enum": ["user"]
+        },
+        "data": {
+            "$ref": "userPerson.schema.json"
+        },
+        "method": {
+            "description": "The action that caused the event",
+            "type": "string",
+            "enum": ["create"]
+        },
+        "correlationIds": {
+            "$ref": "correlationIds.schema.json"
+        }
+    },
+    "required": ["type", "data", "method"]
+}

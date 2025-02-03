@@ -1,0 +1,30 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/notification/event/v1/award/sendAwardNotificationEvent.schema.json",
+    "title": "Award Notification Event",
+    "description": "An Event emitted when a notification is required to be sent by the post-decision service",
+    "type": "object",
+    "required": ["data", "correlationIds", "type"],
+    "properties": {
+        "type": {
+            "description": "The type of event",
+            "type": "string",
+            "enum": ["award-notification"]
+        },
+        "data": {
+            "type": "object",
+            "anyOf": [
+                { "$ref": "sendFesIssuedNotificationEventBody.schema.json" },
+                { "$ref": "sendFesAcceptedNotificationEventBody.schema.json" },
+                { "$ref": "sendFesRejectedNotificationEventBody.schema.json" },
+                { "$ref": "sendAwardClosedNotificationEventBody.schema.json" },
+                { "$ref": "sendTesIssuedNotificationEventBody.schema.json" },
+                { "$ref": "sendTesAcceptedNotificationEventBody.schema.json" },
+                { "$ref": "sendTesRejectedNotificationEventBody.schema.json" }
+            ]
+        },
+        "correlationIds": {
+            "$ref": "../common/correlationIds.schema.json"
+        }
+    }
+}

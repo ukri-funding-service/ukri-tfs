@@ -1,0 +1,35 @@
+{
+    "extends": "../../../tsconfig.base.json",
+    "compilerOptions": {
+        "jsx": "react",
+        "outDir": "./dist/lib",
+        "lib": [
+            "ES2020",
+            "DOM"
+        ],
+        "moduleResolution": "node",
+        "forceConsistentCasingInFileNames": true,
+        "noImplicitReturns": true,
+        "noImplicitThis": true,
+        "noImplicitAny": true,
+        "strictNullChecks": true,
+        "suppressImplicitAnyIndexErrors": false,
+        "noUnusedLocals": true,
+        "allowSyntheticDefaultImports": true,
+        "declarationMap": true,
+        "typeRoots": [
+            "./@types",
+            "./node_modules/@types",
+            "./node_modules/@ukri-tfs/govuk-react-jsx-types"
+        ],
+        "noEmit": true
+    },
+    "ts-node": {
+        "files": true
+    },
+    "include": [
+        "src/**/*",
+        "images/**/*",
+        "test/**/*"
+    ]
+}

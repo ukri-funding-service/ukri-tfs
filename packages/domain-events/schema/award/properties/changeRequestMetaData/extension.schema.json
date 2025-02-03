@@ -1,0 +1,23 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/award/event/properties/changeRequestMetaData/extension.schema.json",
+    "title": "CR Submitted - Extension",
+    "description": "Data in the event emitted when a change request is submitted specific to an extension request",
+    "type": "object",
+    "properties": {
+        "changeType": {
+            "const": "Extension"
+        },
+        "initialEndDate": {
+            "description": "When the original award was scheduled to end.",
+            "type": "string",
+            "format": "date-time"
+        },
+        "extensionDate": {
+            "description": "The requested extension date for the award ending",
+            "type": "string",
+            "format": "date-time"
+        }
+    },
+    "required": ["changeType", "initialEndDate", "extensionDate"]
+}

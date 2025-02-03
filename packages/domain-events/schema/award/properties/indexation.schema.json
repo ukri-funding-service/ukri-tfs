@@ -1,0 +1,7 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/award/event/properties/indexation.schema.json",
+    "title": "Indexation",
+    "description": "If the award has indexation",
+    "type": ["boolean", "null"]
+}

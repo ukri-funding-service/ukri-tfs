@@ -1,0 +1,15 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/adm/event/v1/contactChampionInvite.schema.json",
+    "title": "Contact Champion Invite",
+    "description": "Details of a champion invite for a contact",
+    "type": "object",
+    "properties": {
+        "emailAddress": {
+            "description": "The contact's email address",
+            "type": "string",
+            "format": "email"
+        }
+    },
+    "required": ["emailAddress"]
+}

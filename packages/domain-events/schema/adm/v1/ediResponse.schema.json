@@ -1,0 +1,19 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/adm/event/v1/ediResponse.schema.json",
+    "title": "EdiResponse",
+    "description": "A response to a single Equality, Diversity & Inclusion (EDI) survey question.",
+    "type": "object",
+    "properties": {
+        "responseId": {
+            "description": "The unique identifier for the Edi Response",
+            "type": "number"
+        },
+        "freeTextValue": {
+            "description": "The answer given to the EDI survey question.",
+            "type": "string",
+            "minLength": 1
+        }
+    },
+    "required": ["responseId"]
+}

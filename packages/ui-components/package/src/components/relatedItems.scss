@@ -1,0 +1,7 @@
+.govuk-related-items {
+    border-top: 5px solid govuk-colour('blue');
+
+    &--no-bar {
+        border-top: 0px;
+    }
+}

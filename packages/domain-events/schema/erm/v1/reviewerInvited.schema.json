@@ -1,0 +1,44 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/erm/event/v1/reviewerInvited.schema.json",
+    "title": "Reviewer Invited",
+    "description": "An object describing the invite details for the reviewer that is being invited",
+    "type": "object",
+    "properties": {
+        "applicationId": {
+            "description": "The id of the application to review",
+            "type": "number",
+            "examples": ["1000003"]
+        },
+        "personId": {
+            "description": "The person id of the reviewer",
+            "type": "number",
+            "examples": ["1000067"]
+        },
+        "contactId": {
+            "description": "The contact id of the reviewer",
+            "type": "number"
+        },
+        "resourceType": {
+            "description": "The resource type of the invite",
+            "type": "number",
+            "enum": [0],
+            "default": 0
+        },
+        "role": {
+            "description": "The role type of the invite",
+            "type": "number",
+            "enum": [0],
+            "default": 0
+        },
+        "resend": {
+            "description": "Is the invite being resent",
+            "type": "boolean"
+        },
+        "requestedBy": {
+            "description": "Tfs id of the user who requested the invite",
+            "type": "string"
+        }
+    },
+    "required": ["applicationId", "personId", "contactId", "resend"]
+}

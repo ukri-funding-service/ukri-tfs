@@ -1,0 +1,116 @@
+{
+    "$schema": "./node_modules/nx/schemas/nx-schema.json",
+    "extends": "nx/presets/npm.json",
+    "npmScope": "@ukri-tfs",
+    "affected": {
+        "defaultBase": "develop"
+    },
+    "workspaceLayout": {
+        "appsDir": "services",
+        "libsDir": "packages"
+    },
+    "implicitDependencies": {
+        "package.json": {
+            "dependencies": "*",
+            "devDependencies": "*"
+        },
+        "tsconfig.base.json": "*",
+        "nx.json": "*"
+    },
+    "namedInputs": {
+        "sharedGlobals": [
+            "{workspaceRoot}/babel.config.json",
+            "{workspaceRoot}/tsconfig.base.json",
+            "{workspaceRoot}/jsconfig.json"
+        ],
+        "default": ["{projectRoot}/**/*", "sharedGlobals"],
+        "excludeDockerfiles": ["!{projectRoot}/Dockerfile.*", "!{projectRoot}/docker-*.yml"],
+        "excludeTests": [
+            "!{projectRoot}/**/*.spec.ts",
+            "!{projectRoot}/**/*.spec.tsx",
+            "!{projectRoot}/**/*.test.ts",
+            "!{projectRoot}/**/*.test.tsx",
+            "!{projectRoot}/jest*"
+        ],
+        "excludeUtilityFiles": [
+            "!{projectRoot}/**/*.md",
+            "!{projectRoot}/**/*.sh",
+            "!{projectRoot}/sonar-project.properties"
+        ],
+        "production": [
+            "default",
+            "excludeDockerfiles",
+            "excludeTests",
+            "excludeUtilityFiles",
+            "!{projectRoot}/**/.eslint*",
+            "!{projectRoot}/**/.prettier*",
+            "!{projectRoot}/.commitlint.config.js",
+            "!{projectRoot}/.conventionalCommit.json"
+        ],
+        "development": [
+            "default",
+            "excludeDockerfiles",
+            "excludeUtilityFiles",
+            "!{projectRoot}/**/.eslint*",
+            "!{projectRoot}/**/.prettier*",
+            "!{projectRoot}/.commitlint.config.js",
+            "!{projectRoot}/.conventionalCommit.json"
+        ],
+        "lintable": ["{workspaceRoot}/.eslint*", "{projectRoot}/**/*", "excludeUtilityFiles"],
+        "prettiable": ["{workspaceRoot}/.prettier*", "{projectRoot}/**/*", "excludeUtilityFiles"]
+    },
+    "targetDefaults": {
+        "build": {
+            "inputs": ["production", "^production"],
+            "dependsOn": ["^build"]
+        },
+        "compile": {
+            "inputs": ["production", "^production"],
+            "dependsOn": ["^compile"],
+            "outputs": ["{projectRoot}/dist"]
+        },
+        "compile:test": {
+            "inputs": ["development", "^production"],
+            "dependsOn": ["compile"]
+        },
+        "package": {
+            "inputs": ["development", "^production"],
+            "dependsOn": ["compile"],
+            "outputs": ["{projectRoot}/packaged-lambdas", "{projectRoot}/.next", "{projectRoot}/next-env.d.ts"]
+        },
+        "lint": {
+            "inputs": ["lintable"]
+        },
+        "prettier": {
+            "inputs": ["prettiable"]
+        },
+        "test": {
+            "inputs": ["default", "^production"],
+            "dependsOn": ["compile:test"]
+        },
+        "test:ci": {
+            "dependsOn": ["compile:test"]
+        },
+        "test:coverage": {
+            "dependsOn": ["compile:test"]
+        }
+    },
+    "tasksRunnerOptions": {
+        "default": {
+            "runner": "nx/tasks-runners/default",
+            "options": {
+                "cacheableOperations": [
+                    "build",
+                    "compile",
+                    "compile:test",
+                    "test",
+                    "test:ci",
+                    "test:coverage",
+                    "lint",
+                    "prettier",
+                    "package"
+                ]
+            }
+        }
+    }
+}

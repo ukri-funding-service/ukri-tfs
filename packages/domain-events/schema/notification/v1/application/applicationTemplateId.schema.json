@@ -1,0 +1,22 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/notification/event/v1/application/applicationTemplateId.schema.json",
+    "title": "Notification template Id",
+    "description": "A summary of the application, and template discriminator",
+    "type": "string",
+    "enum": [
+        "applicantUnsuccessfulApplication",
+        "applicantWithoutResearchOfficeUnsuccessfulApplication",
+        "applicantWithoutResearchOfficeSuccessfulApplication",
+        "researchOrganisationUnsuccessfulApplication",
+        "researchOrganisationSuccessfulApplication",
+        "applicantSuccessfulApplication",
+        "applicationGroupReassigned",
+        "applicationGroupAssigned",
+        "applicationSentToResearchOffice",
+        "applicationSubmitted",
+        "applicantUnsuccessfulChecksApplication",
+        "applicationFailedReview",
+        "applicationAccess"
+    ]
+}

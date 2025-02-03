@@ -1,0 +1,33 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/decision/event/v2/decisionConfirmedData.schema.json",
+    "title": "Decision Confirmed Data",
+    "description": "Data in the event emitted when a decision has been confirmed",
+    "type": "object",
+    "required": ["opportunityId", "applicationId", "confirmedTimestamp", "decision"],
+    "additionalProperties": false,
+    "properties": {
+        "opportunityId": {
+            "description": "The opportunity id",
+            "type": "number"
+        },
+        "applicationId": {
+            "description": "The application id",
+            "type": "number"
+        },
+        "confirmedTimestamp": {
+            "description": "The timestamp for when the decision was confirmed",
+            "type": "string",
+            "format": "date-time"
+        },
+        "decision": {
+            "description": "Whether the decision made was 'Successful' or 'Unsuccessful'",
+            "type": "string",
+            "enum": ["Successful", "Unsuccessful"]
+        },
+        "reason": {
+            "description": "An optional reason telling us what triggered the decision",
+            "type": "string"
+        }
+    }
+}

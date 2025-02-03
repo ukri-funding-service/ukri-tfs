@@ -1,0 +1,40 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/award/event/properties/teamMembers.schema.json",
+    "title": "Total Award Value",
+    "description": "The team members associated with the award",
+    "type": "array",
+    "items": {
+        "required": ["role", "roleType", "timeSpentOnProject"],
+        "type": "object",
+        "properties": {
+            "personId": {
+                "description": "The person id of the team member",
+                "type": "number"
+            },
+            "role": {
+                "description": "The role of the team member",
+                "type": "string"
+            },
+            "roleType": {
+                "description": "The role type of the team member",
+                "type": "string",
+                "enum": ["Directly Allocated", "Directly Incurred", "Exception", "Unallocated"]
+            },
+            "timeSpentOnProject": {
+                "description": "The time spent on the project by the team member",
+                "type": "number"
+            },
+            "startDate": {
+                "description": "The start date of the team member",
+                "type": "string",
+                "format": "date-time"
+            },
+            "endDate": {
+                "description": "The end date of the team member",
+                "type": "string",
+                "format": "date-time"
+            }
+        }
+    }
+}

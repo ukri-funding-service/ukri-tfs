@@ -1,0 +1,124 @@
+$govuk-assets-path: '~govuk-frontend/govuk/assets/' !default;
+
+$govuk-font-family: 'Helvetica', 'Arial', sans-serif;
+// Importing govuk/all includes all govuk CSS into each file that its imported into.
+// This causes a large amount of duplicated CSS. If govuk functions are required, only import govuk/base
+// govuk/all should only be imported in styles.scss and styles.scss should not be imported into submodule scss (for the same reason)
+
+//spacing
+$space: 5px;
+$space-class-values: (0, 5, 10, 15, 20, 30, 45);
+
+@media only screen and (max-width: 1024px) {
+    .columns {
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+}
+
+.layout--full-height {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+.govuk-input--width-7 {
+    max-width: 15ex;
+}
+
+.full-width {
+    width: 100% !important;
+}
+
+.u-space-t30 {
+    margin-top: 30px !important;
+}
+
+.u-space-b30,
+.u-space-y30 {
+    margin-bottom: 30px !important;
+}
+
+.govuk-error-summary__list {
+    a {
+        text-decoration: underline;
+    }
+}
+
+.after-inline:after {
+    display: inline !important;
+}
+
+.inline {
+    display: inline !important;
+}
+
+@import '~govuk-frontend/govuk/all';
+@import '~bulma/bulma';
+@import '../node_modules/bulma/sass/utilities/all';
+@import './flexbox';
+@import './colours';
+@import './overrides';
+@import './header';
+@import './nav-strip';
+@import './overview';
+@import './typography';
+@import './components/activitySummary/activitySummaryCount.scss';
+@import './components/accordion.scss';
+@import './components/accordionWithValue.scss';
+@import './components/alerts.scss';
+@import './components/tfsStatus.scss';
+@import './components/backToTop.scss';
+@import './components/bpk.scss';
+@import './components/boxedContent.scss';
+@import './components/progressBar.scss';
+@import './components/dashboardResourceItem.scss';
+@import './components/customPanel.scss';
+@import './components/footer.scss';
+@import './components/form/form.scss';
+@import './components/fileDisplay.scss';
+@import './components/labelledValues.scss';
+@import './components/markAsComplete.scss';
+@import './components/table.scss';
+@import './components/tab/tab.scss';
+@import './components/typeAhead.scss';
+@import './components/relatedItems.scss';
+@import './components/richTextEditor.scss';
+@import './components/tag.scss';
+@import './components/contact-us.scss';
+@import './tfs/applicationView/elements/application-item';
+@import './tfs/applicationView/elements/application-tasks';
+@import './tfs/applicationView/elements/print';
+@import './tfs/applicationView/elements/printer-link';
+@import './tfs/applicationView/elements/structuredResourcesAndCostTable';
+@import './tfs/review/score.scss';
+@import './tfs/review/summary.scss';
+@import './components/passwordInputWithToggle.scss';
+@import './components/radioButton.scss';
+@import './components/cookieBanner.scss';
+@import './components/pager/pagination.scss';
+@import './components/tfsmodal.scss';
+@import './utils/utils';
+@import './components/groupedCheckboxes.scss';
+@import './components/searchInput.scss';
+@import './components/completionStatus.scss';
+@import './components/collapsibleCheckboxes/collapsibleCheckboxes.scss';
+
+.govuk-radios__item__hack {
+    position: relative;
+}
+
+.govuk-radios__item__hack--right {
+    width: 200px;
+    position: absolute;
+    left: 150px;
+    top: 0;
+}
+
+.shift-left {
+    float: left;
+    position: relative;
+    left: -40px;
+    top: 10px;
+    margin-bottom: 1rem;
+}

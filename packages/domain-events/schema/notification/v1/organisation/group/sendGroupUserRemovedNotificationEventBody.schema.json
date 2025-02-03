@@ -1,0 +1,28 @@
+{
+    "definitions": {},
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/notification/event/v1/organisation/group/sendGroupUserRemovedNotificationEventBody.schema.json",
+    "title": "Send user removed from group notification event payload data",
+    "description": "Data about the user removed from group.",
+    "type": "object",
+    "required": ["recipients", "group", "researchOfficer", "externalFundingServiceSignInUrl", "templateId"],
+    "properties": {
+        "recipients": {
+            "$ref": "../../common/recipients.schema.json"
+        },
+        "group": {
+            "$ref": "./shared/group.schema.json"
+        },
+        "researchOfficer": {
+            "$ref": "./shared/researchOfficer.schema.json"
+        },
+        "externalFundingServiceSignInUrl": {
+            "type": "string",
+            "description": "URL to external Funding Service Sign in"
+        },
+        "templateId": {
+            "type": "string",
+            "enum": ["groupUserRemoved"]
+        }
+    }
+}

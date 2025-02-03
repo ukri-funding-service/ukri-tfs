@@ -1,0 +1,31 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/erm/event/v1/reviewReminder.schema.json",
+    "title": "Review Reminder trigger event",
+    "description": "An object describing a review reminder which should be sent",
+    "type": "object",
+    "required": ["applicationId", "reviewerId", "personId", "reminderType"],
+    "properties": {
+        "applicationId": {
+            "description": "The application ID",
+            "type": "number"
+        },
+        "reviewerId": {
+            "description": "The reviewer ID",
+            "type": "number"
+        },
+        "personId": {
+            "description": "The person ID",
+            "type": "number"
+        },
+        "reminderType": {
+            "description": "The type of reminder to send",
+            "type": "string",
+            "enum": ["SEVEN_DAY", "THREE_DAY", "OVERDUE"]
+        },
+        "daysOverdue": {
+            "description": "Number of days overdue if overdue reminder",
+            "type": "integer"
+        }
+    }
+}

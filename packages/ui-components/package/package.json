@@ -1,0 +1,163 @@
+{
+    "name": "@ukri-tfs/ui-components",
+    "version": "1.0.3",
+    "private": true,
+    "description": "",
+    "license": "MIT",
+    "author": "",
+    "keywords": [],
+    "main": "dist/lib/index.js",
+    "types": "dist/lib/index.d.ts",
+    "files": [
+        "dist",
+        "README.md"
+    ],
+    "scripts": {
+        "build": "npm run compile && npm run compile:test",
+        "compile": "tsc --project tsconfig-build.json && copyfiles './images/**' ./dist",
+        "compile:test": "tsc -p ./tsconfig-test.json",
+        "clean": "rimraf dist test_reports coverage .nyc_output .scannerwork ${ESLINT_FILE%/*}",
+        "lint": "eslint . --max-warnings=2",
+        "lint:fix": "npm run lint -- --fix",
+        "prelint:ci": "mkdirp ${ESLINT_FILE%/*}",
+        "lint:ci": "npm run lint -- -f ../../../node_modules/eslint-bamboo-formatter/reporter.js",
+        "precompile": "npm run clean",
+        "prettier": "prettier --check .",
+        "prettier:fix": "prettier --write .",
+        "preversion": "npm test",
+        "publish": "npm publish",
+        "postinstall": "[[ $KEEP_REACT = \"true\" ]] || (echo 'Deleting react' && rimraf node_modules/react)",
+        "storybook:build": "build-storybook -s ./images -o .out",
+        "storybook": "start-storybook -s ./images,./public -p 6006 --no-dll",
+        "test": "cross-env TS_NODE_PROJECT=tsconfig-test.json TS_NODE_TRANSPILE_ONLY=true mocha --exit",
+        "test:ci": "mkdirp 'tests/test_reports' && npm run test -- -R mocha-bamboo-reporter --reporter-options output=tests/test_reports/mocha.json",
+        "test:coverage": "mkdirp test_reports && nyc cross-env-shell TS_NODE_PROJECT=tsconfig-test.json TS_NODE_TRANSPILE_ONLY=true mocha --exit -R mocha-bamboo-reporter --reporter-options output=test_reports/mocha.json",
+        "update:public": "cd node_modules/tinymce && find . \\( -name '*.min.js' -or -name '*.min.css' \\) | cpio -updm ../../public/tinymce && cd ../../"
+    },
+    "lint-staged": {
+        "*.{ts,tsx,js,jsx,mjs,cjs}": [
+            "eslint --fix --max-warnings=2",
+            "prettier --write"
+        ],
+        "*.{json,md}": [
+            "prettier --write"
+        ]
+    },
+    "mocha": {
+        "recursive": "true",
+        "extension": [
+            "ts"
+        ],
+        "require": [
+            "ts-node/register",
+            "jsdom-global/register",
+            "ignore-styles",
+            "test/unitTestSetup.ts"
+        ],
+        "spec": "test/**/*.test.ts?(x)",
+        "timeout": "5000"
+    },
+    "nyc": {
+        "all": true,
+        "branches": 74,
+        "check-coverage": true,
+        "exclude": [
+            "**/*.js",
+            "test/",
+            "coverage/",
+            "**/*.d.ts"
+        ],
+        "extension": [
+            ".ts",
+            ".tsx"
+        ],
+        "functions": 80,
+        "lines": 85,
+        "reporter": [
+            "text-summary",
+            "lcov"
+        ],
+        "statements": 85
+    },
+    "dependencies": {
+        "@tinymce/tinymce-react": "4.1.0",
+        "@ukri-tfs/bpk-components": "^1.1.1",
+        "@ukri-tfs/frontend-utils": "1.1.0",
+        "@ukri-tfs/sanitize-html": "1.27.3",
+        "@ukri-tfs/validation": "1.0.0",
+        "@ukri-tfs/time": "1.0.0",
+        "@ukri-tfs/cost-policy": "1.0.0",
+        "accessible-autocomplete": "^2.0.2",
+        "bulma": "^0.9.3",
+        "classnames": "2.2.6",
+        "css-loader": "^2.1.0",
+        "html-entities": "2.0.2",
+        "sass": "^1.3.0",
+        "sass-loader": "^8.0.0",
+        "tinymce": "5.6.1"
+    },
+    "peerDependencies": {
+        "govuk-frontend": "^3.14.0",
+        "govuk-react-jsx": "^6.2.1",
+        "react": "17.x",
+        "react-dom": "17.x",
+        "react-helmet": "^6.1.0",
+        "react-router-dom": "^5.2.0"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.12.3",
+        "@babel/plugin-proposal-class-properties": "7.12.1",
+        "@babel/plugin-proposal-export-default-from": "7.12.1",
+        "@babel/plugin-syntax-dynamic-import": "7.8.3",
+        "@babel/plugin-transform-runtime": "7.12.1",
+        "@babel/preset-env": "7.12.7",
+        "@storybook/addon-actions": "6.x",
+        "@storybook/addon-essentials": "6.x",
+        "@storybook/addon-knobs": "6.x",
+        "@storybook/addon-links": "6.x",
+        "@storybook/react": "6.x",
+        "@testing-library/react": "^12.1.5",
+        "@types/chai": "4.2.14",
+        "@types/classnames": "2.2.11",
+        "@types/ignore-styles": "5.0.0",
+        "@types/lodash": "^4.1.1",
+        "@types/mocha": "10.x",
+        "@types/react": "17.0.46",
+        "@types/react-dom": "^18.3.0",
+        "@types/react-helmet": "^6.1.0",
+        "@types/sinon": "^9.0.10",
+        "@types/sinon-chai": "^3.2.5",
+        "@ukri-tfs/govuk-react-jsx-types": "*",
+        "babel-loader": "^8.2.1",
+        "chai": "4.2.0",
+        "copyfiles": "^2.4.1",
+        "cross-env": "6.0.3",
+        "eslint": "7.x",
+        "file-loader": "^4.3.0",
+        "govuk-frontend": "^3.14.0",
+        "govuk-react-jsx": "^6.2.1",
+        "ignore-styles": "^5.0.1",
+        "jsdom": "16.4.0",
+        "jsdom-global": "3.0.2",
+        "lodash": "^4.17.21",
+        "mini-css-extract-plugin": "^1.3.0",
+        "mkdirp": "1.x",
+        "mocha": "10.x",
+        "mocha-bamboo-reporter": "1.1.2",
+        "moment": "2.29.4",
+        "nyc": "15.x",
+        "react": "17.x",
+        "react-dom": "17.x",
+        "react-helmet": "^6.1.0",
+        "react-is": "^17.0.1",
+        "react-router-dom": "^5.2.0",
+        "rimraf": "^3.0.2",
+        "sinon": "^15.0.1",
+        "sinon-chai": "^3.5.0",
+        "ts-node": "^8.0.2",
+        "typescript": "^4.9.5"
+    },
+    "publishConfig": {
+        "registry": "https://devops.innovateuk.org/binaries/repository/npm-private/"
+    }
+}

@@ -1,0 +1,74 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/am/event/v2/applicationData.schema.json",
+    "title": "Application Data",
+    "description": "Data about an Application",
+    "type": "object",
+    "properties": {
+        "application_id": {
+            "description": "The unique id of the Application",
+            "type": "number"
+        },
+        "opportunity_id": {
+            "description": "The unique id of the Opportunity which this Application has been submitted against",
+            "type": "number"
+        },
+        "organisation_id": {
+            "description": "The Organisation id of the lead Applicant making the application",
+            "type": "number"
+        },
+        "organisation_name": {
+            "description": "The Organisation name of the lead Applicant making the application",
+            "type": "string"
+        },
+        "workflow_component_id": {
+            "description": "The id of the Workflow Component on the Opportunity to which this Application refers",
+            "type": "number"
+        },
+        "applicant_id": {
+            "description": "The person id of the Applicant that created the Application. May not be the Lead Applicant.",
+            "type": "number"
+        },
+        "created_at": {
+            "description": "The creation date of the Application",
+            "type": "string",
+            "format": "date-time"
+        },
+        "created_by": {
+            "description": "The User id of the user who created the Application. Unrelated to Applicants.",
+            "type": "string"
+        },
+        "submitted_at": {
+            "description": "The submission date of the Application",
+            "type": "string",
+            "format": "date-time"
+        },
+        "details": {
+            "$ref": "application.schema.json"
+        },
+        "applicants": {
+            "description": "All applicants named on this Application",
+            "type": "array",
+            "items": { "$ref": "applicant.schema.json" }
+        },
+        "costs_by_organisation": {
+            "$ref": "combinedCost.schema.json"
+        },
+        "application_status": {
+            "description": "The status of the application",
+            "type": "string",
+            "examples": ["Draft"]
+        }
+    },
+    "required": [
+        "application_id",
+        "opportunity_id",
+        "organisation_id",
+        "organisation_name",
+        "workflow_component_id",
+        "applicant_id",
+        "created_at",
+        "created_by",
+        "details"
+    ]
+}

@@ -1,0 +1,8 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/award/event/properties/submittedBy.schema.json",
+    "title": "Submitted By",
+    "description": "The TFS generated UUID of the user who actioned the return",
+    "type": "string",
+    "format": "uuid"
+}

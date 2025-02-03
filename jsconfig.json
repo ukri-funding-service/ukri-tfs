@@ -1,0 +1,24 @@
+{
+    // "compilerOptions": {
+    //     "module": "es6",
+    //     "moduleResolution": "node"
+    // },
+    "exclude": [
+        "dist",
+        "node_modules",
+        "build",
+        ".next",
+        "**/dist",
+        "**/node_modules",
+        "**/build",
+        "**/.next",
+        "**/newrelic.js",
+        "**/coverage",
+        "**/.nyc_output",
+        "**/packaged-lambdas",
+        "**/.serverless",
+        "**/*min.js",
+        "**/coveragen",
+        "templates"
+    ]
+}

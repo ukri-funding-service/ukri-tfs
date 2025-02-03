@@ -1,0 +1,1 @@
+export { validateAgainstSchema } from './validateAgainstSchema';

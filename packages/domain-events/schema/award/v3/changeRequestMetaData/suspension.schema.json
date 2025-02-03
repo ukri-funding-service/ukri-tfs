@@ -1,0 +1,46 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/award/event/v3/changeRequestMetaData/suspension.schema.json",
+    "title": "CR Submitted - Extension",
+    "description": "Data in the event emitted when a change request is submitted specific to an suspension request",
+    "type": "object",
+    "properties": {
+        "changeType": {
+            "const": "Suspension"
+        },
+        "suspensionDate": {
+            "description": "The requested date for suspension.",
+            "type": "string",
+            "format": "date-time"
+        },
+        "resumptionDate": {
+            "description": "The expected date for resumption.",
+            "type": "string",
+            "format": "date-time"
+        },
+        "suspensionReasonType": {
+            "description": "The reason type for the suspension, if 'Other' see suspensionReason for more detail",
+            "type": "string"
+        },
+        "suspensionReason": {
+            "description": "Custom reason for suspension when the suspensionReasonType is 'Other'",
+            "type": "string"
+        },
+        "animalHumanParticipation": {
+            "description": "Whether or not the extension will require animal or human participation",
+            "type": "string",
+            "enum": ["YES", "NO"]
+        },
+        "animalHumanCareProvided": {
+            "description": "Whether or not care provided for animal or human participation",
+            "type": "string",
+            "enum": ["YES", "NO", "N/A"]
+        },
+        "animalHumanCostCharged": {
+            "description": "Whether or not cost charged in grant for animal or human participation",
+            "type": "string",
+            "enum": ["YES", "NO", "N/A"]
+        }
+    },
+    "required": ["changeType", "suspensionDate", "resumptionDate", "suspensionReasonType", "animalHumanParticipation"]
+}

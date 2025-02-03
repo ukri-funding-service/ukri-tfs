@@ -1,0 +1,76 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/award/event/v3/sentForAuthorisationDirectAwardData.schema.json",
+    "title": "Sent for Authorization Data Direct Award",
+    "description": "Data in the event emitted when we authorize an award with direct source",
+    "type": "object",
+    "required": [
+        "tfsAwardReference",
+        "gfsAwardReference",
+        "awardStatus",
+        "statusUpdatedAt",
+        "statusUpdatedBy",
+        "publishToGatewayToResearch",
+        "awardName",
+        "researchOrganisationId",
+        "totalAwardValue",
+        "fundingTotals",
+        "projectPartners",
+        "teamMembers",
+        "earliestStartDate",
+        "latestStartDate",
+        "duration",
+        "awardSource"
+    ],
+    "additionalProperties": false,
+    "properties": {
+        "tfsAwardReference": {
+            "$ref": "../properties/tfsAwardReference.schema.json"
+        },
+        "gfsAwardReference": {
+            "$ref": "../properties/gfsAwardReference.schema.json"
+        },
+        "awardStatus": {
+            "$ref": "../properties/awardStatus.schema.json"
+        },
+        "statusUpdatedAt": {
+            "$ref": "../properties/statusUpdatedAt.schema.json"
+        },
+        "statusUpdatedBy": {
+            "$ref": "../properties/statusUpdatedBy.schema.json"
+        },
+        "publishToGatewayToResearch": {
+            "$ref": "../properties/publishToGatewayToResearch.schema.json"
+        },
+        "awardSource": {
+            "$ref": "../properties/awardSource.schema.json"
+        },
+        "awardName": {
+            "$ref": "../properties/awardName.schema.json"
+        },
+        "researchOrganisationId": {
+            "$ref": "../properties/researchOrganisationId.schema.json"
+        },
+        "totalAwardValue": {
+            "$ref": "../properties/totalAwardValue.schema.json"
+        },
+        "fundingTotals": {
+            "$ref": "../properties/fundingTotalsV3.schema.json"
+        },
+        "projectPartners": {
+            "$ref": "../properties/projectPartners.schema.json"
+        },
+        "teamMembers": {
+            "$ref": "../properties/teamMembers.schema.json"
+        },
+        "earliestStartDate": {
+            "$ref": "../properties/earliestStartDate.schema.json"
+        },
+        "latestStartDate": {
+            "$ref": "../properties/latestStartDate.schema.json"
+        },
+        "duration": {
+            "$ref": "../properties/duration.schema.json"
+        }
+    }
+}

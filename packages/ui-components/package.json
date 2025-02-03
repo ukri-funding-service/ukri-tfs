@@ -1,0 +1,12 @@
+{
+    "name": "@ukri-tfs/ui-components-wrapper",
+    "version": "1.0.3",
+    "private": true,
+    "scripts": {
+        "prettier": "prettier --check .",
+        "prettier:fix": "prettier --write ."
+    },
+    "devDependencies": {
+        "react": "17.x"
+    }
+}

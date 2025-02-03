@@ -1,0 +1,49 @@
+{
+    "definitions": {},
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/notification/event/v1/invite/sendInvitePanelNotificationEventBody.schema.json",
+    "title": "Send Invite Panel Notification event payload data",
+    "description": "Invitation to panel member",
+    "type": "object",
+    "required": [
+        "templateId",
+        "recipients",
+        "inviteLink",
+        "panelDisplayId",
+        "panelName",
+        "meetingStartTime",
+        "meetingEndTime",
+        "memberRole",
+        "prescoreCommentsRequired"
+    ],
+    "properties": {
+        "templateId": {
+            "type": "string",
+            "enum": ["panelMemberInvite"]
+        },
+        "recipients": {
+            "$ref": "../common/recipients.schema.json"
+        },
+        "inviteLink": {
+            "type": "string"
+        },
+        "panelDisplayId": {
+            "type": "string"
+        },
+        "panelName": {
+            "type": "string"
+        },
+        "meetingStartTime": {
+            "type": "string"
+        },
+        "meetingEndTime": {
+            "type": "string"
+        },
+        "memberRole": {
+            "type": "string"
+        },
+        "prescoreCommentsRequired": {
+            "type": "boolean"
+        }
+    }
+}

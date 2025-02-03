@@ -1,0 +1,26 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/erm/event/v1/reviewEvaluateUsabilityEvent.schema.json",
+    "title": "Review evaluate usability Event",
+    "description": "An event emitted when evaluating the usability of a review",
+    "type": "object",
+    "properties": {
+        "type": {
+            "type": "string",
+            "enum": ["review-evaluate-usability"]
+        },
+        "data": {
+            "description": "The data contained in the event",
+            "$ref": "reviewEvaluateUsability.schema.json"
+        },
+        "method": {
+            "description": "The action that caused the event",
+            "type": "string",
+            "enum": ["create"]
+        },
+        "correlationIds": {
+            "$ref": "correlationIds.schema.json"
+        }
+    },
+    "required": ["type", "data"]
+}

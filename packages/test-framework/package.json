@@ -1,0 +1,122 @@
+{
+    "name": "@ukri-tfs/test-framework",
+    "project": "ukri",
+    "version": "0.2.15",
+    "private": true,
+    "description": "UKRI test library for API/UI/Performance testing with generic functions, reusable data and reports",
+    "main": "./dist/index.js",
+    "files": [
+        "dist"
+    ],
+    "bin": {
+        "ukri-test-framework": "./dist/scripts/index.js",
+        "installTestModule": "./dist/scripts/installModule.sh"
+    },
+    "scripts": {
+        "clean": "rm -rf dist && mkdir dist",
+        "docker:build": "VERSION=$(node -p \"require('./package.json').version\") && cd docker_build && docker build -t docker-tfs.devops.innovateuk.org/tfs/ukri-test-framework:${VERSION} --build-arg NPM_AUTH_TOKEN=${NPM_AUTH_TOKEN} --build-arg VERSION=${VERSION} .",
+        "docker:build:local": "VERSION=$(node -p \"require('./package.json').version\") && docker build -t docker-tfs.devops.innovateuk.org/tfs/ukri-test-framework:${VERSION} .",
+        "build": "npm run compile",
+        "compile": "babel src -s -D -d dist && cp package.json ./src/.babelrc dist/",
+        "prebuild": "npm run clean",
+        "prettier": "prettier --check .",
+        "prettier:fix": "prettier --write .",
+        "lint": "eslint . --max-warnings=0",
+        "lint:fix": "npm run lint -- --fix",
+        "lint:ci": "mkdir -p ${ESLINT_FILE%/*}; npm run lint -- -f ../../node_modules/eslint-bamboo-formatter/reporter.js",
+        "test": "mocha"
+    },
+    "mocha": {
+        "recursive": "true",
+        "extension": [
+            "js"
+        ],
+        "spec": "test/**/*.test.js",
+        "timeout": "5000"
+    },
+    "dependencies": {
+        "@aws-sdk/client-cloudwatch-logs": "3.x",
+        "@aws-sdk/client-lambda": "3.x",
+        "@aws-sdk/client-sns": "3.x",
+        "@aws-sdk/client-sqs": "3.x",
+        "@ukri-tfs/auth": "*",
+        "ajv": "6.12.6",
+        "ajv-openapi": "2.0.0",
+        "babel-jest": "^29.7.0",
+        "cucumber-junit-convert": ">=2.1.1",
+        "dotenv": "8.2.0",
+        "eslint": "7.x",
+        "got": "^11.8.2",
+        "graphql": "^14.7.0",
+        "graphql-request": "^3.7.0",
+        "jest": "^29.7.0",
+        "lodash.get": "4.4.2",
+        "luxon": "^1.26.0",
+        "mailosaur": "^8.8.0",
+        "moment": "2.29.4",
+        "node-downloader-helper": "^1.0.17",
+        "node-fetch": "^2.7.0",
+        "openapi-schema-validator": "^7.2.3",
+        "package-json": "^10.0.1",
+        "path": "^0.12.7",
+        "pdf2json": "^3.1.4",
+        "pg-promise": "^10.9.4",
+        "random-string-generator": "1.0.0",
+        "rimraf": "^5.0.5",
+        "simple-node-logger": "18.12.24",
+        "swagger-parser": "10.0.2",
+        "tmp-promise": "^3.0.3",
+        "ts-node": "^9.1.1",
+        "uuid": "^8.3.2",
+        "winston": "^3.11.0",
+        "yargs": "16.2.0"
+    },
+    "devDependencies": {
+        "@babel/cli": "^7.24.8",
+        "@babel/core": "^7.25.2",
+        "@babel/eslint-parser": "^7.25.1",
+        "@babel/plugin-proposal-export-default-from": "^7.24.7",
+        "@babel/plugin-transform-class-properties": "^7.24.7",
+        "@babel/plugin-transform-runtime": "^7.24.7",
+        "@babel/preset-env": "^7.25.3",
+        "@babel/register": "^7.24.6",
+        "aws-sdk-client-mock": "^4",
+        "babel-plugin-module-resolver": "^5.0.2",
+        "chai": "^4.3.3",
+        "chai-as-promised": "7.x",
+        "eslint": "7.x",
+        "eslint-config-airbnb-base": "^14.2.1",
+        "eslint-plugin-import": "^2.22.1",
+        "eslint-plugin-promise": "^4.3.1",
+        "eslint-plugin-wdio": "^6.6.0",
+        "http-server": "^14.1.1",
+        "mocha": "^11.0.1",
+        "npm-run-all": "4.1.5",
+        "proxyquire": "2.x",
+        "sinon": "9.x",
+        "sinon-chai": "3.x",
+        "typescript": "^4.9.5"
+    },
+    "peerDependencies": {
+        "@cucumber/cucumber": ">=8"
+    },
+    "peerDependenciesMeta": {
+        "@cucumber/cucumber": {
+            "optional": true
+        }
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://devops.innovateuk.org/code-repository/projects/UKRI/repos/ukri-test-framework/browse"
+    },
+    "publishConfig": {
+        "registry": "https://devops.innovateuk.org/binaries/repository/npm-private"
+    },
+    "keywords": [
+        "webdriverio",
+        "cucumber",
+        "test",
+        "selenium"
+    ],
+    "license": "MIT"
+}

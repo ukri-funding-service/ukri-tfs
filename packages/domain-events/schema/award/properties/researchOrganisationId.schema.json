@@ -1,0 +1,7 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/award/event/properties/researchOrganisationId.schema.json",
+    "title": "Research Organisation ID",
+    "description": "The associated research organisation id of the award",
+    "type": "number"
+}

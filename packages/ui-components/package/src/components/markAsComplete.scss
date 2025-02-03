@@ -1,0 +1,19 @@
+// Importing govuk/all includes all govuk CSS into each file that its imported into.
+// This causes a large amount of duplicated CSS. If govuk functions are required, only import govuk/base
+@import '~govuk-frontend/govuk/base';
+
+.mark-as-complete-wrapper {
+    margin-top: govuk-spacing(0);
+    margin-bottom: govuk-spacing(6);
+    position: relative;
+    background-color: govuk-colour('light-grey');
+    padding: 20px 40px 20px 20px;
+
+    .govuk-form-group {
+        margin-bottom: govuk-spacing(0);
+    }
+
+    .govuk-checkboxes__label:before {
+        background: govuk-colour('white');
+    }
+}

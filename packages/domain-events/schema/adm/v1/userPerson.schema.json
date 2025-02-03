@@ -1,0 +1,29 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/adm/event/v1/userPerson.schema.json",
+    "title": "User/Person",
+    "description": "Details of a user (including some personal data) who is known to Person/Party Management",
+    "type": "object",
+    "properties": {
+        "id": {
+            "description": "The unique identifier for the User. Note: this is NOT the Person id.",
+            "type": "number"
+        },
+        "first_name": {
+            "description": "The first name of the Person associated with the User",
+            "type": "string",
+            "minLength": 1
+        },
+        "last_name": {
+            "description": "The last name of the Person associated with the User",
+            "type": "string",
+            "minLength": 1
+        },
+        "email_address": {
+            "description": "The email address of the Person associated with the User",
+            "type": "string",
+            "format": "email"
+        }
+    },
+    "required": ["id", "first_name", "last_name", "email_address"]
+}

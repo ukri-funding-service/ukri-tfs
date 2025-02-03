@@ -1,0 +1,21 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/award/event/v1/returnedByResearchOffice.schema.json",
+    "title": "Offer Response - Returned For Amendments Event",
+    "description": "An Event emitted when the research office has returned an award for amendments",
+    "type": "object",
+    "properties": {
+        "type": {
+            "description": "The type of event",
+            "type": "string",
+            "enum": ["https://funding-service.ukri.org/schema/award/event/v1/returnedByResearchOffice.schema.json"]
+        },
+        "data": {
+            "$ref": "returnedByResearchOfficeData.schema.json"
+        },
+        "correlationIds": {
+            "$ref": "correlationIds.schema.json"
+        }
+    },
+    "required": ["data", "correlationIds", "type"]
+}

@@ -1,0 +1,23 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/award/event/properties/changeRequestMetaData/startDate.schema.json",
+    "title": "CR Submitted - Start Date",
+    "description": "Data in the event emitted when a change request is submitted specific to a start date request",
+    "type": "object",
+    "properties": {
+        "changeType": {
+            "const": "Start Date"
+        },
+        "initialStartDate": {
+            "description": "When the original award was scheduled to start.",
+            "type": "string",
+            "format": "date-time"
+        },
+        "newStartDate": {
+            "description": "The requested date for the award starting",
+            "type": "string",
+            "format": "date-time"
+        }
+    },
+    "required": ["changeType", "initialStartDate", "newStartDate"]
+}

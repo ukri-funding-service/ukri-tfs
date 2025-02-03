@@ -1,0 +1,203 @@
+$module: 'pager';
+$pager-link-dimensions: 24px;
+
+.#{$module} {
+    /*margin-top: em(5, 16);
+    margin-bottom: em(20, 16);*/
+    margin-bottom: 30px;
+    @include govuk-font($size: 19);
+    @include govuk-clearfix;
+
+    &__summary {
+        position: relative;
+        width: 40%;
+        max-width: 280px;
+        float: left;
+        padding: 10px 0;
+
+        @include touch {
+            width: 100%;
+            max-width: none;
+            float: left;
+            clear: both;
+        }
+    }
+
+    &__controls {
+        @media only screen and (max-width: 32.25rem) {
+            ul li {
+                &.intermediate-page {
+                    display: none;
+                }
+            }
+        }
+
+        @include touch {
+            width: 100%;
+            max-width: none;
+            float: left;
+            clear: both;
+            margin-top: 10px;
+        }
+
+        &.summary {
+            @media only screen and (max-width: 71.25rem) {
+                width: 100%;
+            }
+
+            position: relative;
+            float: right;
+            width: 60%;
+        }
+    }
+
+    &__list {
+        @include touch {
+            float: left;
+            text-align: left;
+        }
+
+        &.summary {
+            float: left;
+        }
+    }
+
+    &__list-item {
+        box-sizing: border-box;
+        float: left;
+        font-weight: 400;
+        line-height: 1.25;
+        min-height: 45px;
+        min-width: 45px;
+        padding: 10px 10px;
+        position: relative;
+        text-underline-offset: 0.1578em;
+        text-decoration-thickness: max(1px, 0.0625rem);
+    }
+
+    &__list-link {
+        display: block;
+        min-width: $pager-link-dimensions;
+        height: $pager-link-dimensions;
+        text-align: center;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    &__list-current-link {
+        display: block;
+        width: $pager-link-dimensions;
+        height: $pager-link-dimensions;
+        text-align: center;
+        color: white !important;
+
+        &:hover {
+            color: white;
+            text-decoration-thickness: 3px !important;
+        }
+    }
+
+    &__list-ellipses {
+        display: block;
+        height: $pager-link-dimensions;
+        text-align: center;
+        font-weight: 700;
+        color: #505a5f;
+    }
+
+    &__next,
+    &__prev {
+        align-items: center;
+        display: flex;
+        font-weight: bold;
+        height: $pager-link-dimensions;
+        min-width: 40px;
+        text-align: center;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    &__selected-item-background {
+        background-color: govuk-colour('blue');
+        color: #fff;
+
+        &:hover {
+            text-decoration-thickness: 3px !important;
+        }
+    }
+
+    &__selectable-item {
+        a {
+            &:after {
+                content: '';
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+            }
+        }
+
+        &:hover {
+            background-color: #f3f2f1;
+            a {
+                &:hover {
+                    text-decoration-thickness: 3px !important;
+                }
+            }
+        }
+    }
+
+    &__nav-wrapper {
+        &.summary {
+            float: right;
+
+            @media only screen and (max-width: 32.25rem) {
+                float: none;
+            }
+        }
+
+        @media only screen and (max-width: 32.25rem) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+    }
+
+    &__govuk-pagination__icon {
+        width: 0.9375rem;
+        height: 0.8125rem;
+        color: #505a5f;
+        fill: currentcolor;
+        forced-color-adjust: auto;
+
+        &--next {
+            margin-left: 15px;
+        }
+
+        &--prev {
+            margin-right: 15px;
+        }
+    }
+
+    &__previous-button-wrapper {
+        @media only screen and (max-width: 32.25rem) {
+            padding-right: 12px;
+        }
+        padding-right: 10px;
+        padding-left: 0;
+    }
+
+    &__next-button-wrapper {
+        @media only screen and (max-width: 32.25rem) {
+            padding-left: 19px;
+        }
+        padding-left: 10px;
+        padding-right: 0;
+    }
+}

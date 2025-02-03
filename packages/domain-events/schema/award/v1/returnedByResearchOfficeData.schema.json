@@ -1,0 +1,20 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/award/event/v1/returnedByResearchOfficeData.schema.json",
+    "title": "Offer Response - Returned For Amendments",
+    "description": "Data in the event emitted when the research office has returned an award for amendments",
+    "type": "object",
+    "required": ["awardReference", "submittedBy", "timeSubmitted"],
+    "additionalProperties": false,
+    "properties": {
+        "awardReference": {
+            "$ref": "returnedAwardProperties/awardReference.schema.json"
+        },
+        "submittedBy": {
+            "$ref": "returnedAwardProperties/submittedBy.schema.json"
+        },
+        "timeSubmitted": {
+            "$ref": "returnedAwardProperties/timeSubmitted.schema.json"
+        }
+    }
+}

@@ -1,0 +1,6 @@
+.nyc_output
+certificates
+coverage
+dist
+node_modules
+test_reports

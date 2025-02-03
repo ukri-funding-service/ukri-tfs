@@ -1,0 +1,34 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/panel/event/v1/prescores.schema.json",
+    "title": "Prescores",
+    "description": "The application pre-score details",
+    "type": "array",
+    "items": {
+        "type": "object",
+        "properties": {
+            "personId": {
+                "description": "The panel member person ID",
+                "type": "number"
+            },
+            "applicationId": {
+                "description": "The application ID",
+                "type": "number"
+            },
+            "applicationRole": {
+                "description": "The role assigned to the panel member associated to the application",
+                "type": "string"
+            },
+            "score": {
+                "description": "The pre-score submitted for the application",
+                "type": "string"
+            },
+            "timestamp": {
+                "description": "The timestamp of the pre-score submission",
+                "type": "string",
+                "format": "date-time"
+            }
+        },
+        "required": ["personId", "applicationId", "applicationRole", "score", "timestamp"]
+    }
+}

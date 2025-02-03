@@ -1,0 +1,51 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/adm/event/v1/groupUserAddedEvent.schema.json",
+    "title": "Group user added event",
+    "description": "An Event emitted when a group user is added",
+    "type": "object",
+    "properties": {
+        "type": {
+            "description": "The data contained in the event",
+            "type": "string",
+            "enum": ["groupUserAdded"]
+        },
+        "data": {
+            "type": "object",
+            "properties": {
+                "personIds": {
+                    "description": "Array of person ids",
+                    "type": "array",
+                    "items": {
+                        "type": "number"
+                    }
+                },
+                "groupId": {
+                    "description": "Id of the group",
+                    "type": "number"
+                },
+                "organisationId": {
+                    "description": "Id of the organisation",
+                    "type": "number"
+                },
+                "researchOfficer": {
+                    "description": "Research officer first and last name",
+                    "type": "object",
+                    "properties": {
+                        "firstName": {
+                            "type": "string"
+                        },
+                        "lastName": {
+                            "type": "string"
+                        }
+                    }
+                }
+            },
+            "required": ["personIds", "groupId", "researchOfficer", "organisationId"]
+        },
+        "correlationIds": {
+            "$ref": "correlationIds.schema.json"
+        }
+    },
+    "required": ["type", "data"]
+}

@@ -1,0 +1,39 @@
+.vertical-line-right {
+    border-right: 1px solid #b1b4b6;
+}
+
+.align-top {
+    vertical-align: top;
+}
+
+.raise-image {
+    transform: translate(0, -40%);
+}
+
+.subcount-color {
+    color: govuk-colour('red');
+}
+
+.activity-summary-large {
+    @media (max-width: 880px) {
+        display: none;
+    }
+    @media (min-width: 880px) {
+        display: block;
+    }
+}
+
+.activity-summary-small {
+    @media (max-width: 880px) {
+        display: block;
+    }
+    @media (min-width: 880px) {
+        display: none;
+    }
+
+    .top-margin {
+        @media (max-width: 40.0625rem) {
+            margin-bottom: 15px;
+        }
+    }
+}

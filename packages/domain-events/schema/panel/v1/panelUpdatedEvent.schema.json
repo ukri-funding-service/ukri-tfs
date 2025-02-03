@@ -1,0 +1,22 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/panel/event/v1/panelUpdatedEvent.schema.json",
+    "title": "Panel Updated Event",
+    "description": "An Event emitted on update of a panel",
+    "type": "object",
+    "properties": {
+        "type": {
+            "description": "The data contained in the event",
+            "type": "string",
+            "enum": ["panel-updated-gz"]
+        },
+        "unzippedType": { "type": "string", "enum": ["panel-updated"] },
+        "data": {
+            "$ref": "panelUpdated.schema.json"
+        },
+        "correlationIds": {
+            "$ref": "https://funding-service.ukri.org/schema/panel/event/v1/correlationIds.schema.json"
+        }
+    },
+    "required": ["type", "data"]
+}

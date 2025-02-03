@@ -1,0 +1,22 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/am/event/v2/applicationStatusChangedEvent.schema.json",
+    "title": "Application Status Change",
+    "description": "An event emitted when there is a change in application status",
+    "type": "object",
+    "properties": {
+        "type": {
+            "description": "The data contained in the event",
+            "type": "string",
+            "enum": ["https://funding-service.ukri.org/schema/am/event/v2/applicationStatusChangedEvent.schema.json"]
+        },
+        "data": {
+            "$ref": "applicationStatusChangedData.schema.json"
+        },
+        "correlationIds": {
+            "$ref": "correlationIds.schema.json"
+        }
+    },
+
+    "required": ["type", "data", "correlationIds"]
+}

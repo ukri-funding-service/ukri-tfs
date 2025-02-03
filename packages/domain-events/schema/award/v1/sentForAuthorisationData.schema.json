@@ -1,0 +1,186 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/award/event/v1/sentForAuthorisationData.schema.json",
+    "title": "Sent for Authorization Data",
+    "description": "Data in the event emitted when we authorize an award",
+    "type": "object",
+    "required": [
+        "tfsAwardReference",
+        "gfsAwardReference",
+        "awardStatus",
+        "statusUpdatedAt",
+        "statusUpdatedBy",
+        "awardName",
+        "opportunityId",
+        "applicationId",
+        "researchOrganisationId",
+        "totalAwardValue",
+        "fundingTotals",
+        "projectPartners",
+        "teamMembers",
+        "earliestStartDate",
+        "latestStartDate",
+        "duration"
+    ],
+    "additionalProperties": false,
+    "properties": {
+        "tfsAwardReference": {
+            "$ref": "awardProperties/tfsAwardReference.schema.json"
+        },
+        "gfsAwardReference": {
+            "$ref": "awardProperties/gfsAwardReference.schema.json"
+        },
+        "awardStatus": {
+            "$ref": "awardProperties/awardStatus.schema.json"
+        },
+        "statusUpdatedAt": {
+            "$ref": "awardProperties/statusUpdatedAt.schema.json"
+        },
+        "statusUpdatedBy": {
+            "$ref": "awardProperties/statusUpdatedBy.schema.json"
+        },
+        "awardName": {
+            "description": "The name of the award",
+            "type": "string"
+        },
+        "opportunityId": {
+            "description": "The associated opportunity reference ID of the award",
+            "type": "number"
+        },
+        "applicationId": {
+            "description": "The associated application id of the award",
+            "type": "number"
+        },
+        "researchOrganisationId": {
+            "description": "The associated research organisation id of the award",
+            "type": "number"
+        },
+        "totalAwardValue": {
+            "description": "The total value of the award",
+            "type": "number"
+        },
+        "fundingTotals": {
+            "description": "Breakdown of final indexed value for each funding heading",
+            "type": "object",
+            "required": ["directlyIncurred", "directlyAllocated", "indirectCosts", "exceptions"],
+            "properties": {
+                "directlyIncurred": {
+                    "description": "Cumulative award total for directly incurred costs",
+                    "type": "number"
+                },
+                "directlyAllocated": {
+                    "description": "Cumulative award total for directly allocated costs",
+                    "type": "number"
+                },
+                "indirectCosts": {
+                    "description": "Cumulative award total for indirect costs",
+                    "type": "number"
+                },
+                "exceptions": {
+                    "description": "Cumulative award total for exceptions",
+                    "type": "number"
+                }
+            }
+        },
+        "projectPartners": {
+            "description": "The project partners associated with the award",
+            "type": "array",
+            "items": {
+                "required": [
+                    "organisationName",
+                    "nameOfContact",
+                    "directContributionPence",
+                    "inKindContributionPence",
+                    "country"
+                ],
+                "type": "object",
+                "properties": {
+                    "organisationName": {
+                        "description": "The name of the organisation",
+                        "type": "string"
+                    },
+                    "nameOfContact": {
+                        "description": "The name of the contact",
+                        "type": "string"
+                    },
+                    "directContributionPence": {
+                        "description": "The direct contribution of the organisation in pence",
+                        "type": "number"
+                    },
+                    "inKindContributionPence": {
+                        "description": "The in kind contribution of the organisation in pence",
+                        "type": "number"
+                    },
+                    "country": {
+                        "description": "The name of the country",
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "teamMembers": {
+            "description": "The team members associated with the award",
+            "type": "array",
+            "items": {
+                "required": ["role", "roleType", "timeSpentOnProject"],
+                "type": "object",
+                "properties": {
+                    "personId": {
+                        "description": "The person id of the team member",
+                        "type": "number"
+                    },
+                    "role": {
+                        "description": "The role of the team member",
+                        "type": "string",
+                        "enum": [
+                            "Lead Applicant",
+                            "Principal Investigator",
+                            "Co-investigator",
+                            "Researcher",
+                            "Technician",
+                            "Business partner",
+                            "Fellow"
+                        ]
+                    },
+                    "roleType": {
+                        "description": "The role type of the team member",
+                        "type": "string",
+                        "enum": ["Directly Allocated", "Directly Incurred", "Exception", "Unallocated"]
+                    },
+                    "timeSpentOnProject": {
+                        "description": "The time spent on the project by the team member",
+                        "type": "number"
+                    },
+                    "averageHoursPerWeek": {
+                        "description": "The average hours per week spent on the project by the team member",
+                        "type": "number"
+                    },
+                    "startDate": {
+                        "description": "The start date of the team member",
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "endDate": {
+                        "description": "The end date of the team member",
+                        "type": "string",
+                        "format": "date-time"
+                    }
+                }
+            }
+        },
+        "earliestStartDate": {
+            "description": "The earliest start date of the award",
+            "type": "string",
+            "format": "date-time"
+        },
+        "latestStartDate": {
+            "description": "The latest start date of the award",
+            "type": "string",
+            "format": "date-time"
+        },
+        "duration": {
+            "description": "The duration of the award",
+            "type": "number"
+        }
+    }
+}

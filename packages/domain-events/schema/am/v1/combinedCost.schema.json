@@ -1,0 +1,22 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/am/event/v1/combinedCost.schema.json",
+    "title": "Combined Costs",
+    "description": "All possible costs associated with an Application",
+    "type": "object",
+    "properties": {
+        "directly_incurred": {
+            "$ref": "cost.schema.json"
+        },
+        "directly_allocated": {
+            "$ref": "cost.schema.json"
+        },
+        "indirect_costs": {
+            "$ref": "cost.schema.json"
+        },
+        "exceptions": {
+            "$ref": "cost.schema.json"
+        }
+    },
+    "additionalProperties": false
+}

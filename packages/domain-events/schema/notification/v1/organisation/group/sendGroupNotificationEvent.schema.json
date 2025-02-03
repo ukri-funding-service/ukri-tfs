@@ -1,0 +1,26 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/notification/event/v1/organisation/group/sendGroupNotificationEvent.schema.json",
+    "title": "Group Notification Event",
+    "description": "An Event emitted when a notification is required to be sent by the admin service",
+    "type": "object",
+    "required": ["data", "correlationIds", "type"],
+    "properties": {
+        "type": {
+            "description": "The type of event",
+            "type": "string",
+            "enum": ["group-notification"]
+        },
+        "data": {
+            "type": "object",
+            "anyOf": [
+                { "$ref": "sendGroupDeletedNotificationEventBody.schema.json" },
+                { "$ref": "sendGroupUserRemovedNotificationEventBody.schema.json" },
+                { "$ref": "sendGroupUserAddedNotificationEventBody.schema.json" }
+            ]
+        },
+        "correlationIds": {
+            "$ref": "../../common/correlationIds.schema.json"
+        }
+    }
+}

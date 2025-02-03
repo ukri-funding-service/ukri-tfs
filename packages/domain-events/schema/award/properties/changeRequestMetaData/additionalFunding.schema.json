@@ -1,0 +1,57 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/award/event/properties/changeRequestMetaData/additionalFunding.schema.json",
+    "title": "CR Submitted - Additional Funding",
+    "description": "Data in the event emitted when a change request is submitted specific to a additional funding request",
+    "type": "object",
+    "properties": {
+        "changeType": {
+            "const": "Additional Funding"
+        },
+        "startDate": {
+            "description": "The start date that the additional funding will apply",
+            "type": "string",
+            "format": "date-time"
+        },
+        "duration": {
+            "description": "The length in months the additional funding will apply",
+            "type": "number"
+        },
+        "additionalFundingReasonType": {
+            "description": "The reason type for the additional funding, if 'Other' see additionalFundingReason for more detail",
+            "type": "string"
+        },
+        "additionalFundingReason": {
+            "description": "Custom reason for additional funding reason when the additionalFundingReasonType is 'Other'",
+            "type": "string"
+        },
+        "fundHeadings": {
+            "type": "array",
+            "items": {
+                "description": "Fund heading for an additional funding change request",
+                "type": "object",
+                "properties": {
+                    "costCategory": {
+                        "type": "string",
+                        "description": "cost category of the fund heading"
+                    },
+                    "fundHeading": {
+                        "type": "string",
+                        "description": "fund heading name"
+                    },
+                    "fullCost": {
+                        "type": "number",
+                        "description": "fund heading full cost"
+                    }
+                },
+                "required": ["costCategory", "fundHeading", "fullCost"],
+                "additionalProperties": false
+            }
+        },
+        "fundingStream": {
+            "description": "The name of the funding stream",
+            "type": "string"
+        }
+    },
+    "required": ["changeType", "startDate", "duration", "additionalFundingReasonType", "fundHeadings", "fundingStream"]
+}
