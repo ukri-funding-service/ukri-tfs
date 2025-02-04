@@ -1,0 +1,25 @@
+/*
+    Typescript compiler options which are common to ALL packages within
+    the monorepo.  The intention is that it should be possible to
+    switch flags or other settings on or off here to affect everything
+    at once, such as experimental flags which become obsolete.
+
+    This file should NOT be used for options that are unique to a single
+    package or a minority of packages.  Instead, extend this file and
+    override the setting in the individual package contexts.
+*/
+{
+    "compilerOptions": {
+        "declaration": true,
+        "emitDecoratorMetadata": true,
+        "esModuleInterop": true,
+        "experimentalDecorators": true,
+        "jsx": "react",
+        "module": "commonjs",
+        "target": "ES2016",
+        "resolveJsonModule": true,
+        "skipLibCheck": true,
+        "strict": true,
+        "sourceMap": true
+    }
+}

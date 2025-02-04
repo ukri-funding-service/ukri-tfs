@@ -7,9 +7,19 @@
 This is the UKRI TFS codebase.
 It includes the packages neccesary to run the TFS system.
 
-Use npm run bootstrap to install dependancies.
-npm run build to build packages
-and npm run test to run unittests
+To initialise the project run `npm install` This only needs to be run once to setup lerna that handles package and service dependcies.
+Use `npm run bootstrap` to install dependancies.
+`npm run build` to build packages
+and `npm run test` to run unittests
+
+## Storybook
+
+To run storybook:
+
+```bash
+cd packages/ui-components/package
+npm run storybook
+```
 
 ## Conventional Commits
 
