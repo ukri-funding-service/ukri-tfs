@@ -6,6 +6,4 @@ import '../styles.scss';
 
 const stories = storiesOf('Components', module);
 
-stories.add('Phase Banner', () => (
-    <PhaseBanner phase="BETA" surveyUrl="https://airtable.com/appj6osCTyP9dGvrL/shrDlfX6wle4cftUR" />
-));
+stories.add('Phase Banner', () => <PhaseBanner phase="BETA" surveyUrl="https://forms.office.com/e/cCd0b1SveT" />);

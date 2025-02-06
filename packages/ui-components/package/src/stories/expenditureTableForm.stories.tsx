@@ -33,5 +33,12 @@ const expenditureStatement: ExpenditureStatement = {
 const stories = storiesOf('TFS Components', module);
 
 stories.add('ExpenditureTableForm', () => {
-    return <ExpenditureTableForm expenditureStatement={expenditureStatement} errorMessages={[]} editable={true} />;
+    return (
+        <ExpenditureTableForm
+            expenditureStatement={expenditureStatement}
+            descriptionText={'Here is some decription text'}
+            errorMessages={[]}
+            editable={true}
+        />
+    );
 });

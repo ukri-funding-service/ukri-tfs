@@ -28,6 +28,15 @@ switch (process.env.SERVICE) {
     case 'file-management-service':
         serviceVariables = 'FileManagementServiceRestVariables';
         break;
+    case 'organisation-service-api':
+        serviceVariables = '';
+        break;
+    case 'panel-service-api':
+        serviceVariables = '';
+        break;
+    case 'post-decision':
+        serviceVariables = '';
+        break;
     case 'ui':
         serviceVariables = '';
         break;

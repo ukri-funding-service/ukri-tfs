@@ -9,3 +9,4 @@ export * from './isPostMethod';
 export * from './multipartFormData';
 export * from './redirect';
 export * from './request';
+export * from './readCookies';

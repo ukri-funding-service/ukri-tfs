@@ -47,12 +47,12 @@ describe('Group reassigned application email generator', () => {
 <p>You can read the application in full, by signing into your UKRI Funding Service account at any time. Full details about this Opportunity, including 'What happens next' can be found in the <a href="https://www.ukri.org/opportunity/develop-programme-ideas-with-the-bbc-new-generation-thinkers/">guidance on the Opportunity webpage</a>.</p>
 <p>If you can spare a few moments, we would welcome you selecting the 'Take survey' button to give feedback.</p>
 <a>some-application-link</a>
-<a>https://airtable.com/appj6osCTyP9dGvrL/shrDlfX6wle4cftUR</a>
+<a>https://forms.office.com/e/cCd0b1SveT</a>
 <p>If the 'View application' button does not work, use the link below or copy and paste it into your
 browser's address bar.</p>
 <p><a href="some-application-link">some-application-link</a></p>
 <p>If the ‘Take survey' button does not work, use the link below or copy and paste it into your browser's address bar.</p>
-<p><a href="https://airtable.com/appj6osCTyP9dGvrL/shrDlfX6wle4cftUR">https://airtable.com/appj6osCTyP9dGvrL/shrDlfX6wle4cftUR</a></p>
+<p><a href="https://forms.office.com/e/cCd0b1SveT">https://forms.office.com/e/cCd0b1SveT</a></p>
 mock email sign off html`);
     });
 
@@ -74,7 +74,7 @@ If the 'View application' button does not work, use the link below or copy and p
 some-application-link
 
 If the Take survey' button does not work, use the link below or copy and paste it into your browser's address bar.
-https://airtable.com/appj6osCTyP9dGvrL/shrDlfX6wle4cftUR
+https://forms.office.com/e/cCd0b1SveT
 
 mock email sign off text`);
     });

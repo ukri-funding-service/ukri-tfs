@@ -2,6 +2,7 @@ import React, { ReactElement } from 'react';
 import { Column, TypedTable } from './table';
 import { HeadingText } from './heading';
 import { Form } from './form';
+import { Paragraph } from './paragraph';
 
 export interface SupportingFileMetadata {
     id: string;
@@ -27,7 +28,7 @@ export interface SupportingFilesProps {
 const SupportingFilesTable = TypedTable<SupportingFilesTableRow>();
 
 export const SupportingFiles = (props: SupportingFilesProps): ReactElement => {
-    const fileText = (file: SupportingFileMetadata) => `${file.fileName} (${file.size}MB)`;
+    const fileText = (file: SupportingFileMetadata): string => `${file.fileName} (${file.size}MB)`;
 
     const FileDownload = (file: SupportingFileMetadata) => (
         <Form csrfToken={props.csrfToken} name="downloadFile" method="POST" key={`file-download-${file.id}`}>
@@ -58,7 +59,9 @@ export const SupportingFiles = (props: SupportingFilesProps): ReactElement => {
                         props.allowDownload && row.file.status !== 'QUARANTINED' ? (
                             <FileDownload {...row.file} />
                         ) : (
-                            fileText(row.file)
+                            <Paragraph className="govuk-!-display-inline govuk-!-font-size-16">
+                                {fileText(row.file)}
+                            </Paragraph>
                         )
                     }
                     ariaLabel="File"

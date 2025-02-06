@@ -23,20 +23,24 @@ describe('Applicant successful application email generator', () => {
     it('should generate email with the correct html', () => {
         const email = generator.generateHtml(emailData);
 
-        expect(email).toContain('Your application for funding has been successful');
+        expect(email).toContain('Your application has been successful');
         expect(email).toContain(emailData.recipient.firstName);
         expect(email).toContain(emailData.recipient.lastName);
-        expect(email).toContain('We are pleased to inform you that your application for funding has been successful.');
+        expect(email).toContain('We are pleased to inform you that your application has been successful.');
         expect(email).toContain('Application');
         expect(email).toContain(`${emailData.application.applicationRef}: ${emailData.application.applicationName}`);
         expect(email).toContain('Opportunity');
         expect(email).toContain(`${emailData.application.opportunityRef}: ${emailData.application.opportunityName}`);
         expect(email).toContain('What happens next');
-        expect(email).toContain('We will create a grant agreement and send it to your research organisation.');
         expect(email).toContain(
-            'Your research organisation must agree to the grant agreement before we can issue funding.',
+            'If there are no more stages to the application process, your research office (RO) will be sent a grant agreement. This must be agreed to before we can proceed further.',
         );
-        expect(email).toContain(`You don't need to do anything until your research organisation contacts you.`);
+        expect(email).toContain(
+            'If there are further stages to the application process, you will be contacted shortly with further details.',
+        );
+        expect(email).toContain(
+            `Check the <a href="https://www.ukri.org/opportunity">funding finder for more information about the application process for this opportunity</a>.`,
+        );
         expect(email).toContain('Yours sincerely,');
         expect(email).toContain('The UKRI Funding Service');
         expect(email).toContain('Email: support@funding-service.ukri.org');
@@ -47,20 +51,24 @@ describe('Applicant successful application email generator', () => {
     it('should generate email with the correct text', () => {
         const email = generator.generateText(emailData);
 
-        expect(email).toContain('Your application for funding has been successful');
+        expect(email).toContain('Your application has been successful');
         expect(email).toContain(emailData.recipient.firstName);
         expect(email).toContain(emailData.recipient.lastName);
-        expect(email).toContain('We are pleased to inform you that your application for funding has been successful.');
+        expect(email).toContain('We are pleased to inform you that your application has been successful.');
         expect(email).toContain('Application');
         expect(email).toContain(`${emailData.application.applicationRef}: ${emailData.application.applicationName}`);
         expect(email).toContain('Opportunity');
         expect(email).toContain(`${emailData.application.opportunityRef}: ${emailData.application.opportunityName}`);
         expect(email).toContain('What happens next');
-        expect(email).toContain('We will create a grant agreement and send it to your research organisation.');
         expect(email).toContain(
-            'Your research organisation must agree to the grant agreement before we can issue funding.',
+            'If there are no more stages to the application process, your research office (RO) will be sent a grant agreement. This must be agreed to before we can proceed further.',
         );
-        expect(email).toContain(`You don't need to do anything until your research organisation contacts you.`);
+        expect(email).toContain(
+            'If there are further stages to the application process, you will be contacted shortly with further details.',
+        );
+        expect(email).toContain(
+            `Check the funding finder for more information about the application process for this opportunity (https://www.ukri.org/opportunity).`,
+        );
         expect(email).toContain('Yours sincerely,');
         expect(email).toContain('The UKRI Funding Service');
         expect(email).toContain('Email: support@funding-service.ukri.org');

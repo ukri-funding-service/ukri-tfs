@@ -77,6 +77,18 @@ describe('ExpenditureTableForm', () => {
         expect(subtitle?.textContent).to.contains('Final');
     });
 
+    it('should render ExpenditureTableForm with description text', () => {
+        render(
+            <ExpenditureTableForm
+                expenditureStatement={expenditureStatement}
+                descriptionText={'This is the text Im looking for'}
+                errorMessages={[]}
+            />,
+        );
+
+        screen.getByText('This is the text Im looking for');
+    });
+
     it('should render ExpenditureTableForm with correct subtitle for transfer expenditure statement', () => {
         const { container } = render(
             <ExpenditureTableForm expenditureStatement={transferExpenditureStatement} errorMessages={[]} />,

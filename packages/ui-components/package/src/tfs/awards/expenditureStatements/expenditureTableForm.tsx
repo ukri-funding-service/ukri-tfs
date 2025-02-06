@@ -11,11 +11,13 @@ import {
 } from './mappers/mappers';
 import { ExpenditureStatement, ExpenditureStatementTotals } from './models/expenditureStatements';
 import { ExpenditureTableTotals } from './expenditureTableTotals';
+import { DescriptionText } from './descriptionText';
 
 interface ExpenditureTableFormProps {
     expenditureStatement: ExpenditureStatement;
     errorMessages: string[];
     editable?: boolean;
+    descriptionText?: string;
 }
 
 const ExpenditureStatementTable = TypedTable<ExpenditureStatementRow>();
@@ -251,6 +253,7 @@ export const ExpenditureTableForm = (props: ExpenditureTableFormProps): ReactEle
         <>
             <HeadingText text={copyText[expenditureType]} tag="h2" size="s" />
             <ExpenditureTableTotals totalValues={totalValues} editMode={props.editable} />
+            {props.descriptionText && <DescriptionText text={props.descriptionText} />}
             <CategoryTablesFormField
                 label=""
                 name="expenditureCategoryTables"

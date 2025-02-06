@@ -153,21 +153,40 @@ describe('packages/lambda-handler - eventHandling/sqsEventHandler', () => {
             });
         });
 
-        it('should call event handler with individual message', async () => {
+        it('should handle case when event is not a TFS message', async () => {
+            const isTfsMessage = false;
+
+            const validSingleRecordSQSEventNonTFSMessage: SQSEvent = {
+                Records: [
+                    {
+                        messageId: '1234',
+                        body: JSON.stringify({
+                            Message: JSON.stringify({
+                                foo: 'bar',
+                            }),
+                        }),
+                    } as SQSRecord,
+                ],
+            };
+
             const batchResponse = await handleSqsEvent(
                 'mylambda',
-                validSingleRecordSQSEvent,
+                validSingleRecordSQSEventNonTFSMessage,
                 mockHandler,
                 stubEventHandlerConfig,
                 stubLogger,
                 undefined,
+                undefined,
+                isTfsMessage,
             );
 
             expect(mockHandler).toHaveBeenCalledWith(
                 expect.objectContaining({
                     eventBody: expect.objectContaining({
-                        type: 'https://some-schema/some-event-gz',
-                        data: { hello: 'world' },
+                        type: 'unknown',
+                        data: {
+                            foo: 'bar',
+                        },
                     }),
                 }),
             );

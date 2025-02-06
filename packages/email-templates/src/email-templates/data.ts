@@ -207,23 +207,23 @@ export type InvitePanelMemberEmailData = {
     prescoreCommentsRequired: boolean;
 };
 
-export interface ApplicationGroupAssignedEmailData {
+export type ApplicationGroupAssignedEmailData = {
     group: Group;
     application: Application;
     applicant: Applicant;
-}
+};
 
-export interface ApplicationGroupReassignedEmailData {
+export type ApplicationGroupReassignedEmailData = {
     group: Group;
     application: Application;
-}
+};
 
-export interface ApplicationSentToResearchOfficeEmailData {
+export type ApplicationSentToResearchOfficeEmailData = {
     applicant: Applicant;
     application: Application;
     recipient: Recipient;
     opportunityCloseTime: string;
-}
+};
 
 export interface ApplicationSubmittedEmailData {
     submitter: Applicant;
@@ -265,6 +265,11 @@ export interface CancelReviewerEmailData {
     lastName: string;
 }
 
+export type MFASetupCompleteEmailData = {
+    recipient: Recipient;
+    accountSettingsLink: string;
+};
+
 export type EmailData =
     | ApplicationEmailData
     | CoApplicantEmailData
@@ -286,7 +291,8 @@ export type EmailData =
     | ApplicationGroupReassignedEmailData
     | InviteChampionEmailData
     | InvitePanelMemberEmailData
-    | RemovedCoreTeamMemberEmailData;
+    | RemovedCoreTeamMemberEmailData
+    | MFASetupCompleteEmailData;
 
 export abstract class EmailGenerator<Type extends EmailData> {
     abstract generateHtml(emailData: Type): string;

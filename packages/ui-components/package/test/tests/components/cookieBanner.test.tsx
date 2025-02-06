@@ -77,14 +77,11 @@ describe('<HeaderBranding /> component tests', () => {
         const acceptCookieButton = getByRole('button', { name: 'Accept additional cookies' });
         fireEvent.click(acceptCookieButton);
 
-        expect(mockStoreCookie.callCount).to.be.eql(3);
-        expect(mockStoreCookie.getCalls()[0].args[0], 'allow all cookies').to.be.eql(
-            'allow_all_cookies=true; expires=Fri, 31 Jan 2020 00:00:00 GMT; path=/; secure',
-        );
-        expect(mockStoreCookie.getCalls()[1].args[0], 'cookie prefe').to.be.eql(
+        expect(mockStoreCookie.callCount).to.be.eql(2);
+        expect(mockStoreCookie.getCalls()[0].args[0], 'cookie preferences set').to.be.eql(
             'cookies_preferences_set=true; expires=Fri, 31 Jan 2020 00:00:00 GMT; path=/; secure',
         );
-        expect(mockStoreCookie.getCalls()[2].args[0], 'cookie policy').to.be.eql(
+        expect(mockStoreCookie.getCalls()[1].args[0], 'cookie policy').to.be.eql(
             'cookies_policy={"essential":true,"additional":true}; expires=Fri, 31 Jan 2020 00:00:00 GMT; path=/; secure',
         );
     });
@@ -99,14 +96,11 @@ describe('<HeaderBranding /> component tests', () => {
         const acceptCookieButton = getByRole('button', { name: 'Reject additional cookies' });
         fireEvent.click(acceptCookieButton);
 
-        expect(mockStoreCookie.callCount).to.be.eql(3);
-        expect(mockStoreCookie.getCalls()[0].args[0], 'allow all cookies').to.be.eql(
-            'allow_all_cookies=true; expires=Fri, 31 Jan 2020 00:00:00 GMT; path=/; secure',
-        );
-        expect(mockStoreCookie.getCalls()[1].args[0], 'cookie prefe').to.be.eql(
+        expect(mockStoreCookie.callCount).to.be.eql(2);
+        expect(mockStoreCookie.getCalls()[0].args[0], 'cookie preferences set').to.be.eql(
             'cookies_preferences_set=true; expires=Fri, 31 Jan 2020 00:00:00 GMT; path=/; secure',
         );
-        expect(mockStoreCookie.getCalls()[2].args[0], 'cookie policy').to.be.eql(
+        expect(mockStoreCookie.getCalls()[1].args[0], 'cookie policy').to.be.eql(
             'cookies_policy={"essential":true,"additional":false}; expires=Fri, 31 Jan 2020 00:00:00 GMT; path=/; secure',
         );
     });

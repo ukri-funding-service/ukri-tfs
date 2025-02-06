@@ -23,7 +23,6 @@ export const CookieBanner = (props: CookieBannerProps): JSX.Element => {
 
     const updateCookie = (allowAdditional: boolean): void => {
         const cookiePolicy: CookiePolicy = { essential: true, additional: allowAdditional };
-        storeCookie(`${cookieBannerSettings.cookieName}=true; expires=${expires}; path=/; secure`);
         storeCookie(`${cookieBannerSettings.cookiePreferencesSet}=true; expires=${expires}; path=/; secure`);
         storeCookie(
             `${cookieBannerSettings.cookiePolicy}=${JSON.stringify(cookiePolicy)}; expires=${expires}; path=/; secure`,

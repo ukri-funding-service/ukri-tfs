@@ -19,22 +19,29 @@ export class ApplicantWithoutResearchOfficeSuccessfulApplicationEmailGenerator e
             ${generateEmailHeader(emailText.getSuccessfulDecisionHeading)}
             ${generateEmailParagraph(`Dear ${emailData.recipient.firstName} ${emailData.recipient.lastName},`)}
 
-      ${generateEmailParagraph('We are pleased to inform you that your application for funding has been successful.')}
+      ${generateEmailParagraph('We are pleased to inform you that your application has been successful.')}
 
       ${generateEmailH2Header('Application')}
-      ${generateEmailParagraph(emailText.getApplicationParagraph(emailData.application))}            
-      
+      ${generateEmailParagraph(emailText.getApplicationParagraph(emailData.application))}
+
       ${generateEmailH2Header('Opportunity')}
       ${generateEmailParagraph(emailText.getOpportunityParagraph(emailData.application))}
 
       ${generateEmailH2Header('What happens next')}
 
-      ${generateEmailParagraph('We will create a grant agreement and send it to you.')}
+      ${generateEmailParagraph(
+          'If there are no more stages to the application process, you will be sent a grant agreement. This must be agreed to before we can proceed further.',
+      )}
 
-      ${generateEmailParagraph('You must agree to the grant agreement before we can issue funding.')}
+      ${generateEmailParagraph(
+          'If there are further stages to the application process, you will be contacted shortly with further details.',
+      )}
+      ${generateEmailParagraph(
+          'Check the <a href="https://www.ukri.org/opportunity">funding finder for more information about the application process for this opportunity</a>.',
+      )}
 
       ${generateEmailParagraph('Yours sincerely,', 'noMargin')}
-            
+
       ${generateEmailParagraph('The UKRI Funding Service', 'noMargin')}
       ${generateEmailParagraph(emailText.email, 'noMargin')}
       ${generateEmailParagraph(emailText.telephone, 'noMargin')}
@@ -48,26 +55,28 @@ export class ApplicantWithoutResearchOfficeSuccessfulApplicationEmailGenerator e
 
         Dear ${emailData.recipient.firstName} ${emailData.recipient.lastName},
 
-        We are pleased to inform you that your application for funding has been successful.
-        
+        We are pleased to inform you that your application has been successful.
+
         Application
-        ${emailText.getApplicationParagraph(emailData.application)}            
-        
+        ${emailText.getApplicationParagraph(emailData.application)}
+
         Opportunity
         ${emailText.getOpportunityParagraph(emailData.application)}
 
         What happens next
 
-        We will create a grant agreement and send it to you.
+        If there are no more stages to the application process, you will be sent a grant agreement. This must be agreed to before we can proceed further.
 
-        You must agree to the grant agreement before we can issue funding.
+        If there are further stages to the application process, you will be contacted shortly with further details.
+
+        Check the funding finder for more information about the application process for this opportunity (https://www.ukri.org/opportunity).
 
         Yours sincerely,
 
         The UKRI Funding Service
         ${emailText.email}
         ${emailText.telephone}
-        
+
         ${emailText.automatedMessage}
         `;
     }
@@ -89,7 +98,7 @@ export class ApplicantWithoutResearchOfficeSuccessfulApplicationEmailGenerator e
 
 const emailText = {
     ...baseEmailText,
-    getSuccessfulDecisionHeading: 'Your application for funding has been successful',
+    getSuccessfulDecisionHeading: 'Your application has been successful',
     getApplicationParagraph: ({
         applicationName,
         applicationRef,

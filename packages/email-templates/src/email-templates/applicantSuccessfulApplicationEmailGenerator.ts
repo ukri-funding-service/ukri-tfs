@@ -10,6 +10,7 @@ import { ApplicationEmailData, EmailConfigType, EmailGenerator } from './data';
 
 export class ApplicantSuccessfulApplicationEmailGenerator extends EmailGenerator<ApplicationEmailData> {
     private subject = 'Funding decision - UKRI';
+    private fundingFinderlink = 'https://www.ukri.org/opportunity';
 
     generateEmail(
         toAddresses: string[],
@@ -32,22 +33,22 @@ export class ApplicantSuccessfulApplicationEmailGenerator extends EmailGenerator
             </br>
             ${generateEmailHeader(emailText.getApplicationSuccessfulHeading)}
             ${generateEmailParagraph(`Dear ${emailData.recipient.firstName} ${emailData.recipient.lastName},`)}
-            
+
             ${generateEmailParagraph(emailText.getBodyParagraph1)}
 
             ${generateEmailH2Header('Application')}
-            ${generateEmailParagraph(emailText.getApplicationParagraph(emailData.application))}            
-            
+            ${generateEmailParagraph(emailText.getApplicationParagraph(emailData.application))}
+
             ${generateEmailH2Header('Opportunity')}
             ${generateEmailParagraph(emailText.getOpportunityParagraph(emailData.application))}
 
             ${generateEmailH2Header('What happens next')}
-        
+
             ${generateEmailParagraph(emailText.getBodyParagraph2)}
 
             ${generateEmailParagraph(emailText.getBodyParagraph3)}
 
-            ${generateEmailParagraph(emailText.getBodyParagraph4)}
+            ${generateEmailParagraph(emailText.getBodyParagraph4(this.fundingFinderlink, true))}
 
             ${generateEmailParagraph(emailText.signOff + ',', 'noMargin')}
             ${generateEmailParagraph(emailText.fundingService, 'noMargin')}
@@ -65,18 +66,18 @@ export class ApplicantSuccessfulApplicationEmailGenerator extends EmailGenerator
         ${emailText.getBodyParagraph1}
 
         Application
-        ${emailText.getApplicationParagraph(emailData.application)}            
-        
+        ${emailText.getApplicationParagraph(emailData.application)}
+
         Opportunity
         ${emailText.getOpportunityParagraph(emailData.application)}
 
         What happens next
-        
+
         ${emailText.getBodyParagraph2}
 
         ${emailText.getBodyParagraph3}
 
-        ${emailText.getBodyParagraph4}
+        ${emailText.getBodyParagraph4(this.fundingFinderlink, false)}
 
         ${emailText.signOff},
         ${emailText.fundingService}
@@ -88,11 +89,18 @@ export class ApplicantSuccessfulApplicationEmailGenerator extends EmailGenerator
 }
 const emailText = {
     ...baseEmailText,
-    getBodyParagraph1: 'We are pleased to inform you that your application for funding has been successful.',
-    getBodyParagraph2: 'We will create a grant agreement and send it to your research organisation.',
-    getBodyParagraph3: 'Your research organisation must agree to the grant agreement before we can issue funding.',
-    getBodyParagraph4: `You don't need to do anything until your research organisation contacts you.`,
-    getApplicationSuccessfulHeading: 'Your application for funding has been successful',
+    getBodyParagraph1: 'We are pleased to inform you that your application has been successful.',
+    getBodyParagraph2:
+        'If there are no more stages to the application process, your research office (RO) will be sent a grant agreement. This must be agreed to before we can proceed further.',
+    getBodyParagraph3:
+        'If there are further stages to the application process, you will be contacted shortly with further details.',
+    getBodyParagraph4: (fundingFinderlink: string, hasHtml: boolean) =>
+        `Check the ${
+            hasHtml
+                ? `<a href="${fundingFinderlink}">funding finder for more information about the application process for this opportunity</a>`
+                : `funding finder for more information about the application process for this opportunity (${fundingFinderlink})`
+        }.`,
+    getApplicationSuccessfulHeading: 'Your application has been successful',
     getApplicationParagraph: ({
         applicationName,
         applicationRef,

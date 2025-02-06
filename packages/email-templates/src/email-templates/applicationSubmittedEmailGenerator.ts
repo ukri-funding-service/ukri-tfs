@@ -49,21 +49,14 @@ ${generateEmailParagraph(
     `If you can spare a few moments, we would welcome you selecting the 'Take survey' button to give feedback.`,
 )}
 ${generateEmailLinkButton(emailData.applicationLink, `View application`, true)}
-${generateEmailLinkButton(
-    'https://airtable.com/appj6osCTyP9dGvrL/shrDlfX6wle4cftUR',
-    `Take Survey`,
-    true,
-    'leftMargin',
-)}
+${generateEmailLinkButton('https://forms.office.com/e/cCd0b1SveT', `Take Survey`, true, 'leftMargin')}
 ${generateEmailParagraph(`If the 'View application' button does not work, use the link below or copy and paste it into your
 browser's address bar.`)}
 ${generateEmailParagraph(`<a href="${emailData.applicationLink}">${emailData.applicationLink}</a>`)}
 ${generateEmailParagraph(
     `If the ‘Take survey' button does not work, use the link below or copy and paste it into your browser's address bar.`,
 )}
-${generateEmailParagraph(
-    `<a href="https://airtable.com/appj6osCTyP9dGvrL/shrDlfX6wle4cftUR">https://airtable.com/appj6osCTyP9dGvrL/shrDlfX6wle4cftUR</a>`,
-)}
+${generateEmailParagraph(`<a href="https://forms.office.com/e/cCd0b1SveT">https://forms.office.com/e/cCd0b1SveT</a>`)}
 ${generateEmailSignOffHtml()}`,
         );
     }
@@ -88,7 +81,7 @@ If the 'View application' button does not work, use the link below or copy and p
 ${emailData.applicationLink}
 
 If the Take survey' button does not work, use the link below or copy and paste it into your browser's address bar.
-https://airtable.com/appj6osCTyP9dGvrL/shrDlfX6wle4cftUR
+https://forms.office.com/e/cCd0b1SveT
 
 ${generateEmailSignOffText()}`;
     }

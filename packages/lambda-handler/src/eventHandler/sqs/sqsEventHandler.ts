@@ -33,11 +33,21 @@ const mapRecord = async <PayloadType>(
     rootLogger: Logger,
     useFetchFunction: boolean,
     basicAuthConfig?: BasicAuthFetchConfigBase,
+    eventIsTfsMessage?: boolean,
 ): Promise<SQSBatchItemFailure | undefined> => {
     let parsedBody: TfsMessage<PayloadType>;
 
     try {
-        parsedBody = JSON.parse(JSON.parse(record.body)['Message']) as TfsMessage<PayloadType>;
+        const body: unknown = JSON.parse(JSON.parse(record.body)['Message']);
+
+        if (eventIsTfsMessage) {
+            parsedBody = body as TfsMessage<PayloadType>;
+        } else {
+            parsedBody = {
+                type: 'unknown',
+                data: body as PayloadType,
+            };
+        }
 
         if (parsedBody.unzippedType) {
             parsedBody = { ...parsedBody, data: JSON.parse(await uncompress(parsedBody.data as unknown as string)) };
@@ -121,6 +131,7 @@ export const handleSqsEvent = async <PayloadType>(
     rootLogger: Logger,
     basicAuthConfig?: BasicAuthFetchConfigBase,
     useFetchFunction = true,
+    eventIsTfsMessage = true,
 ): Promise<SQSBatchResponse> => {
     const batchItemFailures = (
         await Promise.all(
@@ -133,6 +144,7 @@ export const handleSqsEvent = async <PayloadType>(
                     rootLogger,
                     useFetchFunction,
                     basicAuthConfig,
+                    eventIsTfsMessage,
                 ),
             ),
         )

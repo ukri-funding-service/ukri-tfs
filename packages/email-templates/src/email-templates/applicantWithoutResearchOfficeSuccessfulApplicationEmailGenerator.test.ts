@@ -27,18 +27,23 @@ describe('ApplicantWithoutResearchOrganisationSuccessfulApplicationEmailDataGene
             applicantWithoutResearchOfficeSuccessfulApplicationEmailData,
         );
 
-        expect(emailContent).toContain('Your application for funding has been successful');
+        expect(emailContent).toContain('Your application has been successful');
         expect(emailContent).toContain('Dear John Doe,');
-        expect(emailContent).toContain(
-            'We are pleased to inform you that your application for funding has been successful.',
-        );
+        expect(emailContent).toContain('We are pleased to inform you that your application has been successful.');
         expect(emailContent).toContain('Application');
         expect(emailContent).toContain('APP001: Super cool application');
         expect(emailContent).toContain('Opportunity');
         expect(emailContent).toContain('OPP001: Super cool opportunity');
         expect(emailContent).toContain('What happens next');
-        expect(emailContent).toContain('We will create a grant agreement and send it to you.');
-        expect(emailContent).toContain('You must agree to the grant agreement before we can issue funding.');
+        expect(emailContent).toContain(
+            'If there are no more stages to the application process, you will be sent a grant agreement. This must be agreed to before we can proceed further.',
+        );
+        expect(emailContent).toContain(
+            'If there are further stages to the application process, you will be contacted shortly with further details.',
+        );
+        expect(emailContent).toContain(
+            'Check the <a href="https://www.ukri.org/opportunity">funding finder for more information about the application process for this opportunity</a>.',
+        );
         expect(emailContent).toContain('Yours sincerely,');
         expect(emailContent).toContain('The UKRI Funding Service');
         expect(emailContent).toContain('Email: support@funding-service.ukri.org');
@@ -51,18 +56,23 @@ describe('ApplicantWithoutResearchOrganisationSuccessfulApplicationEmailDataGene
             applicantWithoutResearchOfficeSuccessfulApplicationEmailData,
         );
 
-        expect(emailContent).toContain('Your application for funding has been successful');
+        expect(emailContent).toContain('Your application has been successful');
         expect(emailContent).toContain('Dear John Doe,');
-        expect(emailContent).toContain(
-            'We are pleased to inform you that your application for funding has been successful.',
-        );
+        expect(emailContent).toContain('We are pleased to inform you that your application has been successful.');
         expect(emailContent).toContain('Application');
         expect(emailContent).toContain('APP001: Super cool application');
         expect(emailContent).toContain('Opportunity');
         expect(emailContent).toContain('OPP001: Super cool opportunity');
         expect(emailContent).toContain('What happens next');
-        expect(emailContent).toContain('We will create a grant agreement and send it to you.');
-        expect(emailContent).toContain('You must agree to the grant agreement before we can issue funding.');
+        expect(emailContent).toContain(
+            'If there are no more stages to the application process, you will be sent a grant agreement. This must be agreed to before we can proceed further.',
+        );
+        expect(emailContent).toContain(
+            'If there are further stages to the application process, you will be contacted shortly with further details.',
+        );
+        expect(emailContent).toContain(
+            'Check the funding finder for more information about the application process for this opportunity (https://www.ukri.org/opportunity).',
+        );
         expect(emailContent).toContain('Yours sincerely,');
         expect(emailContent).toContain('The UKRI Funding Service');
         expect(emailContent).toContain('Email: support@funding-service.ukri.org');

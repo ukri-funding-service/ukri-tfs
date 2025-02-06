@@ -21,7 +21,12 @@ describe('withCookieConsent', () => {
         IncomingMessage & {
             cookies: NextApiRequestCookies;
         }
-    > = { cookies: { [cookieBannerSettings.cookieName]: 'some-cookie-value' } };
+    > = {
+        cookies: {
+            [cookieBannerSettings.cookiePreferencesSet]: 'some-cookie-value',
+            [cookieBannerSettings.cookiePolicy]: '{"essential":true,"additional":true}',
+        },
+    };
 
     const originalEnv = { ...process.env };
     const ctxWithCookie: Partial<DocumentContext> = {
@@ -38,14 +43,14 @@ describe('withCookieConsent', () => {
 
     const TestComponent: NextPage<WithCookieConsentProps> = withCookieConsent(WrappedComponent);
 
-    describe('allowAllCookies', () => {
-        it('props should return allowAllCookies true if cookie exists', async () => {
+    describe('cookiePreferencesSet', () => {
+        it('props should return cookiePreferencesSet true if cookie exists', async () => {
             const props = await TestComponent.getInitialProps!(ctxWithCookie as DocumentContext);
 
-            return expect(props).to.have.property('allowAllCookies', true);
+            expect(props).to.have.property('cookiePreferencesSet', true);
         });
 
-        it('props should return allowAllCookies false if correct cookie does not exist', async () => {
+        it('props should return cookiePreferencesSet false if correct cookie does not exist', async () => {
             const reqWithInvalidCookie: Partial<
                 IncomingMessage & {
                     cookies: NextApiRequestCookies;
@@ -59,13 +64,60 @@ describe('withCookieConsent', () => {
 
             const props = await TestComponent.getInitialProps!(ctxWithInvalidCookie as DocumentContext);
 
-            return expect(props).to.have.property('allowAllCookies', false);
+            expect(props).to.have.property('cookiePreferencesSet', false);
         });
 
-        it('props should return allowAllCookies false if no cookies exist', async () => {
+        it('props should return cookiePreferencesSet false if no cookies exist', async () => {
             const props = await TestComponent.getInitialProps!(defaultCtx as DocumentContext);
 
-            return expect(props).to.have.property('allowAllCookies', false);
+            expect(props).to.have.property('cookiePreferencesSet', false);
+        });
+    });
+
+    describe('allowAdditionalCookies', () => {
+        it('props should return allow additional cookies if the cookie exists', async () => {
+            const props = await TestComponent.getInitialProps!(ctxWithCookie as DocumentContext);
+
+            expect(props.allowAdditionalCookies).to.be.true;
+        });
+
+        it('props should return false for allow additional cookies given a cookie does not exist', async () => {
+            const reqWithInvalidCookie: Partial<
+                IncomingMessage & {
+                    cookies: NextApiRequestCookies;
+                }
+            > = { cookies: { someOtherCookie: 'some-cookie-value' } };
+
+            const ctxWithInvalidCookie: Partial<DocumentContext> = {
+                ...defaultCtx,
+                req: reqWithInvalidCookie as IncomingMessage & { cookies: NextApiRequestCookies },
+            };
+
+            const props = await TestComponent.getInitialProps!(ctxWithInvalidCookie as DocumentContext);
+
+            expect(props.allowAdditionalCookies).to.be.false;
+        });
+
+        it('props should return false for allow additional cookies given a cookie exists with additional set to false', async () => {
+            const reqWithInvalidCookie: Partial<
+                IncomingMessage & {
+                    cookies: NextApiRequestCookies;
+                }
+            > = {
+                cookies: {
+                    [cookieBannerSettings.cookiePreferencesSet]: 'some-cookie-value',
+                    [cookieBannerSettings.cookiePolicy]: '{"essential":true,"additional":false}',
+                },
+            };
+
+            const ctxWithInvalidCookie: Partial<DocumentContext> = {
+                ...defaultCtx,
+                req: reqWithInvalidCookie as IncomingMessage & { cookies: NextApiRequestCookies },
+            };
+
+            const props = await TestComponent.getInitialProps!(ctxWithInvalidCookie as DocumentContext);
+
+            expect(props.allowAdditionalCookies).to.be.false;
         });
     });
 

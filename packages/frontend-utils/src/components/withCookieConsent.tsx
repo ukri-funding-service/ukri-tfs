@@ -3,6 +3,7 @@ import process from 'process'; // required to override nextjs' process implement
 import React from 'react';
 import { cookieBannerSettings } from '../defaults';
 import { AppRequest, NextPageContextWithAppRequest } from '../pageFunctions';
+import { getAllowAdditionalCookies } from '../pageFunctions/readCookies';
 
 export type NextApiRequestCookies = {
     [x: string]: string | undefined;
@@ -11,7 +12,8 @@ export type NextApiRequestCookies = {
 export type AppRequestWithCookies = AppRequest & { cookies?: NextApiRequestCookies };
 
 export interface WithCookieConsentProps {
-    allowAllCookies?: boolean;
+    cookiePreferencesSet?: boolean;
+    allowAdditionalCookies?: boolean;
     googleTagManager?: {
         auth?: string;
         preview?: string;
@@ -34,16 +36,18 @@ export function withCookieConsent<T>(WrappedComponent: NextPage<T>): React.Compo
         ctx: NextPageContextWithAppRequest,
     ): Promise<T & WithCookieConsentProps> => {
         const initialProps = WrappedComponent.getInitialProps ? await WrappedComponent.getInitialProps(ctx) : null;
-        let allowAllCookies = false;
+        let cookiePreferencesSet = false;
+        let allowAdditionalCookies = false;
 
         if (ctx.req) {
             const req = ctx.req as AppRequestWithCookies;
-            allowAllCookies = !!(req.cookies && req.cookies[cookieBannerSettings.cookieName]);
+            cookiePreferencesSet = !!(req.cookies && req.cookies[cookieBannerSettings.cookiePreferencesSet]);
+            allowAdditionalCookies = getAllowAdditionalCookies(req.cookies);
         }
 
         const googleTagManager = getGTMAuthAndPreview();
 
-        return { allowAllCookies, googleTagManager, ...initialProps! };
+        return { cookiePreferencesSet, allowAdditionalCookies, googleTagManager, ...initialProps! };
     };
 
     return WithCookieBanner;

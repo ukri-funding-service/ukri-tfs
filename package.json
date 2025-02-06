@@ -53,13 +53,8 @@
         "version:ci": "lerna version --conventional-commits --no-changelog --no-private --amend --yes"
     },
     "lint-staged": {
-        "*.{ts,tsx,js,jsx,mjs,cjs}": [
-            "eslint --fix --max-warnings=0",
-            "prettier --write"
-        ],
-        "*.{json,md,yml,yaml}": [
-            "prettier --write"
-        ]
+        "*.{ts,tsx,js,jsx,mjs,cjs}": ["eslint --fix --max-warnings=0", "prettier --write"],
+        "*.{json,md,yml,yaml}": ["prettier --write"]
     },
     "devDependencies": {
         "@commitlint/cli": "^19.3.0",

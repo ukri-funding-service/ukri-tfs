@@ -8,11 +8,7 @@
     },
     "ignoreChanges": ["**/*.md", "**/test/**", "**/tests/**"],
     "loglevel": "info",
-    "packages": [
-        "packages/ui-components/*",
-        "packages/*",
-        "services/**"
-    ],
+    "packages": ["packages/ui-components/*", "packages/*", "services/**"],
     "version": "independent",
     "useNx": true,
     "npmClientArgs": ["--legacy-peer-deps"]

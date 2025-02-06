@@ -10,6 +10,7 @@ import { ApplicationEmailData, EmailConfigType, EmailGenerator } from './data';
 
 export class ResearchOrganisationSuccessfulApplicationEmailGenerator extends EmailGenerator<ApplicationEmailData> {
     private subject = 'Funding decision - UKRI';
+    private fundingFinderlink = 'https://www.ukri.org/opportunity';
 
     generateEmail(
         toAddresses: string[],
@@ -38,8 +39,8 @@ export class ResearchOrganisationSuccessfulApplicationEmailGenerator extends Ema
             ${generateEmailParagraph(emailText.getIgnoreParagraph)}
 
             ${generateEmailH2Header('Application')}
-            ${generateEmailParagraph(emailText.getApplicationParagraph(emailData.application))}            
-            
+            ${generateEmailParagraph(emailText.getApplicationParagraph(emailData.application))}
+
             ${generateEmailH2Header('Opportunity')}
             ${generateEmailParagraph(emailText.getOpportunityParagraph(emailData.application))}
 
@@ -47,6 +48,8 @@ export class ResearchOrganisationSuccessfulApplicationEmailGenerator extends Ema
             ${generateEmailParagraph(emailText.getBodyParagraph2)}
 
             ${generateEmailParagraph(emailText.getBodyParagraph3)}
+
+            ${generateEmailParagraph(emailText.getBodyParagraph4(this.fundingFinderlink, true))}
 
             ${generateEmailParagraph(emailText.signOff + ',', 'noMargin')}
             ${generateEmailParagraph(emailText.fundingService, 'noMargin')}
@@ -62,20 +65,22 @@ export class ResearchOrganisationSuccessfulApplicationEmailGenerator extends Ema
         Dear ${emailData.recipient.firstName} ${emailData.recipient.lastName},
 
         ${emailText.getBodyParagraph1}
-        
+
         ${emailText.getIgnoreParagraph}
 
         Application
-        ${emailText.getApplicationParagraph(emailData.application)}            
-        
+        ${emailText.getApplicationParagraph(emailData.application)}
+
         Opportunity
         ${emailText.getOpportunityParagraph(emailData.application)}
 
         What happens next
-        
+
         ${emailText.getBodyParagraph2}
 
         ${emailText.getBodyParagraph3}
+
+        ${emailText.getBodyParagraph4(this.fundingFinderlink, false)}
 
         ${emailText.signOff},
         ${emailText.fundingService}
@@ -87,12 +92,19 @@ export class ResearchOrganisationSuccessfulApplicationEmailGenerator extends Ema
 }
 const emailText = {
     ...baseEmailText,
-    getBodyParagraph1:
-        'We are pleased to inform you that an application for funding from your organisation has been successful.',
-    getBodyParagraph2: 'We will create a grant agreement and send it to you.',
-    getBodyParagraph3: 'You must agree to the grant agreement before we can issue funding.',
+    getBodyParagraph1: 'We are pleased to inform you that an application from your organisation has been successful.',
     getIgnoreParagraph: 'If you were not involved in submitting this application, you can ignore this email.',
-    getResearchOrganisationSuccessfulHeading: 'An application for funding from your organisation has been successful',
+    getBodyParagraph2:
+        'If there are no more stages to the application process, you will be sent a grant agreement. This must be agreed to before we can proceed further.',
+    getBodyParagraph3:
+        'If there are further stages to the application process, you will be contacted shortly with further details.',
+    getBodyParagraph4: (fundingFinderlink: string, hasHtml: boolean) =>
+        `Check the ${
+            hasHtml
+                ? `<a href="${fundingFinderlink}">funding finder for more information about the application process for this opportunity</a>`
+                : `funding finder for more information about the application process for this opportunity (${fundingFinderlink})`
+        }.`,
+    getResearchOrganisationSuccessfulHeading: 'An application from your organisation has been successful',
     getApplicationParagraph: ({
         applicationName,
         applicationRef,
