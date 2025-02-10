@@ -1,0 +1,22 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/notification/event/v1/auth/sendAuthNotificationEvent.schema.json",
+    "title": "Auth notification event",
+    "description": "An notification event emitted when event is required to be sent by the admin service",
+    "type": "object",
+    "properties": {
+        "type": {
+            "description": "The type of event",
+            "type": "string",
+            "enum": ["auth-notification"]
+        },
+        "data": {
+            "type": "object",
+            "anyOf": [{ "$ref": "sendMfaEnabledNotificationEventBody.schema.json" }]
+        },
+        "correlationIds": {
+            "$ref": "../common/correlationIds.schema.json"
+        }
+    },
+    "required": ["data", "correlationIds", "type"]
+}

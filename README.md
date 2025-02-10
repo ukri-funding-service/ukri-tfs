@@ -10,7 +10,7 @@ It includes the packages neccesary to run the TFS system.
 To initialise the project run `npm install` This only needs to be run once to setup lerna that handles package and service dependcies.
 Use `npm run bootstrap` to install dependancies.
 `npm run build` to build packages
-and `npm run test` to run unittests
+and `npm run test` to run unittests.
 
 ## Storybook
 

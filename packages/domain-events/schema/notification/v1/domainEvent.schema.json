@@ -9,6 +9,7 @@
         { "$ref": "./award/sendAwardNotificationEvent.schema.json" },
         { "$ref": "./organisation/group/sendGroupNotificationEvent.schema.json" },
         { "$ref": "./invite/sendInviteNotificationEvent.schema.json" },
-        { "$ref": "./review/reviewNotificationEvent.schema.json" }
+        { "$ref": "./review/reviewNotificationEvent.schema.json" },
+        { "$ref": "./auth/sendAuthNotificationEvent.schema.json" }
     ]
 }

@@ -1,0 +1,21 @@
+{
+    "definitions": {},
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/notification/event/v1/auth/sendMfaEnabledNotificationEventBody.schema.json",
+    "title": "Send MFA enabled notification event payload data",
+    "description": "Data required to send MFA enabled notification event",
+    "type": "object",
+    "required": ["accountSettingsLink", "recipients", "templateId"],
+    "properties": {
+        "recipients": {
+            "$ref": "../common/recipients.schema.json"
+        },
+        "accountSettingsLink": {
+            "type": "string"
+        },
+        "templateId": {
+            "type": "string",
+            "enum": ["mfaEnabled"]
+        }
+    }
+}
