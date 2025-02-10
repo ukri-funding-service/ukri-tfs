@@ -129,6 +129,7 @@ export interface FesIssuedEmailData {
     recipient: Recipient;
     award: Award;
     deadlineDays?: number;
+    deadlineDate: Date;
     fesUrl: string;
 }
 

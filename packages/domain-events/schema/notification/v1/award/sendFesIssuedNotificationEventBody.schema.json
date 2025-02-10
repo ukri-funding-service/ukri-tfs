@@ -16,6 +16,10 @@
         "deadlineDays": {
             "type": "integer"
         },
+        "deadlineDate": {
+            "type": "string",
+            "format": "date-time"
+        },
         "fesUrl": {
             "$ref": "./shared/fesUrl.schema.json"
         },

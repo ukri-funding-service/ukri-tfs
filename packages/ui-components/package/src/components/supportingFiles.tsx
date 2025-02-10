@@ -1,6 +1,5 @@
 import React, { ReactElement } from 'react';
 import { Column, TypedTable } from './table';
-import { HeadingText } from './heading';
 import { Form } from './form';
 import { Paragraph } from './paragraph';
 
@@ -50,7 +49,6 @@ export const SupportingFiles = (props: SupportingFilesProps): ReactElement => {
 
     return (
         <>
-            <HeadingText text={'Supporting files'} size={'m'} tag={'h2'} />
             <SupportingFilesTable data={props.supportingFiles}>
                 <Column
                     idPrefix="file-name"
