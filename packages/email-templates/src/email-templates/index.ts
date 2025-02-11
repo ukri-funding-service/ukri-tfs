@@ -30,3 +30,4 @@ export * from './applicantUnsuccessfulFailedReviewEmailGenerator';
 export * from './removedCoreTeamMemberEmailGenerator';
 export * from './inviteChampionEmailGenerator';
 export * from './invitePanelMemberEmailGenerator';
+export * from './mfaSetupCompleteEmailGenerator';
