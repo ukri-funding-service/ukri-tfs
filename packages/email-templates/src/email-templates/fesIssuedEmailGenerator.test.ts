@@ -1,12 +1,10 @@
 import { beforeEach, describe, expect, it, jest } from '@jest/globals';
-import { baseEmailText } from '../components';
+import { FesIssuedEmailGenerator } from './fesIssuedEmailGenerator';
+import { FesIssuedEmailData, EmailConfigType } from './data';
 import * as generateEmailHeaderMock from '../components/emailHeader';
-import * as generateEmailListItemMock from '../components/emailListItem';
 import * as generateEmailParagraphMock from '../components/emailParagraph';
 import * as generateEmailSignOffMock from '../components/emailSignOff';
-import * as generateEmailUnorderedListMock from '../components/emailUnorderedList';
-import { EmailConfigType, FesIssuedEmailData } from './data';
-import { FesIssuedEmailGenerator } from './fesIssuedEmailGenerator';
+import { baseEmailText } from '../components';
 
 describe('fES issued email generator', () => {
     const generator: FesIssuedEmailGenerator = new FesIssuedEmailGenerator();
@@ -18,7 +16,6 @@ describe('fES issued email generator', () => {
         },
         fesUrl: 'http://my/fes/url',
         recipient: { firstName: 'John', lastName: 'Doe' },
-        deadlineDate: new Date('2030-03-11'),
     };
 
     const deadlineDays = 180;
@@ -50,14 +47,6 @@ describe('fES issued email generator', () => {
             .spyOn(generateEmailParagraphMock, 'generateEmailParagraph')
             .mockReturnValue('');
 
-        const generateHtmlUnorderedListSpy = jest
-            .spyOn(generateEmailUnorderedListMock, 'generateHtmlUnorderedList')
-            .mockReturnValue('');
-
-        const generateHtmlListItemSpy = jest
-            .spyOn(generateEmailListItemMock, 'generateHtmlListItem')
-            .mockReturnValue('');
-
         const generateEmailSignOffHtmlSpy = jest
             .spyOn(generateEmailSignOffMock, 'generateEmailSignOffHtml')
             .mockReturnValue('');
@@ -68,7 +57,7 @@ describe('fES issued email generator', () => {
         expect(generateEmailHeaderSpy).toHaveBeenCalledWith(
             `Final expenditure statement for ${emailDataWithDeadlineDays.award.name} ${emailDataWithDeadlineDays.award.reference} issued`,
         );
-        expect(generateEmailParagraphSpy).toHaveBeenCalledTimes(5);
+        expect(generateEmailParagraphSpy).toHaveBeenCalledTimes(4);
         expect(generateEmailParagraphSpy).toHaveBeenNthCalledWith(
             1,
             `Dear ${emailDataWithDeadlineDays.recipient.firstName} ${emailDataWithDeadlineDays.recipient.lastName},`,
@@ -79,27 +68,14 @@ describe('fES issued email generator', () => {
         );
         expect(generateEmailParagraphSpy).toHaveBeenNthCalledWith(
             3,
-            `You have ${deadlineDays} days to complete the fES and return it to us. This means you must submit your FES by 11 March 2030`,
+            `You have ${deadlineDays} days to complete the fES and return it to us.`,
         );
         expect(generateEmailParagraphSpy).toHaveBeenNthCalledWith(
             4,
-            `You can <a href="${emailDataWithDeadlineDays.fesUrl}">complete and submit your FES in the Funding Service (TFS)</a>.`,
+            `You can complete and submit your fES at <a href="${emailDataWithDeadlineDays.fesUrl}">${emailDataWithDeadlineDays.fesUrl}</a>.`,
         );
-        expect(generateEmailParagraphSpy).toHaveBeenNthCalledWith(
-            5,
-            `You may need to upload supporting documents as part of your FES. For more information about what supporting documents you may need to provide:`,
-        );
-        expect(generateHtmlListItemSpy).toHaveBeenCalledTimes(2);
-        expect(generateHtmlListItemSpy).toHaveBeenNthCalledWith(1, 'review the T&Cs of your award');
-        expect(generateHtmlListItemSpy).toHaveBeenNthCalledWith(
-            2,
-            `read our <a href="${emailDataWithDeadlineDays.fesUrl}/supporting-files-guidance">guidance on supporting files for final expenditure statements (FES)</a>`,
-        );
-        expect(generateHtmlUnorderedListSpy).toHaveBeenCalledTimes(1);
-        expect(generateHtmlUnorderedListSpy).toHaveBeenNthCalledWith(1, '');
-
         expect(generateEmailH2HeaderSpy).toHaveBeenCalledTimes(1);
-        expect(generateEmailH2HeaderSpy).toHaveBeenCalledWith('How to complete your FES');
+        expect(generateEmailH2HeaderSpy).toHaveBeenCalledWith('What happens next');
         expect(generateEmailSignOffHtmlSpy).toHaveBeenCalledTimes(1);
         expect(generateEmailSignOffHtmlSpy).toHaveBeenCalledWith({
             email: baseEmailText.awardEmail,
@@ -122,20 +98,9 @@ describe('fES issued email generator', () => {
         expect(email).toContain(
             `${emailDataWithDeadlineDays.award.name} ${emailDataWithDeadlineDays.award.reference} has been issued a final expenditure statement (fES) by UKRI.`,
         );
-        expect(email).toContain(
-            `You have ${deadlineDays} days to complete the fES and return it to us. This means you must submit your FES by 11 March 2030`,
-        );
-        expect(email).toContain('How to complete your FES');
-        expect(email).toContain(
-            `You can complete and submit your FES in the Funding Service at ${emailDataWithoutDeadlineDays.fesUrl}.`,
-        );
-        expect(email).toContain(
-            `You may need to upload supporting documents as part of your FES. For more information about what supporting documents you may need to provide:`,
-        );
-        expect(email).toContain(`* review the T&Cs of your award`);
-        expect(email).toContain(
-            `* read our guidance on supporting files for final expenditure statements (FES) at ${emailDataWithoutDeadlineDays.fesUrl}/supporting-files-guidance`,
-        );
+        expect(email).toContain(`You have ${deadlineDays} days to complete the fES and return it to us.`);
+        expect(email).toContain('What happens next');
+        expect(email).toContain(`You can complete and submit your fES at ${emailDataWithoutDeadlineDays.fesUrl}.`);
         expect(generateEmailSignOffTextSpy).toHaveBeenCalledWith({
             email: baseEmailText.awardEmail,
             telephone: baseEmailText.awardTelephone,
@@ -149,19 +114,17 @@ describe('fES issued email generator', () => {
 
         generator.generateHtml(emailDataWithoutDeadlineDays);
 
-        expect(generateEmailParagraphSpy).toHaveBeenCalledTimes(5);
+        expect(generateEmailParagraphSpy).toHaveBeenCalledTimes(4);
         expect(generateEmailParagraphSpy).toHaveBeenNthCalledWith(
             3,
-            'You have 90 days to complete the fES and return it to us. This means you must submit your FES by 11 March 2030',
+            'You have 90 days to complete the fES and return it to us.',
         );
     });
 
     it('should generate email with the correct text when optional data is omitted', () => {
         const email = generator.generateText(emailDataWithoutDeadlineDays);
 
-        expect(email).toContain(
-            'You have 90 days to complete the fES and return it to us. This means you must submit your FES by 11 March 2030',
-        );
+        expect(email).toContain('You have 90 days to complete the fES and return it to us.');
     });
 
     it('should generate a generic Email object', () => {
