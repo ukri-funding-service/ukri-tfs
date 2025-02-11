@@ -35,4 +35,5 @@ export const adminServicesRestEndpoints = {
     hasChampionsAssigned: '{0}/api/person-organisations/{1}/has-champions-assigned',
     getGroupPersons: '{0}/api/organisations/{1}/groups/{2}/persons',
     getPersonCountForGroupIds: '{0}/api/organisations/{1}/groups/person-count?groupIds={2}',
+    sendEnabledMfaEmail: '{0}/api/users/job/send-enabled-mfa-email',
 };
