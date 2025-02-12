@@ -39,7 +39,9 @@ export class ApplicantWithoutResearchOfficeSuccessfulApplicationEmailGenerator e
       ${generateEmailParagraph(
           'Check the <a href="https://www.ukri.org/opportunity">funding finder for more information about the application process for this opportunity</a>.',
       )}
-
+      ${generateEmailParagraph(
+          'We would appreciate your feedback on your experience so we can improve the Funding Service. Please fill out <a href="https://forms.office.com/e/KhmVCx49cz">anonymous survey (link)</a>',
+      )}
       ${generateEmailParagraph('Yours sincerely,', 'noMargin')}
 
       ${generateEmailParagraph('The UKRI Funding Service', 'noMargin')}
@@ -71,6 +73,8 @@ export class ApplicantWithoutResearchOfficeSuccessfulApplicationEmailGenerator e
 
         Check the funding finder for more information about the application process for this opportunity (https://www.ukri.org/opportunity).
 
+        We would appreciate your feedback on your experience so we can improve the Funding Service. Please fill out <a href="https://forms.office.com/e/KhmVCx49cz">anonymous survey (link)</a>
+
         Yours sincerely,
 
         The UKRI Funding Service
@@ -80,6 +84,7 @@ export class ApplicantWithoutResearchOfficeSuccessfulApplicationEmailGenerator e
         ${emailText.automatedMessage}
         `;
     }
+
     generateEmail(
         toAddresses: string[],
         emailData: ApplicationEmailData,

@@ -44,6 +44,9 @@ describe('ApplicantWithoutResearchOrganisationSuccessfulApplicationEmailDataGene
         expect(emailContent).toContain(
             'Check the <a href="https://www.ukri.org/opportunity">funding finder for more information about the application process for this opportunity</a>.',
         );
+        expect(emailContent).toContain(
+            'We would appreciate your feedback on your experience so we can improve the Funding Service. Please fill out <a href="https://forms.office.com/e/KhmVCx49cz">anonymous survey (link)</a>',
+        );
         expect(emailContent).toContain('Yours sincerely,');
         expect(emailContent).toContain('The UKRI Funding Service');
         expect(emailContent).toContain('Email: support@funding-service.ukri.org');
@@ -72,6 +75,9 @@ describe('ApplicantWithoutResearchOrganisationSuccessfulApplicationEmailDataGene
         );
         expect(emailContent).toContain(
             'Check the funding finder for more information about the application process for this opportunity (https://www.ukri.org/opportunity).',
+        );
+        expect(emailContent).toContain(
+            'We would appreciate your feedback on your experience so we can improve the Funding Service. Please fill out <a href="https://forms.office.com/e/KhmVCx49cz">anonymous survey (link)</a>',
         );
         expect(emailContent).toContain('Yours sincerely,');
         expect(emailContent).toContain('The UKRI Funding Service');

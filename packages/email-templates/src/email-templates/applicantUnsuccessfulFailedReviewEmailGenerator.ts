@@ -62,6 +62,9 @@ export class ApplicantUnsuccessfulFailedReviewEmailGenerator extends EmailGenera
       ${generateEmailParagraph(emailText.getOpportunityParagraph(emailData.application))}
 
       ${generateEmailParagraph('Thank you for taking the time to submit an application for this Opportunity.')}
+      ${generateEmailParagraph(
+          'We would appreciate your feedback on your experience so we can improve the Funding Service. Please fill out <a href="https://forms.office.com/e/KhmVCx49cz">anonymous survey (link)</a>',
+      )};
       
       ${generateEmailParagraph('Kind regards,', 'noMargin')}
             
@@ -98,6 +101,8 @@ export class ApplicantUnsuccessfulFailedReviewEmailGenerator extends EmailGenera
             emailText.getOpportunityParagraph(emailData.application),
             '',
             'Thank you for taking the time to submit an application for this Opportunity.',
+            '',
+            'We would appreciate your feedback on your experience so we can improve the Funding Service. Please fill out <a href="https://forms.office.com/e/KhmVCx49cz">anonymous survey (link)</a>',
             '',
             'Kind regards,',
             'The UKRI Funding Service',

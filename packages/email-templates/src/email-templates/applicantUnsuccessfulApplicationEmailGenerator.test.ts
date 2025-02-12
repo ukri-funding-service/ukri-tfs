@@ -40,6 +40,9 @@ describe('ApplicantUnsuccessfulApplicationEmailDataGenerator', () => {
         expect(emailContent).toContain('You do not need to do anything else.');
         expect(emailContent).toContain('We have let your research organisation know about this decision.');
         expect(emailContent).toContain('Thank you for taking the time to submit an application for this Opportunity.');
+        expect(emailContent).toContain(
+            'We would appreciate your feedback on your experience so we can improve the Funding Service. Please fill out  <a href="https://forms.office.com/e/KhmVCx49cz"',
+        );
         expect(emailContent).toContain('Yours sincerely,');
         expect(emailContent).toContain('The UKRI Funding Service');
         expect(emailContent).toContain('Email: support@funding-service.ukri.org');
@@ -65,6 +68,9 @@ describe('ApplicantUnsuccessfulApplicationEmailDataGenerator', () => {
         expect(emailContent).toContain('You do not need to do anything else.');
         expect(emailContent).toContain('We have let your research organisation know about this decision.');
         expect(emailContent).toContain('Thank you for taking the time to submit an application for this Opportunity.');
+        expect(emailContent).toContain(
+            'We would appreciate your feedback on your experience so we can improve the Funding Service. Please fill out <a href="https://forms.office.com/e/KhmVCx49cz">anonymous survey (link)</a>',
+        );
         expect(emailContent).toContain('Yours sincerely,');
         expect(emailContent).toContain('The UKRI Funding Service');
         expect(emailContent).toContain('Email: support@funding-service.ukri.org');
