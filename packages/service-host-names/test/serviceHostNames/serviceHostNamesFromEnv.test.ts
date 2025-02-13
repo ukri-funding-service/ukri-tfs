@@ -32,7 +32,7 @@ describe('serviceHostNamesFromEnv', () => {
         try {
             serviceHostNames.getUrl('XYZ_SERVICE_API');
         } catch (e) {
-            expect(e).toEqual(new Error('TypeError [ERR_INVALID_URL]: Invalid URL var name=XYZ_SERVICE_API, value='));
+            expect(e).toEqual(new Error('TypeError: Invalid URL var name=XYZ_SERVICE_API, value='));
         }
     });
 });

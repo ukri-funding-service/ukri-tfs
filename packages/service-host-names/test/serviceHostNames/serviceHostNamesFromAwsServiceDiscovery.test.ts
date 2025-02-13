@@ -121,9 +121,7 @@ describe('serviceHostNamesFromEnv', () => {
         try {
             serviceHostNames.getUrl('INVALID_VAR_NAME' as any);
         } catch (e) {
-            expect(e).toEqual(
-                new Error('TypeError [ERR_INVALID_URL]: Invalid URL var name=INVALID_VAR_NAME, value=undefined'),
-            );
+            expect(e).toEqual(new Error('TypeError: Invalid URL var name=INVALID_VAR_NAME, value=undefined'));
         }
     });
 });

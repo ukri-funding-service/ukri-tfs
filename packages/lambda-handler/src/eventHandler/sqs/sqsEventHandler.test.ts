@@ -450,7 +450,7 @@ describe('packages/lambda-handler - eventHandling/sqsEventHandler', () => {
 
             expect(mockLogger.error).toHaveBeenCalledTimes(1);
             expect(errorLoggerMock.mock.calls[0][0]).toMatch(
-                /.*unable to parse body of record with message id 1234: Unexpected token h in JSON at position 1.*/,
+                /.*unable to parse body of record with message id 1234: Unexpected token 'h', \"this is invalid\" is not valid JSON.*/,
             );
 
             expect(batchResponse).toEqual({

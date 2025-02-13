@@ -1,5 +1,5 @@
-FROM docker-tfs.devops.innovateuk.org/tfs/node:18.20-alpine3.20 AS builder
-RUN npm install --global npm@10.7.0
+FROM docker-tfs.devops.innovateuk.org/tfs/node:20.18.2-alpine3.20 AS builder
+RUN npm install --global npm@10.8.2
 
 WORKDIR /usr/src/app
 
@@ -26,8 +26,8 @@ RUN npm set ${NPM_REPO}:_authToken ${NPM_AUTH_TOKEN} && \
 RUN chmod 0755 node_modules/@ukri-tfs/test-framework/scripts/*.sh
 
 #### Prod image ####
-FROM docker-tfs.devops.innovateuk.org/tfs/node:18.20-alpine3.20 AS prod-image
-RUN npm install --global npm@10.7.0
+FROM docker-tfs.devops.innovateuk.org/tfs/node:20.18.2-alpine3.20 AS prod-image
+RUN npm install --global npm@10.8.2
 
 WORKDIR /usr/src/app
 
