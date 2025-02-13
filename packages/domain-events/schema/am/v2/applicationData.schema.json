@@ -58,9 +58,6 @@
             "description": "The status of the application",
             "type": "string",
             "examples": ["Draft"]
-        },
-        "project_partners": {
-            "$ref": "projectPartners.schema.json"
         }
     },
     "required": [
