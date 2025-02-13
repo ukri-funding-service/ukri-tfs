@@ -21,9 +21,10 @@ export class FesIssuedEmailGenerator extends EmailGenerator<FesIssuedEmailData> 
         getDeadlineText: (deadlineDate: Date, deadlineDays?: number) =>
             `You have ${
                 deadlineDays ?? '90'
-            } days to complete the fES and return it to us.${` This means you must submit your FES by ${this.formatDate(
+            } days to complete the FES and return it to us.${` This means you must submit your FES by ${this.formatDate(
                 deadlineDate,
             )}`}`,
+        instructionText1: `If you do not, you may be sanctioned as outlined in your award T&Cs.`,
         linkInstructionHtml1: (fesUrl: string) =>
             `You can <a href="${fesUrl}">complete and submit your FES in the Funding Service (TFS)</a>.`,
         linkInstructionText1: (fesUrl: string) =>
@@ -37,7 +38,7 @@ export class FesIssuedEmailGenerator extends EmailGenerator<FesIssuedEmailData> 
         subHeadingText: `How to complete your FES`,
         getHeaderText: (award: Award) => `Final expenditure statement for ${award.name} ${award.reference} issued`,
         getAwardText: (award: Award) =>
-            `${award.name} ${award.reference} has been issued a final expenditure statement (fES) by UKRI.`,
+            `${award.name} ${award.reference} has been issued a final expenditure statement (FES) by UKRI.`,
     };
 
     generateEmail(
@@ -65,6 +66,7 @@ export class FesIssuedEmailGenerator extends EmailGenerator<FesIssuedEmailData> 
             )}
             ${generateEmailParagraph(this.emailText.getAwardText(emailData.award))}
             ${generateEmailParagraph(this.emailText.getDeadlineText(emailData.deadlineDate, emailData.deadlineDays))}
+            ${generateEmailParagraph(this.emailText.instructionText1)}
             ${generateEmailH2Header(this.emailText.subHeadingText)}
             ${generateEmailParagraph(this.emailText.linkInstructionHtml1(emailData.fesUrl))}
             ${generateEmailParagraph(this.emailText.linkInstructionText2)}
@@ -90,6 +92,8 @@ export class FesIssuedEmailGenerator extends EmailGenerator<FesIssuedEmailData> 
 
         ${this.emailText.getDeadlineText(emailData.deadlineDate, emailData.deadlineDays)}
 
+        ${this.emailText.instructionText1}
+        
         ${this.emailText.subHeadingText}
 
         ${this.emailText.linkInstructionText1(emailData.fesUrl)}

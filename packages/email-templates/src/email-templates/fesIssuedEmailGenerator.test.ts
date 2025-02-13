@@ -68,25 +68,29 @@ describe('fES issued email generator', () => {
         expect(generateEmailHeaderSpy).toHaveBeenCalledWith(
             `Final expenditure statement for ${emailDataWithDeadlineDays.award.name} ${emailDataWithDeadlineDays.award.reference} issued`,
         );
-        expect(generateEmailParagraphSpy).toHaveBeenCalledTimes(5);
+        expect(generateEmailParagraphSpy).toHaveBeenCalledTimes(6);
         expect(generateEmailParagraphSpy).toHaveBeenNthCalledWith(
             1,
             `Dear ${emailDataWithDeadlineDays.recipient.firstName} ${emailDataWithDeadlineDays.recipient.lastName},`,
         );
         expect(generateEmailParagraphSpy).toHaveBeenNthCalledWith(
             2,
-            `${emailDataWithDeadlineDays.award.name} ${emailDataWithDeadlineDays.award.reference} has been issued a final expenditure statement (fES) by UKRI.`,
+            `${emailDataWithDeadlineDays.award.name} ${emailDataWithDeadlineDays.award.reference} has been issued a final expenditure statement (FES) by UKRI.`,
         );
         expect(generateEmailParagraphSpy).toHaveBeenNthCalledWith(
             3,
-            `You have ${deadlineDays} days to complete the fES and return it to us. This means you must submit your FES by 11 March 2030`,
+            `You have ${deadlineDays} days to complete the FES and return it to us. This means you must submit your FES by 11 March 2030`,
         );
         expect(generateEmailParagraphSpy).toHaveBeenNthCalledWith(
             4,
-            `You can <a href="${emailDataWithDeadlineDays.fesUrl}">complete and submit your FES in the Funding Service (TFS)</a>.`,
+            'If you do not, you may be sanctioned as outlined in your award T&Cs.',
         );
         expect(generateEmailParagraphSpy).toHaveBeenNthCalledWith(
             5,
+            `You can <a href="${emailDataWithDeadlineDays.fesUrl}">complete and submit your FES in the Funding Service (TFS)</a>.`,
+        );
+        expect(generateEmailParagraphSpy).toHaveBeenNthCalledWith(
+            6,
             `You may need to upload supporting documents as part of your FES. For more information about what supporting documents you may need to provide:`,
         );
         expect(generateHtmlListItemSpy).toHaveBeenCalledTimes(2);
@@ -120,11 +124,12 @@ describe('fES issued email generator', () => {
             `Dear ${emailDataWithoutDeadlineDays.recipient.firstName} ${emailDataWithoutDeadlineDays.recipient.lastName},`,
         );
         expect(email).toContain(
-            `${emailDataWithDeadlineDays.award.name} ${emailDataWithDeadlineDays.award.reference} has been issued a final expenditure statement (fES) by UKRI.`,
+            `${emailDataWithDeadlineDays.award.name} ${emailDataWithDeadlineDays.award.reference} has been issued a final expenditure statement (FES) by UKRI.`,
         );
         expect(email).toContain(
-            `You have ${deadlineDays} days to complete the fES and return it to us. This means you must submit your FES by 11 March 2030`,
+            `You have ${deadlineDays} days to complete the FES and return it to us. This means you must submit your FES by 11 March 2030`,
         );
+        expect(email).toContain('If you do not, you may be sanctioned as outlined in your award T&Cs.');
         expect(email).toContain('How to complete your FES');
         expect(email).toContain(
             `You can complete and submit your FES in the Funding Service at ${emailDataWithoutDeadlineDays.fesUrl}.`,
@@ -149,10 +154,10 @@ describe('fES issued email generator', () => {
 
         generator.generateHtml(emailDataWithoutDeadlineDays);
 
-        expect(generateEmailParagraphSpy).toHaveBeenCalledTimes(5);
+        expect(generateEmailParagraphSpy).toHaveBeenCalledTimes(6);
         expect(generateEmailParagraphSpy).toHaveBeenNthCalledWith(
             3,
-            'You have 90 days to complete the fES and return it to us. This means you must submit your FES by 11 March 2030',
+            'You have 90 days to complete the FES and return it to us. This means you must submit your FES by 11 March 2030',
         );
     });
 
@@ -160,7 +165,7 @@ describe('fES issued email generator', () => {
         const email = generator.generateText(emailDataWithoutDeadlineDays);
 
         expect(email).toContain(
-            'You have 90 days to complete the fES and return it to us. This means you must submit your FES by 11 March 2030',
+            'You have 90 days to complete the FES and return it to us. This means you must submit your FES by 11 March 2030',
         );
     });
 
