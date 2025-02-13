@@ -1,0 +1,36 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://funding-service.ukri.org/schema/am/event/v2/projectPartners.schema.json",
+    "title": "Project partner details",
+    "description": "The details and contributions for project partners",
+    "type": "array",
+    "items": {
+        "type": "object",
+        "properties": {
+            "application_project_partners_id": {
+                "description": "The project partner id",
+                "type": "number",
+                "examples": [1000]
+            },
+            "organisation_id": {
+                "description": "The organisation id",
+                "type": "number",
+                "examples": [20]
+            },
+            "person_id": { "description": "The person id", "type": "number", "examples": [1234] },
+            "contributions": {
+                "type": "object",
+                "properties": {
+                    "direct": { "$ref": "contribution.schema.json" },
+                    "in_kind": { "$ref": "contribution.schema.json" }
+                }
+            },
+            "country": {
+                "type": "string",
+                "description": "The country of the project partner",
+                "examples": ["England"]
+            }
+        },
+        "required": ["application_project_partners_id", "organisation_id", "person_id", "contributions", "country"]
+    }
+}
