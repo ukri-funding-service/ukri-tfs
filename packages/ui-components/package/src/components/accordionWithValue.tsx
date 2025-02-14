@@ -57,6 +57,7 @@ export const AccordionWithValue = (props: AccordionWithValueProps): JSX.Element 
         };
 
         const testId = section.testId ?? index;
+        const readonlyInputName = `daAccordionTotal-${index}-input`;
 
         return (
             <div
@@ -88,7 +89,7 @@ export const AccordionWithValue = (props: AccordionWithValueProps): JSX.Element 
                         </button>
                     </h2>
                     <div className="accordion-totals js-only" data-testid={`accordion-section-total-${testId}`}>
-                        <label className="accordion-totals__label">
+                        <label className="accordion-totals__label" htmlFor={readonlyInputName}>
                             <span className="govuk-visually-hidden">{section.heading}</span> {section.summaryLabel}:{' '}
                         </label>
                         <input
@@ -96,7 +97,7 @@ export const AccordionWithValue = (props: AccordionWithValueProps): JSX.Element 
                             tabIndex={-1}
                             className="govuk-input govuk-input--secret accordion-totals__input"
                             value={section.summaryValue}
-                            name="daAccordionTotal"
+                            name={readonlyInputName}
                             readOnly
                         />
                     </div>
