@@ -44,7 +44,7 @@ describe('InviteReviewerEmailGenerator', () => {
             expect(email.html).toBe(`UKRI Funding Service - 2FA set up complete
             <p>Dear Dave Stevenson,</p>
             <p>Two factor authentication has been set up on your account for the Funding Service (TFS).</p>
-            <p>You can manage your 2FA preferences in <a href=\"https://application-manager/account-settings/link\">account settings</a></p>
+
             <p>Kind regards,</p>
 
             <p>The UKRI Funding Service</p>
@@ -70,8 +70,6 @@ describe('InviteReviewerEmailGenerator', () => {
         Dear Dave Stevenson,
 
         Two factor authentication has been set up on your account for the Funding Service (TFS).
-
-        You can manage your 2FA preferences in https://application-manager/account-settings/link
 
         Kind regards,
 

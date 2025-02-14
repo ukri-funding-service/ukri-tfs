@@ -47,7 +47,6 @@
         "setup:post-decision": "nx run-many -t docker:compose:up:db --projects='@ukri-tfs/{admin-services,application-manager,opportunity-manager,organisation-service-api,post-decision-api}' -- -d && nx run-many -t wait-on-db --projects='@ukri-tfs/{admin-services,application-manager,opportunity-manager,organisation-service-api,post-decision-api}' && nx run-many -t db:migrate --projects='@ukri-tfs/{admin-services,application-manager,opportunity-manager,organisation-service-api,post-decision-api}' && npm run seed:post-decision",
         "sonar:ci:combined": "npm run test:coverage && sonar-scanner -Dsonar.login=${SONAR_API_KEY} ${SONAR_EXTRA_ARGS}",
         "sonar:ci": "nx run-many -t sonar:ci",
-        "test:admin-services:API": "npm run --prefix services/admin-services/tests test:API:component",
         "test": "nx run-many -t test",
         "version": "lerna version --conventional-commits --no-changelog --no-private --amend --no-push",
         "version:ci": "lerna version --conventional-commits --no-changelog --no-private --amend --yes"
