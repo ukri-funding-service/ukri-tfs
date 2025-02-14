@@ -51,6 +51,10 @@ export class ResearchOrganisationSuccessfulApplicationEmailGenerator extends Ema
 
             ${generateEmailParagraph(emailText.getBodyParagraph4(this.fundingFinderlink, true))}
 
+            ${generateEmailParagraph(
+                'We would appreciate your feedback on your experience so we can improve the Funding Service. Please fill out <a href="https://forms.office.com/e/KhmVCx49cz">anonymous survey (link)</a>',
+            )}
+
             ${generateEmailParagraph(emailText.signOff + ',', 'noMargin')}
             ${generateEmailParagraph(emailText.fundingService, 'noMargin')}
             ${generateEmailParagraph(emailText.email, 'noMargin')}
@@ -81,6 +85,8 @@ export class ResearchOrganisationSuccessfulApplicationEmailGenerator extends Ema
         ${emailText.getBodyParagraph3}
 
         ${emailText.getBodyParagraph4(this.fundingFinderlink, false)}
+
+        We would appreciate your feedback on your experience so we can improve the Funding Service. Please fill out anonymous survey (https://forms.office.com/e/KhmVCx49cz),
 
         ${emailText.signOff},
         ${emailText.fundingService}

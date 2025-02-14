@@ -79,7 +79,7 @@ describe('fES issued email generator', () => {
         );
         expect(generateEmailParagraphSpy).toHaveBeenNthCalledWith(
             3,
-            `You have ${deadlineDays} days to complete the FES and return it to us. This means you must submit your FES by 11 March 2030`,
+            `You have ${deadlineDays} days to complete the FES and return it to us. This means you must submit your FES by 11 March 2030.`,
         );
         expect(generateEmailParagraphSpy).toHaveBeenNthCalledWith(
             4,
@@ -127,7 +127,7 @@ describe('fES issued email generator', () => {
             `${emailDataWithDeadlineDays.award.name} ${emailDataWithDeadlineDays.award.reference} has been issued a final expenditure statement (FES) by UKRI.`,
         );
         expect(email).toContain(
-            `You have ${deadlineDays} days to complete the FES and return it to us. This means you must submit your FES by 11 March 2030`,
+            `You have ${deadlineDays} days to complete the FES and return it to us. This means you must submit your FES by 11 March 2030.`,
         );
         expect(email).toContain('If you do not, you may be sanctioned as outlined in your award T&Cs.');
         expect(email).toContain('How to complete your FES');
@@ -157,7 +157,7 @@ describe('fES issued email generator', () => {
         expect(generateEmailParagraphSpy).toHaveBeenCalledTimes(6);
         expect(generateEmailParagraphSpy).toHaveBeenNthCalledWith(
             3,
-            'You have 90 days to complete the FES and return it to us. This means you must submit your FES by 11 March 2030',
+            'You have 90 days to complete the FES and return it to us. This means you must submit your FES by 11 March 2030.',
         );
     });
 
@@ -165,7 +165,7 @@ describe('fES issued email generator', () => {
         const email = generator.generateText(emailDataWithoutDeadlineDays);
 
         expect(email).toContain(
-            'You have 90 days to complete the FES and return it to us. This means you must submit your FES by 11 March 2030',
+            'You have 90 days to complete the FES and return it to us. This means you must submit your FES by 11 March 2030.',
         );
     });
 

@@ -50,7 +50,9 @@ export class ApplicantSuccessfulApplicationEmailGenerator extends EmailGenerator
 
             ${generateEmailParagraph(emailText.getBodyParagraph4(this.fundingFinderlink, true))}
 
-            ${generateEmailParagraph(emailText.getFeedbackParagraph)}
+            ${generateEmailParagraph(
+                'We would appreciate your feedback on your experience so we can improve the Funding Service. Please fill out <a href="https://forms.office.com/e/KhmVCx49cz">anonymous survey (link)</a>',
+            )}
 
             ${generateEmailParagraph(emailText.signOff + ',', 'noMargin')}
             ${generateEmailParagraph(emailText.fundingService, 'noMargin')}
@@ -81,8 +83,8 @@ export class ApplicantSuccessfulApplicationEmailGenerator extends EmailGenerator
 
         ${emailText.getBodyParagraph4(this.fundingFinderlink, false)}
         
-        ${emailText.getFeedbackParagraph}
-
+        We would appreciate your feedback on your experience so we can improve the Funding Service. Please fill out anonymous survey (https://forms.office.com/e/KhmVCx49cz)
+        
         ${emailText.signOff},
         ${emailText.fundingService}
         ${emailText.email}
@@ -119,6 +121,4 @@ const emailText = {
         opportunityName: string;
         opportunityRef: string;
     }) => `${opportunityRef}: ${opportunityName}`,
-    getFeedbackParagraph:
-        'We would appreciate your feedback on your experience so we can improve the Funding Service. Please fill out <a href="https://forms.office.com/e/KhmVCx49cz">anonymous survey (link)</a>',
 };

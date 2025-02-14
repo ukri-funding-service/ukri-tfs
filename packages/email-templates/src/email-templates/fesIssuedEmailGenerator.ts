@@ -21,9 +21,9 @@ export class FesIssuedEmailGenerator extends EmailGenerator<FesIssuedEmailData> 
         getDeadlineText: (deadlineDate: Date, deadlineDays?: number) =>
             `You have ${
                 deadlineDays ?? '90'
-            } days to complete the FES and return it to us.${` This means you must submit your FES by ${this.formatDate(
+            } days to complete the FES and return it to us. This means you must submit your FES by ${this.formatDate(
                 deadlineDate,
-            )}`}`,
+            )}.`,
         instructionText1: `If you do not, you may be sanctioned as outlined in your award T&Cs.`,
         linkInstructionHtml1: (fesUrl: string) =>
             `You can <a href="${fesUrl}">complete and submit your FES in the Funding Service (TFS)</a>.`,

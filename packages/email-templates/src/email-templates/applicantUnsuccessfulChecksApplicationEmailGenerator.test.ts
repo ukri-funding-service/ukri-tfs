@@ -57,14 +57,12 @@ describe('ApplicantUnsuccessfulChecksApplicationEmailDataGenerator', () => {
             <p>OPP001: Super cool opportunity</p>
 
             <p>Thank you for taking the time to submit an application for this Opportunity.</p>
-
-            mock email sign off html
-      `);
+            <p>We would appreciate your feedback on your experience so we can improve the Funding Service. Please fill out <a href=\"https://forms.office.com/e/KhmVCx49cz\">anonymous survey</a></p>
+            mock email sign off html`);
         });
 
         it('should work for text only', () => {
             const email = applicantUnsuccessfulChecksApplicationEmailDataGenerator.generateText(emailData);
-
             expect(email).toBe(`Your application for funding has not been successful
 
         Dear John Doe,
@@ -84,8 +82,9 @@ describe('ApplicantUnsuccessfulChecksApplicationEmailDataGenerator', () => {
 
         Thank you for taking the time to submit an application for this Opportunity.
 
-        mock email sign off text
-        `);
+        We would appreciate your feedback on your experience so we can improve the Funding Service. Please fill out anonymous survey (https://forms.office.com/e/KhmVCx49cz),
+
+        mock email sign off text`);
         });
     });
 
@@ -115,9 +114,8 @@ describe('ApplicantUnsuccessfulChecksApplicationEmailDataGenerator', () => {
             <p>OPP001: Super cool opportunity</p>
 
             <p>Thank you for taking the time to submit an application for this Opportunity.</p>
-
-            mock email sign off html
-      `);
+            <p>We would appreciate your feedback on your experience so we can improve the Funding Service. Please fill out <a href=\"https://forms.office.com/e/KhmVCx49cz\">anonymous survey</a></p>
+            mock email sign off html`);
         });
 
         it('should work for text only', () => {
@@ -125,7 +123,6 @@ describe('ApplicantUnsuccessfulChecksApplicationEmailDataGenerator', () => {
                 ...emailData,
                 userType: 'ResearchOfficer',
             });
-
             expect(email).toBe(`An application for funding from your organisation has not been successful
 
         Dear John Doe,
@@ -145,8 +142,9 @@ describe('ApplicantUnsuccessfulChecksApplicationEmailDataGenerator', () => {
 
         Thank you for taking the time to submit an application for this Opportunity.
 
-        mock email sign off text
-        `);
+        We would appreciate your feedback on your experience so we can improve the Funding Service. Please fill out anonymous survey (https://forms.office.com/e/KhmVCx49cz),
+
+        mock email sign off text`);
         });
     });
 

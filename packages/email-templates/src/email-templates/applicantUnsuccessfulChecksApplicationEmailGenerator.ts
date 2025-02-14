@@ -114,9 +114,10 @@ export class ApplicantUnsuccessfulChecksApplicationEmailGenerator extends EmailG
             ${generateEmailParagraph(emailText.getOpportunityParagraph(emailData.application))}
 
             ${generateEmailParagraph('Thank you for taking the time to submit an application for this Opportunity.')}
-
-            ${generateEmailSignOffHtml()}
-      `,
+            ${generateEmailParagraph(
+                `We would appreciate your feedback on your experience so we can improve the Funding Service. Please fill out <a href="https://forms.office.com/e/KhmVCx49cz">anonymous survey</a>`,
+            )}
+            ${generateEmailSignOffHtml()}`,
         );
     }
     generateText(emailData: ApplicantUnsuccessfulChecksEmailGeneratorData): string {
@@ -139,7 +140,8 @@ export class ApplicantUnsuccessfulChecksApplicationEmailGenerator extends EmailG
 
         Thank you for taking the time to submit an application for this Opportunity.
 
-        ${generateEmailSignOffText()}
-        `;
+        We would appreciate your feedback on your experience so we can improve the Funding Service. Please fill out anonymous survey (https://forms.office.com/e/KhmVCx49cz),
+
+        ${generateEmailSignOffText()}`;
     }
 }

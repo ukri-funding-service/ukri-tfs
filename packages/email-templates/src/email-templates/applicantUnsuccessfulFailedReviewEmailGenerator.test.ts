@@ -105,7 +105,7 @@ describe('ApplicantUnsuccessfulFailedReviewEmailGenerator', () => {
                 'Thank you for taking the time to submit an application for this Opportunity.',
             );
             expect(emailContent).toContain(
-                'We would appreciate your feedback on your experience so we can improve the Funding Service. Please fill out <a href="https://forms.office.com/e/KhmVCx49cz">anonymous survey (link)</a>',
+                'We would appreciate your feedback on your experience so we can improve the Funding Service. Please fill out anonymous survey (https://forms.office.com/e/KhmVCx49cz)',
             );
             expect(emailContent).toContain('Kind regards,');
             expect(emailContent).toContain('The UKRI Funding Service');
