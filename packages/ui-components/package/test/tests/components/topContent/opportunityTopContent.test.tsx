@@ -9,6 +9,7 @@ describe('opportunity top component', () => {
     const topContentProps = {
         totalRecords: 30,
         checkedOpportunityFunderFilters: [funder],
+        filterSummaryText: `opportunities with a council of '${funder}'`,
     };
     const renderComponent = () => {
         render(<>{topContent(topContentProps)}</>);
