@@ -44,6 +44,9 @@ describe('Research Office successful application email generator', () => {
         expect(email).toContain(
             'Check the <a href="https://www.ukri.org/opportunity">funding finder for more information about the application process for this opportunity</a>.',
         );
+        expect(email).toContain(
+            'We would appreciate your feedback on your experience so we can improve the Funding Service. Please fill out <a href="https://forms.office.com/e/KhmVCx49cz">anonymous survey (link)</a>',
+        );
         expect(email).toContain('Yours sincerely,');
         expect(email).toContain('The UKRI Funding Service');
         expect(email).toContain('Email: support@funding-service.ukri.org');
@@ -75,6 +78,11 @@ describe('Research Office successful application email generator', () => {
         expect(email).toContain(
             'Check the funding finder for more information about the application process for this opportunity (https://www.ukri.org/opportunity).',
         );
+
+        expect(email).toContain(
+            'We would appreciate your feedback on your experience so we can improve the Funding Service. Please fill out anonymous survey (https://forms.office.com/e/KhmVCx49cz)',
+        );
+
         expect(email).toContain('Yours sincerely,');
         expect(email).toContain('The UKRI Funding Service');
         expect(email).toContain('Email: support@funding-service.ukri.org');

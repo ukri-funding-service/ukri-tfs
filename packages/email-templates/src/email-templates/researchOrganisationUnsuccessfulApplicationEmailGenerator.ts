@@ -68,7 +68,7 @@ export class ResearchOrganisationUnsuccessfulApplicationEmailGenerator extends E
 
         Thank you for taking the time to submit an application for this Opportunity.
 
-        We would appreciate your feedback on your experience so we can improve the Funding Service. Please fill out anonymous survey (https://forms.office.com/e/KhmVCx49cz),
+        We would appreciate your feedback on your experience so we can improve the Funding Service. Please fill out anonymous survey (https://forms.office.com/e/KhmVCx49cz)
 
 
         Yours sincerely,

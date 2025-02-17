@@ -57,7 +57,7 @@ describe('ApplicantUnsuccessfulChecksApplicationEmailDataGenerator', () => {
             <p>OPP001: Super cool opportunity</p>
 
             <p>Thank you for taking the time to submit an application for this Opportunity.</p>
-            <p>We would appreciate your feedback on your experience so we can improve the Funding Service. Please fill out <a href=\"https://forms.office.com/e/KhmVCx49cz\">anonymous survey</a></p>
+            <p>We would appreciate your feedback on your experience so we can improve the Funding Service. Please fill out <a href=\"https://forms.office.com/e/KhmVCx49cz\">anonymous survey (link)</a></p>
             mock email sign off html`);
         });
 
@@ -82,7 +82,7 @@ describe('ApplicantUnsuccessfulChecksApplicationEmailDataGenerator', () => {
 
         Thank you for taking the time to submit an application for this Opportunity.
 
-        We would appreciate your feedback on your experience so we can improve the Funding Service. Please fill out anonymous survey (https://forms.office.com/e/KhmVCx49cz),
+        We would appreciate your feedback on your experience so we can improve the Funding Service. Please fill out anonymous survey (https://forms.office.com/e/KhmVCx49cz)
 
         mock email sign off text`);
         });
@@ -114,7 +114,7 @@ describe('ApplicantUnsuccessfulChecksApplicationEmailDataGenerator', () => {
             <p>OPP001: Super cool opportunity</p>
 
             <p>Thank you for taking the time to submit an application for this Opportunity.</p>
-            <p>We would appreciate your feedback on your experience so we can improve the Funding Service. Please fill out <a href=\"https://forms.office.com/e/KhmVCx49cz\">anonymous survey</a></p>
+            <p>We would appreciate your feedback on your experience so we can improve the Funding Service. Please fill out <a href=\"https://forms.office.com/e/KhmVCx49cz\">anonymous survey (link)</a></p>
             mock email sign off html`);
         });
 
@@ -142,7 +142,7 @@ describe('ApplicantUnsuccessfulChecksApplicationEmailDataGenerator', () => {
 
         Thank you for taking the time to submit an application for this Opportunity.
 
-        We would appreciate your feedback on your experience so we can improve the Funding Service. Please fill out anonymous survey (https://forms.office.com/e/KhmVCx49cz),
+        We would appreciate your feedback on your experience so we can improve the Funding Service. Please fill out anonymous survey (https://forms.office.com/e/KhmVCx49cz)
 
         mock email sign off text`);
         });
