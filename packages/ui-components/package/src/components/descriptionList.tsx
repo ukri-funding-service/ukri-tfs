@@ -8,7 +8,7 @@ export class DescriptionList extends React.Component<DescriptionListProps, {}> {
     }
     render(): React.ReactElement {
         return (
-            <dl id={this.props.id} className={this.props.className}>
+            <dl id={this.props.id} className={this.props.className} role="list">
                 {this.props.children}
             </dl>
         );
