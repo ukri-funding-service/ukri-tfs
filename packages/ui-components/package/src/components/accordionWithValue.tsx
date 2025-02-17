@@ -24,9 +24,6 @@ type AccordionState = { [k: number]: boolean };
 export const AccordionWithValue = (props: AccordionWithValueProps): JSX.Element => {
     const defaultAccordionState: AccordionState = {};
 
-    // for (let i = 0; i < props.sections.length; i++) {
-    //     defaultAccordionState[i] = false;
-    // }
     props.sections.forEach((section: AccordionWithValueSection, i) => {
         defaultAccordionState[i] = section.defaultExpanded ?? false;
     });

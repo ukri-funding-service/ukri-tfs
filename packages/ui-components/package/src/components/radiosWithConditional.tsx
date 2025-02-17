@@ -1,4 +1,3 @@
-// import 'govuk-frontend/govuk/core/_typography.scss';
 import React, { ReactNode } from 'react';
 import cx from 'classnames';
 import { GdsRadioButton, RadioButtonProps } from './radioButton';
