@@ -30,13 +30,13 @@
     "author": "",
     "license": "MIT",
     "dependencies": {
-        "newrelic": "12.5.1"
+        "newrelic": "12.13.0"
     },
     "devDependencies": {
         "@types/jest": "29.5.14",
         "@types/node": "^18.19.33",
         "@types/node-fetch": "2.x",
-        "@types/newrelic": "9.14.6",
+        "@types/newrelic": "9.14.7",
         "eslint": "7.x",
         "jest": "^29.7.0",
         "jest-junit-reporter": "^1.1.0",
